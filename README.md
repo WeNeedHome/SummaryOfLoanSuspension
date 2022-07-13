@@ -7,9 +7,9 @@
 
 <br/>
 
-```
-互帮互助留言讨论区：https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions
-```
+
+[互帮互助留言讨论区](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
+
 
 ## 其他数据公示处
 ```
