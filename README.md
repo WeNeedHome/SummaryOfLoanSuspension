@@ -17,6 +17,8 @@
 
 金山文档：https://kdocs.cn/l/ctqDVK5k215N
 ```
+
+![统计图](https://www.kdocs.cn/1870c2ec-0275-460f-837c-49e95cde9971)
   
 
 ## 江西省 [ 7 ]  
