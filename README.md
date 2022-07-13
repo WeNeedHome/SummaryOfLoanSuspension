@@ -5,6 +5,10 @@
 <br/>
 _数据开放转载引用，但请注明出处，非常感谢！_
 
+```
+互帮互助留言讨论区：https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions
+```
+
 ## 其他数据公示处
 ```
 项目发起人 Leepeng Young：https://www.zhihu.com/people/leepeng-young
