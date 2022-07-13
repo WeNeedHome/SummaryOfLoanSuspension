@@ -5,8 +5,6 @@
 <br/>
 *数据开放转载引用，但请注明出处，非常感谢！*
 
-<br/>
-  
 ## 其他数据公示处
 ```
 项目发起人 Leepeng Young：https://www.zhihu.com/people/leepeng-young
