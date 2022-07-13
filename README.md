@@ -9,7 +9,8 @@
   
 ## 其他数据公示处
 ```
-项目发起人知乎：https://www.zhihu.com/people/leepeng-young
+项目发起人 Leepeng Young：
+    https://www.zhihu.com/people/leepeng-young
 金山文档：https://kdocs.cn/l/ctqDVK5k215N
 ```
   
