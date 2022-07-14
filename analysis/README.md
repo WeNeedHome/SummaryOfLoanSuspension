@@ -36,3 +36,5 @@ properties count in province 陕西省 failed to validate, calculated:  14, mark
 ## 数据来源
 
 - 全国城市经纬度（文件：`data/region.json`）：https://github.com/boyan01/ChinaRegionDistrict
+- GoogleMapsApiKey: https://github.com/webcoiruser/tvc/blob/2c10cad726e92282ba3a8e672890bd91a40160ba/gradle.properties
+- 

@@ -43,6 +43,8 @@
 
 # 总数：【235+】
 
+![基于城市级别的烂尾楼可视化](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/images/20220715/c5a62de4e72c4f328ade1cd54700e10c.png?x-oss-process=image/auto-orient,1/interlace,1/quality,q_100/format,jpg)
+
 <br/>
 
 [互帮互助留言讨论区](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
