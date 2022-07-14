@@ -24,7 +24,7 @@
   
 ## 其他数据公示处
 ```
-项目发起人 Leepeng Young：https://www.zhihu.com/people/leepeng-young
+项目发起人 Leepeng Young
 
 我来文档：https://www.wolai.com/xutejcDgz9B3aTcrRCjxB1
 ```
