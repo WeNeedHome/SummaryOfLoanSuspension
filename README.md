@@ -39,7 +39,7 @@
  https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
 
-# 总数：【227+】
+# 总数：【229+】
   
 <br/>
 
@@ -157,8 +157,8 @@
 - **济南市（1）：** 阳光城檀悦  
 - **烟台市（1）：** 松隽阳光城
 
-## 福建省 [ 1 ]
-- **福州市（1）：** 天泽奥莱时代（8月），[恒大天璟（8月）](./images/20220714114814.png)，永泰青云小镇
+## 福建省 [ 3 ]
+- **福州市（3）：** [天泽奥莱时代（8月）](./images/fujian_fuzhou_tianzeaolai.jpg)，[恒大天璟（8月）](./images/fujian_fuzhou_hengdatianjing)，[世茂泰禾青云小镇（9月）](https://www.lejucaijing.com/news-6952897746651365146.html)
 
 ## 安徽省 [ 2 ]
 - **合肥市（2）：** 恒大中心（8月），斯瑞大厦  
