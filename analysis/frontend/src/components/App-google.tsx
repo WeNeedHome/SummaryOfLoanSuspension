@@ -1,4 +1,4 @@
-import {Circle, GoogleMap, LoadScript, Polygon} from "@react-google-maps/api"
+import {Circle, GoogleMap, LoadScript} from "@react-google-maps/api"
 
 import citiesOnMap from "../data/citiesOnMap.json"
 

@@ -1,5 +1,3 @@
-import {Pos} from "../region/region.ds";
-
 export interface Property {
     province: string
     city: string
@@ -7,12 +5,3 @@ export interface Property {
     link?: string
     month?: number
 }
-
-export interface ICityOnMap {
-    id: string
-    count: number
-    pos: Pos
-}
-
-export type CitiesOnMap = Record<string, ICityOnMap>
-

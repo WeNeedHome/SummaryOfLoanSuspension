@@ -1,8 +1,8 @@
 declare module "data/citiesOnMap.json" {
-    import {AddressWithCount} from "ds";
+    import {CitiesOnMap} from "ds";
     /**
      * ref: https://www.typescriptlang.org/docs/handbook/modules.html#wildcard-module-declarations
      */
-    const content: Record<string, AddressWithCount>
+    const content: CitiesOnMap
     export default content
 }

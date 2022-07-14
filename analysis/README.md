@@ -24,6 +24,14 @@ properties count in province 陕西省 failed to validate, calculated:  14, mark
 
 ![基于城市级别的烂尾楼可视化](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/images/20220715/c5a62de4e72c4f328ade1cd54700e10c.png?x-oss-process=image/auto-orient,1/interlace,1/quality,q_100/format,jpg)
 
+## usage
+
+分别见前后端部分
+
+## reference
+
+- 谷歌地图js api(细节要看js api，实现看react api或者内部源码): https://developers.google.com/maps/documentation/javascript
+- 谷歌地图react api: https://react-google-maps-api-docs.netlify.app/
 
 ## 数据来源
 
