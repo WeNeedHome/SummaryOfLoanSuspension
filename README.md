@@ -47,6 +47,8 @@
 项目发起人：被ban了
 
 我来文档：https://www.wolai.com/xutejcDgz9B3aTcrRCjxB1
+
+Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 ```
 
 ## 江西省 [ 13 ]  
