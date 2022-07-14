@@ -1,6 +1,6 @@
 # 全国各省市烂尾楼停贷通知汇总
 
-### 数据来源统计以及发起人：zhihu @Leepeng Young
+### 数据来源统计以及发起人： 已被封禁
 
 ***
 *数据开放转载引用，但请注明出处，非常感谢！*  
@@ -24,7 +24,7 @@
   
 ## 其他数据公示处
 ```
-项目发起人 Leepeng Young：https://www.zhihu.com/people/leepeng-young
+项目发起人：被ban了
 
 我来文档：https://www.wolai.com/xutejcDgz9B3aTcrRCjxB1
 ```
