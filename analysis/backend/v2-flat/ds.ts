@@ -15,3 +15,4 @@ export interface ICityOnMap {
 }
 
 export type CitiesOnMap = Record<string, ICityOnMap>
+

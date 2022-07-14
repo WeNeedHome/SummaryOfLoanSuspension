@@ -1,25 +1,30 @@
-import {GoogleMap, Polygon} from "@react-google-maps/api"
+import {Circle, GoogleMap, LoadScript, Polygon} from "@react-google-maps/api"
+
+import citiesOnMap from "../data/citiesOnMap.json"
 
 const mapContainerStyle = {
-    height: "400px",
-    width: "800px"
+    height: "800px",
+    width: "1200px"
 }
 
-const center = {lat: 24.886, lng: -70.268}
+const lat = 35
+const lng = 100
+const center: google.maps.LatLngLiteral = {lat, lng}
 
+const K = 3
 const paths = [
-    {lat: 25.774, lng: -80.19},
-    {lat: 18.466, lng: -66.118},
-    {lat: 32.321, lng: -64.757},
-    {lat: 25.774, lng: -80.19}
+    {lat: lat - K, lng: lng - K},
+    {lat: lat - K, lng: lng + K},
+    {lat: lat + K, lng: lng + K},
+    {lat: lat + K, lng: lng - K},
 ]
 
 const options = {
-    fillColor: "lightblue",
-    fillOpacity: 1,
+    fillColor: "red",
+    fillOpacity: 0.5,
     strokeColor: "red",
-    strokeOpacity: 1,
-    strokeWeight: 2,
+    strokeOpacity: 0,
+    strokeWeight: 1,
     clickable: false,
     draggable: false,
     editable: false,
@@ -27,23 +32,41 @@ const options = {
     zIndex: 1
 }
 
-const onLoad = (polygon: any) => {
-    console.log("polygon: ", polygon);
-}
 
-export default () => {
+export const App = () => {
+
+    console.log({citiesOnMap})
+
     return (
-        <GoogleMap
-            id="marker-example"
-            mapContainerStyle={mapContainerStyle}
-            zoom={5}
-            center={center}
-        >
-            <Polygon
-                onLoad={onLoad}
-                paths={paths}
-                options={options}
-            />
-        </GoogleMap>
+        <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_API_KEY as string}>
+            <GoogleMap
+                mapContainerStyle={mapContainerStyle}
+                zoom={5}
+                center={center}
+                onLoad={map => {
+                    console.log({map})
+                }}
+                options={{
+                    streetViewControl: false
+                }}
+
+
+            >
+
+                {
+                    Object.values(citiesOnMap).map(address => (
+                        <Circle
+                            center={address.pos}
+                            radius={1e4 * (Math.log(address.count) + 1) * 2}
+                            options={options}
+                        />
+                    ))
+                }
+
+            </GoogleMap>
+        </LoadScript>
     )
 }
+
+
+export default App

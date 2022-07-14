@@ -1,6 +1,7 @@
-export interface Pos {
-    longitude: number
-    latitude: number
+export interface Pos
+{
+    lat: number
+    lng: number
 }
 
 export type RegionLevel =

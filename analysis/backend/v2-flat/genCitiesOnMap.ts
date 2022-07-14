@@ -1,10 +1,39 @@
 import * as fs from "fs";
 import path from "path";
-import {ICityOnMap, Property} from "./ds";
-import {BACKEND_DIR, FRONTEND_SRC_DATA_DIR} from "../const";
-import {Address2PosMap} from "../region/ds";
+import {Property} from "./ds";
+import {FRONTEND_SRC_DATA_DIR} from "../const";
+import regionTree from "../region/region.json"
+import {Address, AddressWithCount} from "../../frontend/src/ds";
 
-const city2PosMap: Address2PosMap = JSON.parse(fs.readFileSync(path.join(BACKEND_DIR, "region/city2pos.map.json"), "utf-8"))
+
+export function getAddress(province_: string, city_: string): Address {
+    const id_ = province_ + "-" + city_
+    for (const provinceItem of regionTree.districts) {
+        const province = provinceItem.name
+        if (province_.includes(province) || province.includes(province_)) {
+            // 二级查找
+            for (const cityItem of provinceItem.districts) {
+                const city = cityItem.name
+                if (city.includes(city_) || city_.includes(city)) {
+                    return {province, city, pos: cityItem.center}
+                }
+            }
+
+            // 三级查找
+            for (const cityItem of provinceItem.districts) {
+                const city = cityItem.name
+                for (const districtItem of cityItem.districts) {
+                    const district = districtItem.name
+                    if (district.includes(city_) || city_.includes(district)) {
+                        return {province, city, district, pos: districtItem.center}
+                    }
+                }
+            }
+        }
+    }
+    throw new Error(`not found for ${id_}`)
+}
+
 
 fs.readFile(
     path.join(__dirname, "properties.json"),
@@ -13,18 +42,14 @@ fs.readFile(
         if (err) throw err
 
         const properties: Property[] = JSON.parse(data)
-        const citiesOnMap: Record<string, ICityOnMap> = {}
+        const citiesOnMap: Record<string, AddressWithCount> = {}
 
         properties.forEach(property => {
             const id = property.province + "-" + property.city
             if (Object.keys(citiesOnMap).includes(id)) {
-                (citiesOnMap[id] as ICityOnMap).count += 1
+                citiesOnMap[id].count += 1
             } else {
-                citiesOnMap[id] = {
-                    id,
-                    count: 1,
-                    pos: city2PosMap[id]
-                }
+                citiesOnMap[id] = {...getAddress(property.province, property.city), count: 1}
             }
         })
 

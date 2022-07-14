@@ -29,7 +29,7 @@ async function analyze() {
                 // console.log({matchProvince})
                 province = matchProvince[1]
                 markedTotalInProvince = parseInt(matchProvince[2])
-                console.log(`parsing province ${province}`)
+                // console.log(`parsing province ${province}`)
                 cumTotalInProvince = 0
                 return;
             }
