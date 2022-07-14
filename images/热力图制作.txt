@@ -17,7 +17,7 @@ fetch('https://gw.alipayobjects.com/os/antfincdn/OOSGL1vhp3/20200726024229.json'
       江西省: 8,
       河南省: 27,
       山西省: 2,
-      湖南省: 10,
+      湖南省: 25,
       辽宁省: 2,
       江苏省: 4,
       陕西省: 3,
