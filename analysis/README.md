@@ -30,8 +30,9 @@ properties count in province 陕西省 failed to validate, calculated:  14, mark
 
 ## reference
 
-- 谷歌地图js api(细节要看js api，实现看react api或者内部源码): https://developers.google.com/maps/documentation/javascript
-- 谷歌地图react api: https://react-google-maps-api-docs.netlify.app/
+- google map js api(细节要看js api，实现看react api或者内部源码): https://developers.google.com/maps/documentation/javascript
+- google map react api: https://react-google-maps-api-docs.netlify.app/
+- custom google map theme: https://mapstyle.withgoogle.com/
 
 ## 数据来源
 
