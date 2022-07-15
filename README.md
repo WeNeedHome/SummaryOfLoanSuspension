@@ -2,7 +2,6 @@
 
 ### 数据来源统计以及发起人： 已被封禁
 
-
 ***
 *非专业精确数据，仅供参考，与数据模糊分析*
 
@@ -12,24 +11,24 @@
 
 *要相信党，相信政府。党和政府一定会给人民群众一个满意的交代，这里仅作数据统计，切勿有过激言论！*
 
-**如果要 pull request 请按照格式**  
+---
+### 如果要 pull request 请按照格式
 - 1、新增项目信息，请务必修改 README.md 文件，以及修改全国、省、市总数！否则不予通过
 - 2、最好有图片
 - 3、请记得检查是否需要解决冲突
+- 4、删除项目信息请提供复工图片，并上传至images文件夹相对应的省份
 
 ***
 
 ```
 毛主席在1962年七千人大会上的讲话：
 
- https://www.marxists.org/chinese/maozedong/1968/5-016.htm
+https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
-
-# 总数：【275+】
-
 
 [互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
+# 总数：【274+】
 
 #### 全国总数计算代码：
 
