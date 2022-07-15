@@ -38,16 +38,29 @@
 
 # 总数：【265+】
 
-
 ![基于城市级别的烂尾楼可视化](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/images/20220715/b29d5f8d10b5427cb3b87b613bd8f08e.png?x-oss-process=image/auto-orient,1/interlace,1/quality,q_100/format,jpg)
-
-
-<br/>
 
 [互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
 
+```
+全国总数计算代码：
+let i = 0;
+[...$('.markdown-body').childNodes].forEach(item => {
+    if(item.nodeName === 'H2'){
+        const n = item.textContent.match(/\[\s*(\d+)\s*\]/)
+        i += Number(n && n[1])
+    }
+})
+console.log(i)
+
+使用方式：
+1. 打开分叉代码库前端页面
+2. 打开console 输入以上代码，输出值即为全国统计总数
+```
+
 ## 其他数据公示处
+
 ```
 项目发起人：被ban了
 
