@@ -51,7 +51,7 @@
   他们的作用就是为丑陋涂脂抹粉，为粪坑喷洒芳香剂！
 ```
 
-# 总数：【238+】
+# 总数：【237+】
 <br/>
 
 [互帮互助留言讨论区，这里没有人捂嘴](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
