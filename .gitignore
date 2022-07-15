@@ -1,10 +1,11 @@
+# important
 .env
 
 # mac
-.DS_Store
+**/.DS_Store
 
 # jetbrains
 .idea
 
 # node
-node_modeules
+**/node_modeules
