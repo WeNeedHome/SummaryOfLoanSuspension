@@ -51,7 +51,7 @@
   他们的作用就是为丑陋涂脂抹粉，为粪坑喷洒芳香剂！
 ```
 
-# 总数：【237+】
+# 总数：【238+】
 <br/>
 
 [互帮互助留言讨论区，这里没有人捂嘴](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
@@ -376,7 +376,8 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 西安铭鸿中心二期，
 [锦业6号府邸](images/陕西/西安锦业6号府邸停贷通知书.png)，
 [万和郡](images/陕西/西安万和郡停贷告知.png) ，
-鄠邑区名仕华庭
+鄠邑区名仕华庭，
+国际幸福城
 
 ## 广西壮族自治区 [ 11 ]
 - **南宁市（6）：**
