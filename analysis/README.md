@@ -22,7 +22,6 @@ properties count in province 陕西省 failed to validate, calculated:  14, mark
 
 ### 【前端】对接了城市的经纬度数据，实现了烂尾楼可视化
 
-![基于城市级别的烂尾楼可视化](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/images/20220715/c5a62de4e72c4f328ade1cd54700e10c.png?x-oss-process=image/auto-orient,1/interlace,1/quality,q_100/format,jpg)
 
 ## usage
 
