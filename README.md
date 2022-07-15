@@ -2,10 +2,13 @@
 
 ### 数据来源统计以及发起人： 已被封禁
 
+
 ***
+*非专业精确数据，仅供参考，与数据模糊分析*
+
 *数据开放转载引用，但请注明出处，非常感谢！*  
 
-*这里不做任何非数据性质等其他一系列讨论，只是统计一个数据，有错就纠改，无其他任何含义，别的请勿多言!*
+*这里不做任何非数据性质等其他一系列讨论，只是统计一个数据，有错就纠改，无其他任何含义，别的请勿多言！禁止政治敏感话题！*
 
 *要相信党，相信政府。党和政府一定会给人民群众一个满意的交代，这里仅作数据统计，切勿有过激言论！*
 
@@ -37,13 +40,27 @@
 
 ![基于城市级别的烂尾楼可视化](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/images/20220715/b29d5f8d10b5427cb3b87b613bd8f08e.png?x-oss-process=image/auto-orient,1/interlace,1/quality,q_100/format,jpg)
 
-
-<br/>
-
 [互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
 
+```
+全国总数计算代码：
+let i = 0;
+[...$('.markdown-body').childNodes].forEach(item => {
+    if(item.nodeName === 'H2'){
+        const n = item.textContent.match(/\[\s*(\d+)\s*\]/)
+        i += Number(n && n[1])
+    }
+})
+console.log(i)
+
+使用方式：
+1. 打开分叉代码库前端页面
+2. 打开console 输入以上代码，输出值即为全国统计总数
+```
+
 ## 其他数据公示处
+
 ```
 项目发起人：被ban了
 
