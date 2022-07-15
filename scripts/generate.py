@@ -47,17 +47,19 @@ for data_file in data_files:
     for city, value in province_data.items():
         generate += f'- **{city}（{value["count"]}）：** '
         generate += '，'.join(value['content'])
+        generate += '\n'
     
     if province_name not in overall_generated:
         overall_generated[province_name] = ''
         count_mapping[province_name] = 0
-    overall_generated[province_name] += f'## {province_name} [ {province_count} ]\n{generate}\n\n'
+    overall_generated[province_name] += f'## {province_name} [ {province_count} ]\n{generate}'
     count_mapping[province_name] += province_count
 
 count_mapping = dict(sorted(count_mapping.items(), key=lambda item: item[1], reverse=True))
 final_generated = ''
 for province_name, count in count_mapping.items():
-    final_generated += f'{overall_generated[province_name]}\n\n'
+    final_generated += f'{overall_generated[province_name]}\n'
+    overall_count += count
 
 template = template.replace(r'%%TOTAL_COUNT%%', str(overall_count))
 template = template.replace(r'%%DATA%%', final_generated)
