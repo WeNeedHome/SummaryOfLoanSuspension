@@ -1956,7 +1956,7 @@
     // url转blob
     function urlToBlob() {
         let file_url = 'https://uaresky.github.io/SummaryOfLoanSuspension'
-        let mdHtmlRegx = /<strong>.+\d{1,}.+<\/strong>/
+        let mdHtmlRegx = /<strong>.+\d{1,}.+strong>/
         let result = '';
         $.ajax({
             url: file_url,
