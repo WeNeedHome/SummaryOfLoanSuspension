@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import os
 import re
 import json
+
+if not os.getcwd().endswith('scripts'):
+    os.chdir('scripts')
 
 with open('../README.md', 'r') as f:
     data = f.read()
