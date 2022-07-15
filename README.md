@@ -41,10 +41,20 @@
  https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
 
+```
+易中天：
+
+  满口正能量的人，是这个国家最龌龊的一类人。
+  
+  他们用所谓的正能量，掩盖一切罪恶和苦难，漠视别人的痛苦和不幸。
+  
+  他们的作用就是为丑陋涂脂抹粉，为粪坑喷洒芳香剂！
+```
+
 # 总数：【235+】
 <br/>
 
-[互帮互助留言讨论区](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
+[互帮互助留言讨论区，这里没有人捂嘴](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
 
 ## 其他数据公示处
