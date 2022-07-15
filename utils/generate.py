@@ -2,6 +2,7 @@
 import os
 import pandas as pd
 import json
+outfile = 'README.md'
 case_dir = './cases'
 df = pd.DataFrame(columns = ['province', 'prefecture', 'name', 'date', 'link'])
 #%%
@@ -15,7 +16,7 @@ provinces = df.province.unique()
 print(f'Records Provinces: {provinces}')
 #%%
 intro = open('asset/intro.md', 'r', encoding='utf-8').read()
-with open('Cases.md', 'w', encoding='utf-8') as f:
+with open(outfile, 'w', encoding='utf-8') as f:
     f.write(intro)
     f.write(f'# Cases# 总数：【{len(df)}】\n')
     f.write('''
