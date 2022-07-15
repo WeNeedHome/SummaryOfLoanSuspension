@@ -41,11 +41,20 @@
  https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
 
-# 总数：【236+】
+```
+易中天：
 
+  满口正能量的人，是这个国家最龌龊的一类人。
+  
+  他们用所谓的正能量，掩盖一切罪恶和苦难，漠视别人的痛苦和不幸。
+  
+  他们的作用就是为丑陋涂脂抹粉，为粪坑喷洒芳香剂！
+```
+
+# 总数：【236+】
 <br/>
 
-[互帮互助留言讨论区](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
+[互帮互助留言讨论区，这里没有人捂嘴](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
 
 ## 其他数据公示处
@@ -162,7 +171,7 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 ## 山东 [ 7 ]
 - **龙口市（1）：** 松隽阳光城（12月）
 - **青岛市（3）：** [三盛国际海岸五期（9月）](./images/20220713-155354.jpeg)（9月），中南林樾小区（7月），绿地城际空间站（9月）  
-- **济南市（2）：** [阳光城檀悦](./images/阳光城檀悦.jpeg)，[中新国际城四期南区](./images/jinan-rczxgjc.jpeg)
+- **济南市（2）：** [阳光城檀悦](./images/阳光城檀悦.jpeg)，[融创中新国际城四期南区](./images/jinan-rczxgjc.jpeg)
 - **烟台市（1）：** 松隽阳光城
 
 ## 福建省 [ 2 ]
@@ -180,7 +189,8 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 - **广安市（1）：** 帝谷公园城三期  
 - **巴中市（1）：** 恩阳川旅世纪外滩
 
-## 甘肃省 [1]
+## 甘肃省 [2]
+- **兰州市（1）：** [兰州新区绿地智慧金融城六期康养谷](./images/兰州新区绿地智慧金融城六期康养谷.jpeg)
 - **庆阳市（1）：** 国金one（11月）
 
 ## 上海 [ 3 ]
