@@ -41,7 +41,7 @@
  https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
 
-# 总数：【235+】
+# 总数：【236+】
 <br/>
 
 [互帮互助留言讨论区](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
@@ -193,6 +193,7 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 - **武清区（1）：** 恒大翡翠湾（10月）  
 - **海教园（1）：** 四季春晓
 - **宝坻区（1）：** [宝坻区实地海棠雅著圣景豪庭](images/天津市实地海棠雅著圣景豪庭.jpeg)  
+- **北辰区（1）：** 融创津宸壹号
 
 ## 贵州省 [ 2 ] 
 - **贵阳市（2）：** 中天吾乡，中环国际阅湖 
