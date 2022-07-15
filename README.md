@@ -2,8 +2,6 @@
 
 ### 数据来源统计以及发起人： 已被封禁
 
-### [repo忙不过，需要一个愿意帮忙merger校验数据的（git的会啊，别乱搞），可给权限，这里留言](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
-
 ***
 *数据开放转载引用，但请注明出处，非常感谢！*
 
@@ -590,11 +588,11 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 
 - **嘉定区（1）：**
 
-[徐行佳兆业五期](./images/%E4%B8%8A%E6%B5%B7%E5%BE%90%E8%A1%8C%E4%BD%B3%E5%85%86%E4%B8%9A%E4%BA%94%E6%9C%9F.jpeg)
+[徐行佳兆业五期](./images/上海徐行佳兆业五期.jpeg)
 
 - **浦东新区（1）：**
 
-[临港万祥颐景园江南院](./images/%E4%B8%8A%E6%B5%B7%E4%B8%B4%E6%B8%AF%E4%B8%87%E7%A5%A5%E9%A2%90%E6%99%AF%E5%9B%AD%E6%B1%9F%E5%8D%97%E9%99%A2.jpeg)
+[临港万祥颐景园江南院](./images/上海临港万祥颐景园江南院.jpeg)
 
 ## 天津市 [ 7 ]
 - **天津市（3）：**
