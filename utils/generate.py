@@ -26,7 +26,7 @@ with open('Cases.md', 'w', encoding='utf-8') as f:
     ''')
     for province in provinces:
         df_province = df[df.province == province]
-        f.write(f'## {province} [ {len(df_province)} ]\n---\n')
+        f.write(f'## {province} [ {len(df_province)} ]\n')
         prefectures = df_province.prefecture.unique()
         for prefecture in prefectures:
             df_prefecture = df_province[df_province.prefecture == prefecture]
