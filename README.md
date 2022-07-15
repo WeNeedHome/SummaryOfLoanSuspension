@@ -27,7 +27,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
 
 [互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
-
+[地图可视化统计=>](https://aiheihe.github.io/WeNeedHome/)
 # 总数：【274+】
 
 #### 全国总数计算代码：
