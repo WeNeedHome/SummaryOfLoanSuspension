@@ -2,7 +2,7 @@
 
 ### 数据来源统计以及发起人： 已被封禁
 
-### [repo忙不过，需要一个愿意帮忙merger校验数据的（git的会啊，别乱搞），可给权限，这里留言](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/423)
+### [repo忙不过，需要一个愿意帮忙merger校验数据的（git的会啊，别乱搞），可给权限，这里留言](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
 ***
 *数据开放转载引用，但请注明出处，非常感谢！*
