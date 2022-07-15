@@ -36,12 +36,12 @@ def get_city(line):
     num = int(city_raw[0].split('（')[1].split('）')[0])
     return city, num
 
-cases_raw = lines[66:]
+cases_raw = lines[48:]
 province = ""
 city = ""
 case_name = ""
 for case_raw in cases_raw:
-    if case_raw.startswith('##'):
+    if case_raw.startswith('## '):
         # new province
         province = case_raw.split(' ')[1]
     elif case_raw.startswith('- **'):
@@ -49,6 +49,7 @@ for case_raw in cases_raw:
         city, num = get_city(city_raw)
         if len(city_raw) > 0:
             cases = case_raw.split('**')[2].strip().split('，')
+            print(cases)
             for case in cases:
                 link = get_link(case)
                 name = get_name(case)
@@ -60,5 +61,6 @@ for case_raw in cases_raw:
                     'date': month,
                     'link': link
                 }
-                with open(f'./cases/{name}.json', 'w', encoding='UTF-8') as f:
+                print(case_dict)
+                with open(f'./cases/{province}_{city}_{name}.json', 'w', encoding='UTF-8') as f:
                     f.write(json.dumps(case_dict,  ensure_ascii=False) + '\n')
