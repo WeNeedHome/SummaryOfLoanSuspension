@@ -1,3 +1,10 @@
 .env
+
+# mac
 .DS_Store
+
+# jetbrains
 .idea
+
+# node
+node_modeules
