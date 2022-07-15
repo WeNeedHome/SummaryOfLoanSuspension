@@ -32,7 +32,8 @@ for data_file in data_files:
         if month:
             name += '（' + month + '）'
         if image:
-            name += f'[{name}]({image})'
+            image = './images/' + image
+            name = f'[{name}]({image})'
         
         if city not in province_data:
             province_data[city] = {
