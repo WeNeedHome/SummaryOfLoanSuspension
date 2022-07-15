@@ -41,7 +41,7 @@
  https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
 
-# 总数：【235+】
+# 总数：【236+】
 <br/>
 
 [互帮互助留言讨论区](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
@@ -61,6 +61,7 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 - **南昌市（5）：** 新力城，鸿海城（10月），恒大珺庭（8月），中金中心，恒大林溪府（10月）  
 - **新余市（1）：** 恒大翡翠华庭（9月）    
 - **宜春市（1）：** 恒大绿洲四期  
+- **赣州市（2）：** 绿地博览城，于都县恒大御景北区
 - **萍乡市（2）：** 恒大御府二期，庄和中央华府（10月）
 
 ## 河南省 [ 44 ]   
