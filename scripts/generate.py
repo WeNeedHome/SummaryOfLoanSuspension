@@ -26,7 +26,6 @@ for data_file in data_files:
     province_count = 0
     for entry in data:
         city = entry['city']
-        print(city)
         image = entry.get('image', '')
         month = entry.get('month', '')
         name = entry.get('name', '')
@@ -58,7 +57,7 @@ for data_file in data_files:
 count_mapping = dict(sorted(count_mapping.items(), key=lambda item: item[1], reverse=True))
 final_generated = ''
 for province_name, count in count_mapping.items():
-    final_generated += f'{province_name} [ {count} ]\n{overall_generated[province_name]}\n\n'
+    final_generated += f'{overall_generated[province_name]}\n\n'
 
 template = template.replace(r'%%TOTAL_COUNT%%', str(overall_count))
 template = template.replace(r'%%DATA%%', final_generated)
