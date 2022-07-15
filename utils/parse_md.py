@@ -55,10 +55,10 @@ for case_raw in cases_raw:
                 month, name = sep_month_name(name)
                 case_dict = {
                     'province': province,
-                    'city': city,
+                    'prefecture': city,
                     'name': name,
-                    'month': month,
-                    'link': f'[{name}]({link})'
+                    'date': month,
+                    'link': link
                 }
-                with open(f'cases/{name}.json', 'w', encoding='UTF-8') as f:
+                with open(f'./cases/{name}.json', 'w', encoding='UTF-8') as f:
                     f.write(json.dumps(case_dict,  ensure_ascii=False) + '\n')
