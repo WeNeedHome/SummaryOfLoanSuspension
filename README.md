@@ -64,6 +64,8 @@
 我来文档：https://www.wolai.com/xutejcDgz9B3aTcrRCjxB1
 
 Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
+
+jsDelivr（CDN，在中国大陆也能正常访问）：https://cdn.jsdelivr.net/gh/WeNeedHome/SummaryOfLoanSuspension@main/
 ```
 
 ## 江西省 [ 14 ]  
