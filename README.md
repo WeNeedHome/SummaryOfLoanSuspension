@@ -36,15 +36,16 @@
   他们的作用就是为丑陋涂脂抹粉，为粪坑喷洒芳香剂！
 ```
 
-# 总数：【266+】
+# 总数：【272+】
 
 ![基于城市级别的烂尾楼可视化](https://mark-vue-oss.oss-cn-hangzhou.aliyuncs.com/images/20220715/b29d5f8d10b5427cb3b87b613bd8f08e.png?x-oss-process=image/auto-orient,1/interlace,1/quality,q_100/format,jpg)
 
 [互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
 
+#### 全国总数计算代码：
+
 ```
-全国总数计算代码：
 let i = 0;
 [...$('.markdown-body').childNodes].forEach(item => {
     if(item.nodeName === 'H2'){
