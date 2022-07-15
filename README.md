@@ -39,7 +39,7 @@
  https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
 
-# 总数：【227+】
+# 总数：【228+】
   
 <br/>
 
