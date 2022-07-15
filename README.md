@@ -35,7 +35,7 @@
 
 <br/>
 
-[互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
+[互帮互助留言讨论区，这里没有人捂嘴](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
 
 ## 其他数据公示处
@@ -124,7 +124,7 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 - **石家庄市（3）：** 恒润中央广场，恒大悦龙台，恒大时代新城（8月）  
 - **邯郸市（1）：** 恒大悦珑湾  
 - **廊坊市（3）：** 鸿坤理想城，鸿坤凤凰城五期（8月），盈时·未来港
-- **邢台市（2）：** 恒大悦府，永康万国城  
+- **邢台市（2）：** 恒大悦府，永康万国城，皓顺壹号院
 - **承德市（1）：** 状元府
 - **涿州市（2）：**[隆基泰和涿州铂悦山](images/隆基泰和涿州铂悦山项目全体业主强制停贷告知书.jpeg)，[隆基泰和•紫悦小区佳宅](images/逐州市隆基泰和•紫悦小区佳宅项目.jpeg)
 
