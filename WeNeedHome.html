@@ -1927,7 +1927,8 @@
 
     function getData() {
         debugger
-        let dataString = urlToBlob() ? urlToBlob() : defaultDataString;
+        let dynamicData = urlToBlob();
+        let dataString = dynamicData ? dynamicData : defaultDataString;
         // 正则筛选出数据
         let regExp = /\*{2}\s*.+\d{1,}.*\*{2}/g
         let mdData = dataString.match(regExp);
@@ -1939,7 +1940,7 @@
         let realData = []
         let numRegExp = /\d{1,}/g
         mdData.forEach(item => {
-            item = item.replaceAll('<strong>','**')
+            item = item.replaceAll('<strong>', '**')
             //正则匹配提取数据元素例： **景德镇市（3）：**
             let value = item.match(numRegExp);
             let endIndex = item.indexOf("（") - 1;
