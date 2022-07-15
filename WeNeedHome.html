@@ -1930,15 +1930,16 @@
         let dataString = urlToBlob() ? urlToBlob() : defaultDataString;
         // 正则筛选出数据
         let regExp = /\*{2}\s*.+\d{1,}.*\*{2}/g
-        return extracted(dataString, regExp);
+        let mdData = dataString.match(regExp);
+        return extracted(mdData);
     }
 
-    function extracted(dataString, regExp) {
-        let mdData = dataString.match(regExp);
+    function extracted(mdData) {
         // 构造k-v数据
         let realData = []
         let numRegExp = /\d{1,}/g
         mdData.forEach(item => {
+            item = item.replaceAll('<strong>','**')
             //正则匹配提取数据元素例： **景德镇市（3）：**
             let value = item.match(numRegExp);
             let endIndex = item.indexOf("（") - 1;
@@ -1958,7 +1959,8 @@
             async: false,
             success: function (data) {
                 console.log(data)
-                result = extracted(data, mdHtmlRegx);
+                let mdData = data.match(mdHtmlRegx);
+                result = extracted(mdData);
             }
         });
         return result;
