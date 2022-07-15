@@ -2,7 +2,7 @@
 import os
 import pandas as pd
 import json
-outfile = 'README-new.md'
+outfile = 'README.md'
 case_dir = './cases'
 df = pd.DataFrame(columns = ['province', 'prefecture', 'name', 'date', 'link'])
 #%%
