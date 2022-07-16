@@ -29,7 +29,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ## 开发相关
 
-见 [development](./development.md)
+见 [development](./development/README.md)
 
 ## 数据概要
 

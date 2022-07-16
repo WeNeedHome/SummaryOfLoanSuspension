@@ -1,18 +1,36 @@
 # backend
 
-## usage
+## 自动验证数据hook脚本
 
-### 1. 生成结构化的省市烂尾数据
-
-这个脚本，从主仓库的 `README.md` 中解析各个省市烂尾楼信息，然后输出结构化。
-
-run:
+如果会`nodejs`的话，可以运行以下语句，它将自动检查`README.md`文档中的计数问题，您可以根据提示进行逐一人工检查，直到确保准确：
 
 ```shell
-ts-node v2-flat/genProperties.ts
+ts-node analysis/backend/v2-flat/genProperties.ts
 ```
 
-data-struct:
+在`README.md`文档人工校验通过的情况下，该脚本输出：
+
+```text
+...
+parsing province 吉林省
+parsing province 内蒙古自治区
+总计25个省份，103个城市，276个楼盘
+楼盘合计校验通过！
+```
+
+脚本使用提醒：
+1. `ts-node` 可以通过 `npm i -g ts-node`安装
+2. 脚本需要先初始化：`cd analysis/backend && npm i`
+3. 建议直接加入hook脚本，每次commit的时候自动检查：
+```shell
+echo 'ts-node analysis/backend/v2-flat/genProperties.ts' >> .git/hooks/post-commit
+chmod +x .git/hooks/post-commit
+```
+
+
+## 接口与脚本
+
+### 楼盘接口
 
 ```typescript 
 // backend/v2-flat/ds.ts
@@ -23,6 +41,14 @@ export interface Property {
     link?: string
     month?: number
 }
+```
+
+### 生成楼盘数据
+
+这个脚本将从主仓库的 `README.md` 中解析各个省市烂尾楼信息，然后输出结构化。
+
+```shell
+ts-node v2-flat/genProperties.ts
 ```
 
 output:
@@ -53,15 +79,7 @@ output:
 ]
 ```
 
-### 3. 为烂尾楼数据加上地理位置标识
-
-run:
-
-```shell
-ts-node v2-flat/genCitiesOnMap.ts
-```
-
-data-struct:
+### 地图可视化数据结构
 
 ```typescript
 // frontend/src/ds.ts
@@ -79,6 +97,14 @@ export interface AddressWithCount extends Address {
 }
 
 export type CitiesOnMap = Record<string, AddressWithCount>
+```
+
+### 生成地图可视化数据
+
+在已有最新的`backend/v2-flat/properties.json`的数据前提下，运行：
+
+```shell
+ts-node v2-flat/genCitiesOnMap.ts
 ```
 
 output:
