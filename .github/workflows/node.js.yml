@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [ 18.x, 12.x ]
+        node-version: [ 18.x ]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     defaults:
@@ -30,8 +30,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: 'development/backend/package-lock.json'
-      - run: |
-          npm i
-          npm i ts-node
-          ts-node analyze.ts
+      - run: npm i && npm i -g ts-node && ts-node analyze.ts
 
