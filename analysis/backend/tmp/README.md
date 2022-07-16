@@ -58,7 +58,7 @@ console.log(i)
 Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 ```
 
-## 分省数据
+## 分省数据（按拼音排序）
 
 ### 安徽省 [ 2 ]
 
