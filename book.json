@@ -1,0 +1,15 @@
+{
+    "title": "全国各省市烂尾楼停贷通知汇总",
+    "description": "全国各省市烂尾楼停贷通知汇总",
+    "author": "WeNeedHome",
+    "output.name": "site",
+    "language": "zh-hans",
+    "root": ".",
+    "structure": {
+        "readme": "README.md",
+        "summary": "SUMMARY.md"
+    },
+    "plugins": [
+        "-lunr", "-search", "search-pro","chapter-fold","expandable-chapters","back-to-top-button"
+    ]
+}

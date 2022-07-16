@@ -1,0 +1,19 @@
+name: 'gitbook-publish'
+on:
+  schedule:
+    - cron:  '0 0 1 * *'
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout action
+      uses: actions/checkout@v2
+    - name: Gitbook Action          
+      uses: ZanderZhao/gitbook-action@v1.2.4 
+      with:
+        source_branch: main                                 
+        token: ${{ secrets.PERSONAL_TOKEN }} 
+        # publish_cname: k8s.amrom.tk 
