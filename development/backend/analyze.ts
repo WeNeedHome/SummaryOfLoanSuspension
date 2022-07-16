@@ -187,7 +187,7 @@ function analyze(enableSortProvinces = false) {
         const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")
         fs.cpSync(README_PATH, readmePathBackedUp)
         console.log('√ 已备份 README：file://' + readmePathBackedUp)
-        fs.writeFileSync(README_PATH, [headingPart, provinceVals.join()].join('\n').replace(/\n{2,9}/g, '\n\n'), 'utf-8')
+        fs.writeFileSync(README_PATH, [headingPart, provinceVals.join('')].join('\n').replace(/\n{2,9}/g, '\n\n'), 'utf-8')
         console.log("√ 已写入 README：file://" + README_PATH)
     }
 }
