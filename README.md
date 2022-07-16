@@ -31,7 +31,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 [互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
-# 总数：【274+】
+# 总数：【275+】
 
 #### 全国总数计算代码：
 
@@ -231,6 +231,7 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 
 - **通州区（1）：** [禹洲朗廷湾（朗廷雅苑）](./images/北京禹洲朗廷湾.jpeg)
 - **石景山区（1）：** [禧悦学府（悦创佳苑）](./images/bj_xyxf.jpeg)
+- **朝阳区（1）：** [上东郡（澜悦景苑）](./images/北京/澜悦景苑.jpeg)
 
 ## 内蒙古自治区 [ 1 ]
 
