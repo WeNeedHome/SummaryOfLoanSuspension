@@ -4,11 +4,15 @@
 
 `frontend/react`：基于`backend`的数据结构与`google-map-api`实现，语言为`typescript`，由markshawn2020维护
 
-## 方案二：单页面可视化
+## 方案二：nginx + php
+
+`frontend/php_proxy`: 基于nginx+php，由NishizakiHayato维护
+
+## 方案三：单页面可视化
 
 `frontend/singele-page`：基于`html`实现的单页面可视化，由UAreSky维护
 
-## 方案三：热力图制作
+## 方案四：热力图制作
 
 基于https://l7plot.antv.vision/zh/examples/heat/heatmap#traffic-accident：
 
