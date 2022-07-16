@@ -35,7 +35,7 @@ function analyze() {
     let countCities = 0
 
     function validateTotal() {
-        console.log(`总计${countProvinces}个省份，${countCities}个城市，${cumTotal}个楼盘`)
+        console.log(`截至目前，总计${countProvinces}个省份，${countCities}个城市，${cumTotal}个楼盘`)
         if (cumTotal !== markedTotal) {
             console.error(`文档中楼盘总计的结果[${markedTotal}]可能错误`)
         } else {
@@ -149,13 +149,12 @@ function analyze() {
 
     // rewrite
     const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")
-    console.log('backup README.md to ' + readmePathBackedUp)
+    console.log('备份 README 到 file://' + readmePathBackedUp)
     fs.cpSync(README_PATH, readmePathBackedUp)
     // 按拼音排序，ref: https://blog.csdn.net/qq_27674439/article/details/115406758
-    console.log("sorting provinces part based on pronunciation")
+    console.log("按拼音对省份排序然后重新写入readme, file://" + README_PATH)
     let provinceKeys = Object.keys(provinceDict).sort((word1, word2) => word1.localeCompare(word2, 'zh'))
     let provincesPart = provinceKeys.map(k => provinceDict[k]).join('\n')
-    console.log('rewriting README.md')
     fs.writeFileSync(README_PATH, [headingPart, provincesPart].join('\n').replace(/\n{2,9}/g, '\n\n'), 'utf-8')
 }
 
