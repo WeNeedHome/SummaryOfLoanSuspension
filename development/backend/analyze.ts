@@ -16,6 +16,7 @@ function analyze() {
 
     // 收集楼盘
     let collectedProperties: Property[] = []
+    let collectedErrors: string[] = []
 
     // 统计全国
     let markedTotal = 0
@@ -37,7 +38,9 @@ function analyze() {
     function validateTotal() {
         console.log(`截至目前，总计${countProvinces}个省份，${countCities}个城市，${cumTotal}个楼盘`)
         if (cumTotal !== markedTotal) {
-            console.error(`文档中楼盘总计的结果[${markedTotal}]可能错误`)
+            const msg = `文档中楼盘总计的结果[${markedTotal}]可能错误`
+            console.error(msg)
+            collectedErrors.push(msg)
         } else {
             console.log(`楼盘合计校验通过！`)
         }
@@ -49,7 +52,9 @@ function analyze() {
 
         // 验证省份统计
         if (cumTotalInProvince !== markedTotalInProvince) {
-            console.error(`properties count in province ${curProvince} failed to validate, calculated: ${String(cumTotalInProvince).padStart(3)}, marked: ${String(markedTotalInProvince).padStart(3)}`)
+            const msg = `properties count in province ${curProvince} failed to validate, calculated: ${String(cumTotalInProvince).padStart(3)}, marked: ${String(markedTotalInProvince).padStart(3)}`
+            console.error(msg)
+            collectedErrors.push(msg)
         }
     }
 
@@ -146,6 +151,10 @@ function analyze() {
     // dump
     const data = JSON.stringify(collectedProperties, null, 2)
     fs.writeFileSync(path.join(DATA_GENERATED_DIR, "properties.json"), data, "utf-8")
+
+    // stop
+    if (collectedErrors.length > 0)
+        throw new Error(collectedErrors.join('\n'))
 
     // rewrite
     const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")
