@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs";
 import {IMAGES_DIR} from "../const";
+import {throws} from "assert";
 
 export const provinceNamesUnderImagesDir = fs.readdirSync(IMAGES_DIR, {withFileTypes: true})
     .filter(d => d.isDirectory())
@@ -30,8 +31,8 @@ export function getImageUriRobust(provinceDir: string, cityDir: string | undefin
         return imgUri
     if (cityDir) {
         imgUri = path.join(provinceDir, cityDir, fileName)
-        if (!fs.existsSync(path.join(IMAGES_DIR, imgUri)))
-            console.error(`not found image uri of ${imgUri}`)
-        return imgUri
+        if (fs.existsSync(path.join(IMAGES_DIR, imgUri)))
+            return imgUri
     }
+    throw new Error(`not found image from ${imgUri}`)
 }
