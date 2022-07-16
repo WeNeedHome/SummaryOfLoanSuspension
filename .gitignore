@@ -7,3 +7,6 @@
 
 # js
 **/node_modules
+
+# tmp
+**/tmp/**
