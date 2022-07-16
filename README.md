@@ -27,7 +27,7 @@
 ```
 ![图片](https://user-images.githubusercontent.com/79394963/178715579-7963f8ef-0646-4df5-ae51-18ec96d6fa06.png)
 
-!图片[](https://user-images.githubusercontent.com/79394963/179339252-90bb2bf9-0af4-4d0d-a8a2-dab585e67178.png)
+![图片](https://user-images.githubusercontent.com/79394963/179339252-90bb2bf9-0af4-4d0d-a8a2-dab585e67178.png)
 
 
 ## 江西省 [ 8 ]  
