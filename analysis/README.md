@@ -25,7 +25,8 @@ properties count in province 陕西省 failed to validate, calculated:  14, mark
 
 ## usage
 
-分别见前后端部分
+- [后端](./backend/README.md)
+- [前端](./frontend/README.md)
 
 ## reference
 
