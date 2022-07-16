@@ -44,9 +44,10 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ## 开发相关
 
-已实现持续集成（CI）
+### TIPS
 
-见 [**development**](./development/README.md)
+1. 为节约您的宝贵时间，**在二度开发本项目时建议先查阅一下目前已有的仓库实现：[开发指引](./development/README.md)**
+2. 本仓库已实现持续集成（CI），**push 动作将自动触发后台对 readme 文档中的数据进行验证，验证失败的 push 将不被接受**
 
 ## 数据概要
 
@@ -64,6 +65,13 @@ let i = 0;
 })
 console.log(i)
 ```
+
+### 结构化数据 （基于本 README 文档生成）
+
+-  [数据：基于楼盘的停贷数据](./data/generated/properties.json)（含省市区、链接、月份）
+-  [数据：基于楼盘的城市数据](./data/generated/cities-for-visualization.json) （含省市区、楼盘统计数、经纬度）
+-  [数据：全国三级行政城市经纬度数据](./data/source/region-tree.json)
+
 
 ### 其他数据公示处
 
