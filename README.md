@@ -38,7 +38,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ### PR 基本格式规范
 
 > :warning: 注意，目前我们约定：
-> 如果一个楼盘有多张图片作为支撑材料，则在该省份/城市文件内再新建一个以该楼盘命名的文件夹存放，并加上"_"前缀以示区别，例如`images/广西/桂林/_桂林融创文旅城N4地块`，其下存放了两张图片，否则无法通过本地图片验证脚本`development/backend/vatidateImages.ts`
+> 如果一个楼盘有多张图片作为支撑材料，则在该省份/城市文件内再新建一个以该楼盘命名的文件夹存放，并加上"_"前缀以示区别，例如`images/广西/桂林/_桂林融创文旅城N4地块`，其下存放了两张图片，否则无法通过本地图片验证脚本`development/backend/vatidateLocalImages.ts`
 
 - 1、新增项目信息，请务必修改 `README.md` 文件，以及修改全国、省、市总数！否则不予通过
 - 2、必须附有图片等证明
@@ -49,6 +49,11 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 1. 为节约您的宝贵时间，**在二度开发本项目时建议先查阅一下目前已有的仓库实现：[开发指引](./development/README.md)**
 2. 本仓库已实现持续集成（CI），**push 动作将自动触发后台对 readme 文档中的数据进行验证，验证失败的 push 将不被接受**
+
+### 数据校验工作
+
+- [x] 基于CI，[analyze.ts](development/backend/analyze.ts)已实现每次 push 对 readme 文档中的计数（包括城市、省份、合计）、图片链接的有效性自动进行校验
+- [x] [validateLocalImages.ts](development/backend/vatidateLocalImages.ts)已实现对 images 文件夹中图片在文档中的引用进行核验（确保没有游离的图片）
 
 ## 数据概要
 
