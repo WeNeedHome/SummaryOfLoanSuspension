@@ -1,7 +1,7 @@
+import * as path from "path";
 import * as fs from "fs";
-import {README_PATH} from "../const";
+import {README_PATH} from "../../const";
 import {City, Property, Province} from "./ds";
-import path from "path";
 
 async function analyze() {
     fs.readFile(README_PATH, "utf-8", ((err, content) => {

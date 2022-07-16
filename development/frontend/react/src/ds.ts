@@ -1,4 +1,10 @@
-export type Pos = google.maps.LatLngLiteral
+/**
+ * i.e. `google.maps.LatLngLiteral`
+ */
+export interface Pos {
+    lat: number
+    lng: number
+}
 
 export interface Address {
     province: string

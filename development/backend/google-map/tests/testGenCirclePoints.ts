@@ -1,4 +1,4 @@
-import {assertEqual} from "../../utils";
+import {assertEqual} from "../../utils/general";
 import {polylineEncodeFromNum} from "../encodePolyline";
 
 assertEqual(polylineEncodeFromNum(-179.9832104), '`~oia@')

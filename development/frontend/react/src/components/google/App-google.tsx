@@ -2,7 +2,7 @@ import {Circle, GoogleMap, InfoBox, LoadScript, OverlayView} from "@react-google
 
 import {AddressWithCount} from "../../ds";
 
-import citiesOnMap from "../../data/citiesOnMap.json"
+import citiesOnMap from "../../../../../../data/generated/citiesOnMap.json"
 // ref: https://mapstyle.withgoogle.com/
 import theme from "./theme-dark-simple-2.json"
 

@@ -1,9 +1,12 @@
 import * as fs from "fs";
 import path from "path";
-import {BACKEND_DIR, IMAGES_DIR, README_PATH} from "../const";
+import {BACKEND_DIR, GEN_DATA_DIR, IMAGES_DIR, README_PATH} from "./const";
 import {Property} from "./ds";
-import {getCityNameUnderProvinceImagesDir, getImageUriRobust, getProvinceNameUnderImagesDir} from "./utils";
+import {getCityNameUnderProvinceImagesDir, getImageUriRobust, getProvinceNameUnderImagesDir} from "./utils/uri";
 
+/**
+ * 解析readme文件，检查语法问题，并生成城市停贷数据
+ */
 function analyze() {
     let startCollecting = false
 
@@ -34,7 +37,7 @@ function analyze() {
     function validateTotal() {
         console.log(`总计${countProvinces}个省份，${countCities}个城市，${cumTotal}个楼盘`)
         if (cumTotal !== markedTotal) {
-            console.error(`文档中楼盘总计的结果（${cumTotal}）可能错误`)
+            console.error(`文档中楼盘总计的结果[${markedTotal}]可能错误`)
         } else {
             console.log(`楼盘合计校验通过！`)
         }
@@ -53,22 +56,10 @@ function analyze() {
     function parseLine(line: string) {
         // 标记总数
         const matchTotal = line.match(/总计【(\d+)\+】/)
-        if (matchTotal)
-            markedTotal = parseInt(matchTotal[1])
-
         const matchProvince = line.match(/### (.*?)\s*\[\s*(\d+)\s*\]/)
         const matchCity = line.match(/^-\s*\*\*(.*?)\s*[（(](\d+)[)）].*?\*\*(.*?)$/)
-        // 等待匹配到第一个省份
-        if (matchProvince)
-            startCollecting = true
 
-        if (!startCollecting) {
-            headingPart += line + "\n"
-            return
-        }
-
-        // 解析省份
-        if (matchProvince) {
+        function handleProvince(matchProvince: RegExpMatchArray) {
             countProvinces += 1
             if (curProvince) validateProvince() // 后一个省份解析前一个省份
 
@@ -81,13 +72,12 @@ function analyze() {
             cumTotalInProvince = 0
         }
 
-        // 解析城市
-        else if (matchCity) {
+        function handleCity(matchCity: RegExpMatchArray) {
             countCities += 1
             curCity = matchCity[1]
             cityDir = getCityNameUnderProvinceImagesDir(provinceDir, curCity)
             markedTotalInCity = parseInt(matchCity[2])
-            let propertiesInCity = matchCity[3].split("，")
+            let propertiesInCity = matchCity[3].split(/[，,]/)
             // 验证城市统计
             if (propertiesInCity.length !== markedTotalInCity)
                 console.error(`    properties count in city ${curCity} failed to validate, calculated: ${String(propertiesInCity.length).padStart(3)}, marked: ${String(markedTotalInCity).padStart(3)}`)
@@ -123,6 +113,28 @@ function analyze() {
             })
         }
 
+        // 解析总数
+        if (matchTotal)
+            markedTotal = parseInt(matchTotal[1])
+
+        // 等待匹配到第一个省份
+        if (matchProvince)
+            startCollecting = true
+
+        if (!startCollecting) {
+            headingPart += line + "\n"
+            return
+        }
+
+        // 解析省份
+        if (matchProvince)
+            handleProvince(matchProvince)
+
+        // 解析城市
+        if (matchCity)
+            handleCity(matchCity)
+
+        // 更新省份下的数据
         provinceDict[curProvince] += line + '\n'
     }
 
@@ -133,7 +145,7 @@ function analyze() {
 
     // dump
     const data = JSON.stringify(collectedProperties, null, 2)
-    fs.writeFileSync(path.join(__dirname, "properties.json"), data, "utf-8")
+    fs.writeFileSync(path.join(GEN_DATA_DIR, "properties.json"), data, "utf-8")
 
     // rewrite
     const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")

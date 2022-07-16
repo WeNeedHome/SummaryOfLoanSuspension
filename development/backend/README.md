@@ -5,7 +5,7 @@
 如果会`nodejs`的话，可以运行以下语句，它将自动检查`README.md`文档中的计数问题，您可以根据提示进行逐一人工检查，直到确保准确：
 
 ```shell
-ts-node development/backend/v2-flat/genProperties.ts
+ts-node development/backend/v2-flat/analyze.ts
 ```
 
 在`README.md`文档人工校验通过的情况下，该脚本输出：
@@ -23,7 +23,7 @@ parsing province 内蒙古自治区
 2. 脚本需要先初始化：`cd analysis/backend && npm i`
 3. 建议直接加入hook脚本，每次commit的时候自动检查：
 ```shell
-echo 'ts-node development/backend/v2-flat/genProperties.ts' >> .git/hooks/post-commit
+echo 'ts-node development/backend/analyze.ts' >> .git/hooks/post-commit
 chmod +x .git/hooks/post-commit
 ```
 
@@ -48,7 +48,7 @@ export interface Property {
 这个脚本将从主仓库的 `README.md` 中解析各个省市烂尾楼信息，然后输出结构化。
 
 ```shell
-ts-node v2-flat/genProperties.ts
+ts-node v2-flat/analyze.ts
 ```
 
 output:
@@ -104,7 +104,7 @@ export type CitiesOnMap = Record<string, AddressWithCount>
 在已有最新的`backend/v2-flat/properties.json`的数据前提下，运行：
 
 ```shell
-ts-node v2-flat/genCitiesOnMap.ts
+ts-node v2-flat/genCities.ts
 ```
 
 output:
