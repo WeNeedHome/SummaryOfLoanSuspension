@@ -1,4 +1,4 @@
-import {polylineEncodeFromNum, polylineEncodeFromPos, polylineEncodeFromPoses} from "../google-map/encodePolyline";
+import {encodeNum, encodePoint, encodePoints} from "../algo/encodePolyline";
 import * as polyline from "polyline";
 
 const points = [
@@ -16,18 +16,18 @@ const points = [
 
 for (let point of points) {
     for (let num of point) {
-        const resultFromManual = polylineEncodeFromNum(num)
+        const resultFromManual = encodeNum(num)
         const resultFromPolyline = polyline.encode([[num]])
         const equal = resultFromManual === resultFromPolyline
         console.log(resultFromManual, resultFromPolyline, equal)
     }
-    const resultFromManual = polylineEncodeFromPos({lat: point[0], lng: point[1]})
+    const resultFromManual = encodePoint(point)
     const resultFromPolyline = polyline.encode([point])
     const equal = resultFromManual === resultFromPolyline
     console.log(resultFromManual, resultFromPolyline, equal)
 }
 
-const resultFromManual = polylineEncodeFromPoses(points.map(point => ({lat: point[0], lng: point[1]})))
+const resultFromManual = encodePoints(points)
 const resultFromPolyline = polyline.encode(points)
 const equal = resultFromManual === resultFromPolyline
 console.log({resultFromManual, resultFromPolyli: resultFromPolyline, equal})

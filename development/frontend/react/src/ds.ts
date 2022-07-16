@@ -16,5 +16,3 @@ export interface Address {
 export interface AddressWithCount extends Address {
     count: number
 }
-
-export type CitiesOnMap = Record<string, AddressWithCount>

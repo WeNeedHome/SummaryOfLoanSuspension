@@ -10,6 +10,7 @@ import {Property} from "./ds/property";
 import {getCityNameUnderProvinceImagesDir, getImageUriRobust, getProvinceNameUnderImagesDir} from "./utils/uri";
 import {validateImageLink} from "./validateLocalImages";
 import {ArgumentParser} from "argparse";
+import {Errors} from "./ds/errors";
 
 
 /**
@@ -161,28 +162,29 @@ function analyze(enableSortProvinces = false) {
     // parse
     fs.readFileSync(README_PATH, "utf-8").split("\n").forEach(parseLine)
     validateProvince() // 由于最后没有新的省份作为结尾符，所以要再跑一遍
-    if (provinceKeys.length !== provinceVals.length) throw new Error('programme error')
+    if (provinceKeys.length !== provinceVals.length) throw new Error(Errors.PROGRAMME_ERROR)
     validateTotal()
-
-    // dump
-    const data = JSON.stringify(collectedProperties, null, 2)
-    fs.writeFileSync(DATA_PROPERTIES_PATH, data, "utf-8")
-    console.log('√ 已写入基于楼盘的停贷数据：file://' + DATA_PROPERTIES_PATH)
 
     // stop
     if (collectedErrors.length > 0)
         throw new Error(collectedErrors.join('\n'))
 
-    // 按拼音排序，ref: https://blog.csdn.net/qq_27674439/article/details/115406758
+    // dump properties data
+    const data = JSON.stringify(collectedProperties, null, 2)
+    fs.writeFileSync(DATA_PROPERTIES_PATH, data, "utf-8")
+    console.log('√ 已写入基于楼盘的停贷数据：file://' + DATA_PROPERTIES_PATH)
+
+    // sort provinces if necessary
     if (enableSortProvinces) {
         isModified = true
         provinceVals = [...Array(provinceKeys.length).keys()]
+            // 按拼音排序: https://blog.csdn.net/qq_27674439/article/details/115406758
             .sort((k1, k2) => provinceKeys[k1].localeCompare(provinceKeys[k2], "zh"))
             .map(i => provinceVals[i])
         console.log("√ 按拼音对省份排序")
     }
 
-    // rewrite
+    // rewrite readme if necessary
     if (isModified) {
         const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")
         fs.cpSync(README_PATH, readmePathBackedUp)

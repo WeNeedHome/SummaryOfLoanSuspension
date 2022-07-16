@@ -37,7 +37,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ### PR 基本格式规范
 
-> :warning: 注意，目前我们约定：
+> 注意，目前我们约定：
 > 如果一个楼盘有多张图片作为支撑材料，则在该省份/城市文件内再新建一个以该楼盘命名的文件夹存放，并加上"_"前缀以示区别，例如`images/广西/桂林/_桂林融创文旅城N4地块`，其下存放了两张图片，否则无法通过本地图片验证脚本[validateLocalImages.ts](development/backend/validateLocalImages.ts)
 
 - 1、新增项目信息，请务必修改 `README.md` 文件，以及修改全国、省、市总数！否则不予通过
@@ -47,7 +47,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ## 开发相关
 
-[**=== 开发指引 ===**](./development/README.md)
+[**--> 开发指引**](./development/README.md)
 
 ### 数据校验工作
 
@@ -58,12 +58,22 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ### 总计【298+】
 
+<details>
+<summary>可视化（Silver）</summary>
+<img src="data/generated/visualization-light.png" alt="visualization-light">
+</details>
+
+<details>
+<summary>可视化（Dark）</summary>
+<img src="data/generated/visualization-dark.png" alt="visualization-dark">
+</details>
+
 全国总数便携计算代码（F12 打开 console，复制回车即可）：
 
 ```js
 let i = 0;
 [...$('.markdown-body').childNodes].forEach(item => {
-    if(item.nodeName === 'H3'){
+    if (item.nodeName === 'H3') {
         const n = item.textContent.match(/\[\s*(\d+)\s*\]/)
         i += Number(n && n[1])
     }
@@ -73,9 +83,9 @@ console.log(i)
 
 ### 结构化数据 （基于本 README 文档生成）
 
--  [数据：基于楼盘的停贷数据](data/generated/properties.json)（含省市区、链接、月份）
--  [数据：基于城市的停贷数据](data/generated/cities-for-visualization.json) （含省市区、楼盘统计数、经纬度）
--  [数据：全国三级行政城市经纬度数据](data/source/region-tree.json)
+- [数据：基于楼盘的停贷数据](data/generated/properties.json)（含省市区、链接、月份）
+- [数据：基于城市的停贷数据](data/generated/cities-for-visualization.json) （含省市区、楼盘统计数、经纬度）
+- [数据：全国三级行政城市经纬度数据](data/source/region-tree.json)
 
 ### 其他数据公示处
 
@@ -174,7 +184,7 @@ Notion 数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 
 ### 湖南省 [ 29 ]
 
-- **长沙市（10）：** [恒泰芙蓉悦府](images/湖南/湖南省长沙市恒泰芙蓉悦府全体业主停贷告知书.jpg) ，恒大滨江左岸，合能枫丹宸悦，合能湘江公馆，长沙文景，恒大御景天下二期（8月），恒大悦湖商业广场（12月），滨江正荣紫阙台，[宁乡未来方舟2期&3期](images/湖南/宁乡未来方舟.jpg)，新力铂园（8月）
+- **长沙市（10）：** [恒泰芙蓉悦府](images/湖南/湖南省长沙市恒泰芙蓉悦府全体业主停贷告知书.jpg)，恒大滨江左岸，合能枫丹宸悦，合能湘江公馆，长沙文景，恒大御景天下二期（8月），恒大悦湖商业广场（12月），滨江正荣紫阙台，[宁乡未来方舟2期&3期](images/湖南/宁乡未来方舟.jpg)，新力铂园（8月）
 - **邵阳市（1）：** 恒大华府（9月）
 - **岳阳市（1）：** 恒大未来城二期（8月）
 - **衡东县（1）：** 奥体公馆
@@ -268,4 +278,3 @@ Notion 数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 ### 浙江省 [ 4 ]
 
 - **杭州市（4）：** [中润璞玉公馆](images/浙江/杭州/中润璞玉公馆.png)，[富阳区泰禾大城小院楼盘](images/浙江/杭州/浙江省杭州市富阳区泰禾大城小院楼盘富政储出（2010）20号地块购房者暂停还货告知书.jpg)，[杭州中南春溪集](images/浙江/杭州/浙江杭州中南春溪集.png)，[杭州绿地众安宸瀚里](images/浙江/杭州/杭州绿地众安宸瀚里.png)
-

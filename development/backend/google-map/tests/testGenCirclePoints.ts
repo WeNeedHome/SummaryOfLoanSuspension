@@ -1,10 +1,10 @@
 import {assertEqual} from "../../utils/general";
-import {polylineEncodeFromNum} from "../encodePolyline";
+import {encodeNum} from "../algo/encodePolyline";
 
-assertEqual(polylineEncodeFromNum(-179.9832104), '`~oia@')
-assertEqual(polylineEncodeFromNum(38.5), '_p~iF',)
-assertEqual(polylineEncodeFromNum(-120.2), '~ps|U',)
-assertEqual(polylineEncodeFromNum(40.7), '_ulL')
-assertEqual(polylineEncodeFromNum(-120.95), 'nnqC')
-assertEqual(polylineEncodeFromNum(43.252), '_mqN')
-assertEqual(polylineEncodeFromNum(-126.453), 'vxq`@')
+assertEqual(encodeNum(-179.9832104), '`~oia@')
+assertEqual(encodeNum(38.5), '_p~iF',)
+assertEqual(encodeNum(-120.2), '~ps|U',)
+assertEqual(encodeNum(40.7), '_ulL')
+assertEqual(encodeNum(-120.95), 'nnqC')
+assertEqual(encodeNum(43.252), '_mqN')
+assertEqual(encodeNum(-126.453), 'vxq`@')

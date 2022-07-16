@@ -3,11 +3,12 @@
 ## TODO
 
 - [x] 确保每张图片都能与楼盘对应
+- [x] 增加了可视化脚本
 
 ## 楼盘接口
 
 ```typescript
-// development/backend/property.ts
+// development/backend/ds/property.ts
 export interface Property {
     province: string
     city: string
@@ -68,7 +69,7 @@ parsing province 内蒙古自治区
     "name": "豫发白鹭源春晓三期",
     "city": "郑州市",
     "province": "河南省",
-    "link": "./images/郑州航空港区豫发白鹭源春晓三期全体业主停贷告知书.jpg"
+    "link": "images/郑州航空港区豫发白鹭源春晓三期全体业主停贷告知书.jpg"
   }
   ...
 ]
@@ -77,8 +78,11 @@ parsing province 内蒙古自治区
 ## 地图可视化数据结构
 
 ```typescript
-// frontend/src/property.ts
-export type Pos = google.maps.LatLngLiteral
+// frontend/react/src/property.ts
+export interface Pos {
+    lat: number
+    lng: number
+}
 
 export interface Address {
     province: string
@@ -117,6 +121,12 @@ output:
   },
   ...
 }
+```
+
+## 生成地图
+
+```shell
+ts-node development/backend/genMap.ts
 ```
 
 ## 数据来源

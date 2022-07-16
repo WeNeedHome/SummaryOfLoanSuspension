@@ -17,11 +17,8 @@ export const FRONTEND_REACT_DIR = path.join(FRONTEND_DIR, "react")
 export const FRONTEND_REACT_SRC_DIR = path.join(FRONTEND_REACT_DIR, "src")
 
 // data
+export const DATA_CONFIG_DIR = path.join(DATA_DIR, "config")
 export const DATA_GENERATED_DIR = path.join(DATA_DIR, "generated")
 export const DATA_SOURCE_DIR = path.join(DATA_DIR, "source")
 export const DATA_PROPERTIES_PATH = path.join(DATA_GENERATED_DIR, "properties.json")
 export const DATA_VISUALIZATION_PATH = path.join(DATA_GENERATED_DIR, "cities-for-visualization.json")
-
-// files
-export const IMAGE_TYPES = ['png', 'jpg', 'jpeg'] as const
-export type IMAGE_TYPE = typeof IMAGE_TYPES[number]

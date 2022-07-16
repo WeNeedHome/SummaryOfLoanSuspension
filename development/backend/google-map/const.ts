@@ -1,1 +1,0 @@
-export const PRECISION = 1e-10

@@ -4,5 +4,8 @@ export interface GoogleMapFeature {
     stylers: Record<string, string>[]
 }
 
-export const USE_ENCODE = ["none", 'manual', 'polyline'] as const
-export type USE_ENCODE = typeof USE_ENCODE[number]
+export const langs = [
+    "zh",
+    "en"
+] as const
+export type Lang = typeof langs[number]

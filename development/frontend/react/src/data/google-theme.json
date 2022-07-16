@@ -45,6 +45,9 @@
     "elementType": "labels.text.fill",
     "stylers": [
       {
+        "visibility": "off"
+      },
+      {
         "color": "#9e9e9e"
       }
     ]
