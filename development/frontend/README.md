@@ -12,7 +12,7 @@
 
 ## 单页面可视化
 
-基于`html`实现的单页面可视化，由UAreSky维护，见 [frontend/singele-page](./singele-page)
+由UAreSky维护，基于`html`实现的单页面可视化，见 [frontend/singele-page](./single-page)
 
 ## 基于antv的热力图制作
 
