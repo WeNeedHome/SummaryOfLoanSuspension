@@ -5,7 +5,7 @@
 如果会`nodejs`的话，可以运行以下语句，它将自动检查`README.md`文档中的计数问题，您可以根据提示进行逐一人工检查，直到确保准确：
 
 ```shell
-ts-node analysis/backend/v2-flat/genProperties.ts
+ts-node development/backend/v2-flat/genProperties.ts
 ```
 
 在`README.md`文档人工校验通过的情况下，该脚本输出：
@@ -23,7 +23,7 @@ parsing province 内蒙古自治区
 2. 脚本需要先初始化：`cd analysis/backend && npm i`
 3. 建议直接加入hook脚本，每次commit的时候自动检查：
 ```shell
-echo 'ts-node analysis/backend/v2-flat/genProperties.ts' >> .git/hooks/post-commit
+echo 'ts-node development/backend/v2-flat/genProperties.ts' >> .git/hooks/post-commit
 chmod +x .git/hooks/post-commit
 ```
 
