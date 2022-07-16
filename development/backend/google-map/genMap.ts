@@ -1,18 +1,23 @@
 import axios from "axios";
 import dotenv from "dotenv"
 import path from "path";
-import {FRONTEND_DIR, FRONTEND_SRC_DIR, PROJECT_DIR} from "../const";
+import {
+    DATA_VISUALIZATION_PATH,
+    FRONTEND_REACT_DIR,
+    FRONTEND_REACT_SRC_DIR,
+    PROJECT_DIR, TMP_DIR
+} from "../const";
 import {encodeFeaturesFromFileToArray} from "./encodeFeatures";
 import {createWriteStream} from "fs";
 import * as fs from "fs";
 import {genCircleDraw, genCirclePoints} from "./genCirclePoints";
-import {CitiesOnMap} from "../../frontend/src/ds";
+import {CitiesOnMap} from "../../frontend/react/src/ds";
 
 // https://stackoverflow.com/a/51727245/9422455
 require('axios-debug-log')
 
 dotenv.config({
-    path: path.join(FRONTEND_DIR, ".env.local")
+    path: path.join(FRONTEND_REACT_DIR, ".env.local")
 })
 
 
@@ -72,7 +77,7 @@ export function genMap(props: IGenMap) {
         }
     )
         .then(res => {
-            const fp = path.join(PROJECT_DIR, "cities-visualization." + format)
+            const fp = path.join(TMP_DIR, "visualization." + format)
             // write image from axios response, ref: https://stackoverflow.com/a/61269447/9422455
             const writer = createWriteStream(fp);
             res.data.pipe(writer)
@@ -84,9 +89,9 @@ export function genMap(props: IGenMap) {
 }
 
 
-const styles = encodeFeaturesFromFileToArray(path.join(FRONTEND_SRC_DIR, "components/google/theme-dark-simple-2.json"))
-const cities: CitiesOnMap = JSON.parse(fs.readFileSync(path.join(FRONTEND_SRC_DIR, "data/cities-for-map.json"), "utf-8"))
-const circles = Object.values(cities).slice(0, 2).map(item => genCircleDraw(genCirclePoints(item.pos, 0.5, 10), "polyline"))
+const styles = encodeFeaturesFromFileToArray(path.join(FRONTEND_REACT_SRC_DIR, "components/google/theme-dark-simple-2.json"))
+const cities: CitiesOnMap = JSON.parse(fs.readFileSync(DATA_VISUALIZATION_PATH, "utf-8"))
+const circles = Object.values(cities).slice(0, 2).map(item => genCircleDraw(genCirclePoints(item.pos, 0.5, 10), "manual"))
 
 genMap({
     center: 'henan',

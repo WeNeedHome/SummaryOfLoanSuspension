@@ -1,10 +1,10 @@
 import {Pos} from "../ds/region";
 
-export function invert(s: string): string {
+function invert(s: string): string {
     return s.replace(/[01]/g, c => c === '1' ? '0' : '1')
 }
 
-export function twoComplement(num: number): string {
+function twoComplement(num: number): string {
 
     if (num >= 0) return num.toString(2).padStart(32, '0').slice(0, 32)
 
@@ -83,7 +83,10 @@ export function polylineEncodeFromNum(num: number): string {
 }
 
 export function polylineEncodeFromPos(pos: Pos): string {
-    return polylineEncodeFromNum(pos.lat) + polylineEncodeFromNum(pos.lng)
+    return [pos.lat, pos.lng]
+        .map(polylineEncodeFromNum)
+        .map(s => s.replace('?', ''))
+        .join('')
 }
 
 export function polylineEncodeFromPoses(poses: Pos[]): string {

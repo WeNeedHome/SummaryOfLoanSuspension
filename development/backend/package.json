@@ -9,10 +9,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/argparse": "^2.0.10",
     "@types/node": "^18.0.4",
     "@types/polyline": "^0.1.29"
   },
   "dependencies": {
+    "argparse": "^2.0.1",
     "axios": "^0.27.2",
     "axios-debug-log": "^0.8.4",
     "dotenv": "^16.0.1",

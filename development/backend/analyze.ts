@@ -1,18 +1,29 @@
-import * as fs from "fs";
+import fs from "fs";
 import path from "path";
-import {BACKEND_DIR, DATA_GENERATED_DIR, IMAGE_TYPE, IMAGE_TYPES, IMAGES_DIR, README_PATH} from "./const";
+import {
+    BACKEND_DIR,
+    DATA_PROPERTIES_PATH,
+    IMAGES_DIR,
+    README_PATH
+} from "./const";
 import {Property} from "./ds/property";
 import {getCityNameUnderProvinceImagesDir, getImageUriRobust, getProvinceNameUnderImagesDir} from "./utils/uri";
+import {validateImageLink} from "./validateLocalImages";
+import {ArgumentParser} from "argparse";
+
 
 /**
  * 解析readme文件，检查语法问题，并生成城市停贷数据
  */
-function analyze() {
+function analyze(enableSortProvinces = false) {
+    // 一些标志位
     let startCollecting = false
+    let isModified = false
 
     // 用于省份排序输出
     let headingPart = ''
-    let provinceDict = new Map<string, string>()
+    let provinceKeys: string[] = []
+    let provinceVals: string[] = []
 
     // 收集楼盘
     let collectedProperties: Property[] = []
@@ -42,7 +53,7 @@ function analyze() {
             console.error(msg)
             collectedErrors.push(msg)
         } else {
-            console.log(`楼盘合计校验通过！`)
+            console.log(`√ 楼盘合计校验通过！`)
         }
     }
 
@@ -70,7 +81,8 @@ function analyze() {
 
             curProvince = matchProvince[1]
             provinceDir = getProvinceNameUnderImagesDir(curProvince)
-            provinceDict[curProvince] = ""
+            provinceKeys.push(curProvince)
+            provinceVals.push("")
 
             markedTotalInProvince = parseInt(matchProvince[2])
             console.log(`parsing province ${curProvince}`)
@@ -102,9 +114,12 @@ function analyze() {
                     let fileName = parsedLinkFrags[parsedLinkFrags.length - 1]
                     let imageUri = getImageUriRobust(provinceDir, cityDir, fileName)
                     let newLink = [path.basename(IMAGES_DIR), imageUri].join('/')
+                    validateImageLink(newLink)
                     property.link = newLink
-                    if (parsedLink !== newLink)
+                    if (parsedLink !== newLink) {
+                        isModified = true
                         line = line.replace(parsedLink, newLink)
+                    }
                 } else {
                     property.name = propertyStr.split(" ").join("")
                 }
@@ -140,31 +155,50 @@ function analyze() {
             handleCity(matchCity)
 
         // 更新省份下的数据
-        provinceDict[curProvince] += line + '\n'
+        provinceVals[provinceVals.length - 1] += line + "\n"
     }
 
     // parse
     fs.readFileSync(README_PATH, "utf-8").split("\n").forEach(parseLine)
     validateProvince() // 由于最后没有新的省份作为结尾符，所以要再跑一遍
+    if (provinceKeys.length !== provinceVals.length) throw new Error('programme error')
     validateTotal()
 
     // dump
     const data = JSON.stringify(collectedProperties, null, 2)
-    fs.writeFileSync(path.join(DATA_GENERATED_DIR, "properties.json"), data, "utf-8")
+    fs.writeFileSync(DATA_PROPERTIES_PATH, data, "utf-8")
+    console.log('√ 已写入基于楼盘的停贷数据：file://' + DATA_PROPERTIES_PATH)
 
     // stop
     if (collectedErrors.length > 0)
         throw new Error(collectedErrors.join('\n'))
 
-    // rewrite
-    const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")
-    console.log('备份 README 到 file://' + readmePathBackedUp)
-    fs.cpSync(README_PATH, readmePathBackedUp)
     // 按拼音排序，ref: https://blog.csdn.net/qq_27674439/article/details/115406758
-    console.log("按拼音对省份排序然后重新写入readme, file://" + README_PATH)
-    let provinceKeys = Object.keys(provinceDict).sort((word1, word2) => word1.localeCompare(word2, 'zh'))
-    let provincesPart = provinceKeys.map(k => provinceDict[k]).join('\n')
-    fs.writeFileSync(README_PATH, [headingPart, provincesPart].join('\n').replace(/\n{2,9}/g, '\n\n'), 'utf-8')
+    if (enableSortProvinces) {
+        isModified = true
+        provinceVals = [...Array(provinceKeys.length).keys()]
+            .sort((k1, k2) => provinceKeys[k1].localeCompare(provinceKeys[k2], "zh"))
+            .map(i => provinceVals[i])
+        console.log("√ 按拼音对省份排序")
+    }
+
+    // rewrite
+    if (isModified) {
+        const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")
+        fs.cpSync(README_PATH, readmePathBackedUp)
+        console.log('√ 已备份 README：file://' + readmePathBackedUp)
+        fs.writeFileSync(README_PATH, [headingPart, provinceVals.join()].join('\n').replace(/\n{2,9}/g, '\n\n'), 'utf-8')
+        console.log("√ 已写入 README：file://" + README_PATH)
+    }
 }
 
-analyze()
+const parser = new ArgumentParser({
+    description: "解析 README 脚本"
+})
+parser.add_argument('-s', '--sortProvinces', {
+    action: 'store_true',
+    default: false,
+    help: "由于我们已经做好了省份排序，所以这个选项其实属于历史遗留选项，偶尔用一下即可"
+})
+const args = parser.parse_args()
+analyze(args.sortProvinces)

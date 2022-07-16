@@ -2,7 +2,6 @@ import {Pos} from "../ds/region";
 import {PRECISION} from "./const";
 import * as polyline from "polyline";
 import {polylineEncodeFromPoses} from "./encodePolyline";
-import {encode} from "@googlemaps/polyline-codec";
 import {USE_ENCODE} from "./ds";
 
 /**
@@ -27,20 +26,18 @@ export function genCircleDraw(poses: Pos[], useEncode: USE_ENCODE = 'manual') {
     if (useEncode === "none")
         return ['fillcolor:0x00FF0080', 'geodesic:1', 'weight:0', poses.map(point => point.lat + "," + point.lng).join("|")].join('|')
 
-    const pre = 50
     let points: number[][] = poses.map(point => [point.lat, point.lng])
-    for (let i = 1; i < 10; i++) {
-        console.log(`encode by polyline [${i}]    : `, polyline.encode([points[i]]))
-        console.log(`encode by polyline  [0-${i}] : `, polyline.encode(points.slice(0, i)))
-    }
+    // for (let i = 1; i < 10; i++) {
+    //     console.log(`encode by polyline [${i}]    : `, polyline.encode([points[i]]))
+    //     console.log(`encode by polyline  [0-${i}] : `, polyline.encode(points.slice(0, i)))
+    // }
 
-    console.log('encode by polyline       : ', polyline.encode(points,))
-    console.log("encode by polyline-codesc: ", encode(points,))
+    console.log('encode by polyline       : ', polyline.encode(points))
     console.log("encode by manual         : ", polylineEncodeFromPoses(poses))
     console.log({points})
     let paramPath = useEncode === 'manual'
         ? polylineEncodeFromPoses(poses)
-        : polyline.encode(points, PRECISION)
-    return ['fillcolor:0x00FF0080', 'geodesic:1', 'weight:0', "enc:" + encodeURIComponent(paramPath)].join(encodeURIComponent('|'))
+        : polyline.encode(points)
+    return ['fillcolor:0x00FF0080', 'geodesic:1', 'weight:0', "enc:" + paramPath].join(encodeURIComponent('|'))
 }
 
