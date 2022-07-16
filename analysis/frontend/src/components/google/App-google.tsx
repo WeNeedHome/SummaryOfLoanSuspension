@@ -79,15 +79,14 @@ export const App = () => {
                         <div style={{fontSize: 30, color: "yellow", fontWeight: 800, fontStyle: "italic"}}>We Need Home
                             !
                         </div>
-                        <div style={{fontWeight: 600, marginTop: "5px"}}>SummaryOfLoanSuspension, by
-                            mark@{new Date().toLocaleDateString()}</div>
+                        <div style={{fontWeight: 600, marginTop: "5px"}}>SummaryOfLoanSuspension, {new Date().toLocaleDateString()}</div>
                     </div>
                 </OverlayView>
 
                 <OverlayView position={{lat: 20.5, lng: 112}} mapPaneName={'floatPane'}>
 
                         <div style={{color: "gray", textDecoration: "underline", fontStyle: "italic"}}>
-                            https://github.com/all-for-justice/SummaryOfLoanSuspension
+                            https://github.com/WeNeedHome/SummaryOfLoanSuspension
                         </div>
 
                 </OverlayView>
