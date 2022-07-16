@@ -1,8 +1,22 @@
-https://l7plot.antv.vision/zh/examples/heat/heatmap#traffic-accident
-在上面那个网站将下方的代码按如此修改
+# 前端
 
+## 方案一：react + google-map-api
 
+`frontend/react`：基于`backend`的数据结构与`google-map-api`实现，语言为`typescript`，由markshawn2020维护
 
+## 方案二：nginx + php
+
+`frontend/php_proxy`: 基于nginx+php，由NishizakiHayato维护
+
+## 方案三：单页面可视化
+
+`frontend/singele-page`：基于`html`实现的单页面可视化，由UAreSky维护
+
+## 方案四：热力图制作
+
+基于https://l7plot.antv.vision/zh/examples/heat/heatmap#traffic-accident：
+
+```js
 import { Heatmap } from '@antv/l7plot';
 
 fetch('https://gw.alipayobjects.com/os/antfincdn/OOSGL1vhp3/20200726024229.json')
@@ -59,5 +73,5 @@ fetch('https://gw.alipayobjects.com/os/antfincdn/OOSGL1vhp3/20200726024229.json'
       },
     });
   });
-
+```
  
