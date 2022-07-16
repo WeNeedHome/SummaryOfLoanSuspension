@@ -18,7 +18,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 [~~互帮互助留言讨论区=>~~](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
-由于discussion的大部分聊天不遵守规则，所以我们关闭了discussion。
+由于 discussion 的大部分聊天不遵守规则，所以我们关闭了 discussion。
 
 ## 相关法律与案例支持
 
@@ -37,20 +37,20 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ### PR基本格式规范
 
-- 1、新增项目信息，请务必修改 README.md 文件，以及修改全国、省、市总数！否则不予通过
+- 1、新增项目信息，请务必修改 `README.md` 文件，以及修改全国、省、市总数！否则不予通过
 - 2、最好有图片
 - 3、请记得检查是否需要解决冲突
-- 4、删除项目信息请提供复工图片，并上传至images文件夹相对应的省份
+- 4、删除项目信息请提供复工图片，并上传至 `images` 文件夹相对应的省份
 
 ## 开发相关
 
-见 [development](./development/README.md)
+见 [**development**](./development/README.md)
 
 ## 数据概要
 
 ### 总计【285+】
 
-全国总数便携计算代码（F12打开 console，复制回车即可）：
+全国总数便携计算代码（F12 打开 console，复制回车即可）：
 
 ```js
 let i = 0;
@@ -66,11 +66,11 @@ console.log(i)
 ### 其他数据公示处
 
 ```txt
-项目发起人：被ban了
+项目发起人：被 ban 了
 
 我来文档：https://www.wolai.com/xutejcDgz9B3aTcrRCjxB1
 
-Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
+Notion 数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 ```
 
 ## 分省数据（按拼音排序）
@@ -105,7 +105,7 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 
 ### 广东省 [ 6 ]
 
-- **深圳市（3）：** [佳兆业樾伴山](images/广东/sz001.jpg)，佳兆业时代大厦，[前海天境花园 ](images/广东/sz003.jpg)
+- **深圳市（3）：** [佳兆业樾伴山](images/广东/sz001.jpg)，佳兆业时代大厦，[前海天境花园](images/广东/sz003.jpg)
 - **汕头市（1）：** 恒大金碧外滩湾（八月）
 - **中山市（1）：** 泰禾金尊府
 - **揭阳市（1）：** 恒大翡翠华庭二期
@@ -255,4 +255,3 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 ### 浙江省 [ 3 ]
 
 - **杭州市（3）：** [中润璞玉公馆](images/浙江/中润璞玉公馆.png)，[富阳区泰禾大城小院楼盘](images/浙江/浙江省杭州市富阳区泰禾大城小院楼盘富政储出（2010）20号地块购房者暂停还货告知书.jpg)，[杭州中南春溪集](images/浙江/浙江杭州中南春溪集.png)
-
