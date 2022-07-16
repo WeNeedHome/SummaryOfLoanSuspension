@@ -73,9 +73,15 @@ console.log(i)
 
 ### 结构化数据 （基于本 README 文档生成）
 
+<<<<<<< HEAD
 -  [数据：基于楼盘的停贷数据](data/generated/properties.json)（含省市区、链接、月份）
 -  [数据：基于城市的停贷数据](data/generated/cities-for-visualization.json) （含省市区、楼盘统计数、经纬度）
 -  [数据：全国三级行政城市经纬度数据](data/source/region-tree.json)
+=======
+-  [数据：基于楼盘的停贷数据](./data/generated/properties.json)（含省市区、链接、月份）
+-  [数据：基于楼盘的城市数据](./data/generated/cities-for-visualization.json) （含省市区、楼盘统计数、经纬度）
+-  [数据：全国三级行政城市经纬度数据](./data/source/region-tree.json)
+>>>>>>> e1f553f49cdabe369d07ff16a70bc77f9dd84427
 
 ### 其他数据公示处
 
