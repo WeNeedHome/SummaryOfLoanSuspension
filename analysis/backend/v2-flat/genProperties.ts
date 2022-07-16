@@ -2,6 +2,7 @@ import * as fs from "fs";
 import path from "path";
 import {BACKEND_DIR, IMAGES_DIR, README_PATH} from "../const";
 import {Property} from "./ds";
+import {read} from "fs";
 
 let provinceNamesUnderImagesDir = fs.readdirSync(IMAGES_DIR, {withFileTypes: true})
     .filter(d => d.isDirectory())
@@ -12,11 +13,34 @@ function getProvinceNameUnderImagesDir(inputProvinceName: string): string {
         if (inputProvinceName.includes(provinceNameUnderImagesDir))
             return provinceNameUnderImagesDir
     }
-    throw new Error(`not find a proper province name under images dir for ${inputProvinceName}`)
+    console.warn(`province dir of ${inputProvinceName} not exists, creating...`)
+    fs.mkdirSync(path.join(IMAGES_DIR, inputProvinceName))
+    return inputProvinceName
+}
+
+function getCityNameUnderProvinceImagesDir(provinceDir: string, inputCityName: string): string | undefined {
+    for (let cityNameUnderProvinceImagesDir of fs.readdirSync(path.join(IMAGES_DIR, provinceDir))) {
+        if (inputCityName.includes(cityNameUnderProvinceImagesDir))
+            return cityNameUnderProvinceImagesDir
+    }
+    // console.error(`not find a proper city name under province images dir ${provinceDir} for ${inputCityName}`)
+}
+
+function getImageUriRobust(provinceDir: string, cityDir: string | undefined, fileName: string): string | undefined {
+    let imgUri = path.join(provinceDir, fileName)
+    if (fs.existsSync(path.join(IMAGES_DIR, imgUri)))
+        return imgUri
+    if (cityDir) {
+        imgUri = path.join(provinceDir, cityDir, fileName)
+        if (!fs.existsSync(path.join(IMAGES_DIR, imgUri)))
+            console.error(`not found image uri of ${imgUri}`)
+        return imgUri
+    }
 }
 
 function analyze() {
     let startCollecting = false
+    let isModified = false
     let newReadme = ""
 
     // 收集楼盘
@@ -28,12 +52,14 @@ function analyze() {
 
     // 统计省份
     let curProvince: string
+    let provinceDir: string // 省份图片文件夹名
     let markedTotalInProvince = 0
     let cumTotalInProvince = 0
     let countProvinces = 0
 
     // 统计城市
     let curCity: string
+    let cityDir: string | undefined // 城市图片文件夹（目前可能不存在，未来应该要有）
     let markedTotalInCity = 0
     let countCities = 0
 
@@ -72,9 +98,11 @@ function analyze() {
             // 解析省份
             if (matchProvince) {
                 countProvinces += 1
-                if (curProvince) validateProvince()
+                if (curProvince) validateProvince() // 后一个省份解析前一个省份
 
                 curProvince = matchProvince[1]
+                provinceDir = getProvinceNameUnderImagesDir(curProvince)
+
                 markedTotalInProvince = parseInt(matchProvince[2])
                 console.log(`parsing province ${curProvince}`)
                 cumTotalInProvince = 0
@@ -84,6 +112,7 @@ function analyze() {
             else if (matchCity) {
                 countCities += 1
                 curCity = matchCity[1]
+                cityDir = getCityNameUnderProvinceImagesDir(provinceDir, curCity)
                 markedTotalInCity = parseInt(matchCity[2])
                 let propertiesInCity = matchCity[3].split("，")
                 // 验证城市统计
@@ -99,19 +128,17 @@ function analyze() {
 
                         // 重新归档到省份文件夹内
                         let parsedLink = matchPropertyLink[2]
-                        let newLink = parsedLink
-                        if (newLink.startsWith('.')) newLink = newLink.slice(2)
-                        let imageDir, fileName;
-                        let provinceDir = curProvince
-                        if (newLink.split('/').length === 2)
-                            [imageDir, fileName] = newLink.split('/')
-                        if (newLink.split('/').length === 3)
-                            [imageDir, provinceDir, fileName] = newLink.split('/')
-                        newLink = [imageDir, getProvinceNameUnderImagesDir(provinceDir), fileName].join('/')
+                        let parsedLinkFrags = parsedLink.split('/')
+
+                        let fileName = parsedLinkFrags[parsedLinkFrags.length - 1]
+                            || property.name // 有时候链接只有一个光秃秃的省份，所以用名字去匹配
+                        let imageUri = getImageUriRobust(provinceDir, cityDir, fileName)
+                        let newLink = [path.basename(IMAGES_DIR), imageUri].join('/')
                         property.link = newLink
-                        const linkEqual = parsedLink === newLink
-                        if (!linkEqual) console.log({parsedLink, newLink, linkEqual})
-                        line = line.replace(parsedLink, newLink)
+                        if (parsedLink !== newLink) {
+                            isModified = true
+                            line = line.replace(parsedLink, newLink)
+                        }
                     } else {
                         property.name = propertyStr.split(" ").join("")
                     }
@@ -139,7 +166,13 @@ function analyze() {
     fs.writeFileSync(path.join(__dirname, "properties.json"), data, "utf-8")
 
     // rewrite
-    fs.writeFileSync(path.join(BACKEND_DIR, "tmp/README.md"), newReadme, 'utf-8')
+    if (isModified) {
+        const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")
+        console.log('backup README.md to ' + readmePathBackedUp)
+        fs.cpSync(README_PATH, readmePathBackedUp)
+        console.log('rewriting README.md')
+        fs.writeFileSync(README_PATH, newReadme, 'utf-8')
+    }
 }
 
 analyze()
