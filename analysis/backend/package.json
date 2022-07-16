@@ -9,6 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.0.4"
+    "@types/node": "^18.0.4",
+    "@types/polyline": "^0.1.29"
+  },
+  "dependencies": {
+    "@googlemaps/polyline-codec": "^1.0.28",
+    "axios": "^0.27.2",
+    "axios-debug-log": "^0.8.4",
+    "dotenv": "^16.0.1",
+    "polyline": "^0.2.0",
+    "request": "^2.88.2"
   }
 }

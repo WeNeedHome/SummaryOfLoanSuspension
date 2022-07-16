@@ -1,58 +1,102 @@
 import * as fs from "fs";
 import path from "path";
-import {README_PATH} from "../const";
+import {BACKEND_DIR, README_PATH} from "../const";
 import {Property} from "./ds";
 
-async function analyze() {
-    fs.readFile(README_PATH, "utf-8", ((err, content) => {
-        if (err) throw err
+function analyze() {
+    let startCollecting = false
+    let newReadme = ""
 
-        let startCollecting = false
-        let properties: Property[] = []
-        let province: string
-        let city: string
+    // 收集楼盘
+    let collectedProperties: Property[] = []
 
-        let markedTotalInProvince = 0
-        let cumTotalInProvince = 0
-        let markedTotalInCity = 0
+    // 统计全国
+    let markedTotal = 0
+    let cumTotal = 0
 
-        content.split("\n").forEach((line: string) => {
-            const matchProvince = line.match(/## (.*?)\s*\[\s*(\d+)\s*\]/)
-            // 等待匹配到第一个省份
-            if (matchProvince)
-                startCollecting = true
-            if (!startCollecting)
-                return
+    // 统计省份
+    let curProvince: string
+    let markedTotalInProvince = 0
+    let cumTotalInProvince = 0
+    let countProvinces = 0
+
+    // 统计城市
+    let curCity: string
+    let markedTotalInCity = 0
+    let countCities = 0
+
+    function validateTotal() {
+        console.log(`总计${countProvinces}个省份，${countCities}个城市，${cumTotal}个楼盘`)
+        if (cumTotal !== markedTotal) {
+            console.error(`文档中楼盘总计的结果（${cumTotal}）可能错误`)
+        } else {
+            console.log(`楼盘合计校验通过！`)
+        }
+    }
+
+    function validateProvince() {
+        // 合并省份计数
+        cumTotal += cumTotalInProvince
+
+        // 验证省份统计
+        if (cumTotalInProvince !== markedTotalInProvince) {
+            console.error(`properties count in province ${curProvince} failed to validate, calculated: ${String(cumTotalInProvince).padStart(3)}, marked: ${String(markedTotalInProvince).padStart(3)}`)
+        }
+    }
+
+    function parseLine(line: string) {
+        // 标记总数
+        const matchTotal = line.match(/总计【(\d+)\+】/)
+        if (matchTotal)
+            markedTotal = parseInt(matchTotal[1])
+
+        const matchProvince = line.match(/### (.*?)\s*\[\s*(\d+)\s*\]/)
+        const matchCity = line.match(/^-\s*\*\*(.*?)\s*[（(](\d+)[)）].*?\*\*(.*?)$/)
+        // 等待匹配到第一个省份
+        if (matchProvince)
+            startCollecting = true
+        if (startCollecting) {
 
             // 解析省份
             if (matchProvince) {
-                // console.log({matchProvince})
-                province = matchProvince[1]
+                countProvinces += 1
+                if (curProvince) validateProvince()
+
+                curProvince = matchProvince[1]
                 markedTotalInProvince = parseInt(matchProvince[2])
-                // console.log(`parsing province ${province}`)
+                console.log(`parsing province ${curProvince}`)
                 cumTotalInProvince = 0
-                return;
             }
 
             // 解析城市
-            const matchCity = line.match(/^-\s*\*\*(.*?)\s*[（(](\d+)[)）].*?\*\*(.*?)$/)
-            if (matchCity) {
-                // console.log({matchCity})
-                city = matchCity[1]
+            else if (matchCity) {
+                countCities += 1
+                curCity = matchCity[1]
                 markedTotalInCity = parseInt(matchCity[2])
                 let propertiesInCity = matchCity[3].split("，")
                 // 验证城市统计
                 if (propertiesInCity.length !== markedTotalInCity)
-                    console.error(`    properties count in city ${city} failed to validate, calculated: ${String(propertiesInCity.length).padStart(3)}, marked: ${String(markedTotalInCity).padStart(3)}`)
+                    console.error(`    properties count in city ${curCity} failed to validate, calculated: ${String(propertiesInCity.length).padStart(3)}, marked: ${String(markedTotalInCity).padStart(3)}`)
                 cumTotalInProvince += propertiesInCity.length
 
                 propertiesInCity.forEach((propertyStr: string) => {
-                    // console.log({propertyStr})
-                    let property: Property = {name: "", city, province}
+                    let property: Property = {name: "", city: curCity, province: curProvince}
                     const matchPropertyLink = propertyStr.match(/\s*\[(.*?)\]\((.*?)\)/)
                     if (matchPropertyLink) {
                         property.name = matchPropertyLink[1]
-                        property.link = matchPropertyLink[2]
+                        let parsedLink = matchPropertyLink[2]
+                        let newLink = parsedLink
+                        if (newLink.startsWith('.')) newLink = newLink.slice(2)
+                        if (newLink.split('/').length === 2) {
+                            // 重新归档到省份文件夹内
+                            let [imageDir, fileName] = newLink.split('/')
+                            newLink = [imageDir, curProvince, fileName].join('/')
+                        }
+
+                        property.link = newLink
+                        const linkEqual = parsedLink === newLink
+                        if (!linkEqual) console.log({parsedLink, newLink, linkEqual})
+                        line = line.replace(parsedLink, newLink)
                     } else {
                         property.name = propertyStr.split(" ").join("")
                     }
@@ -62,23 +106,25 @@ async function analyze() {
                         property.month = parseInt(matchPropertyMonth[2])
                     }
 
-                    properties.push(property)
+                    collectedProperties.push(property)
                 })
-
-
-            } else {
-                // 验证省份统计
-                if (cumTotalInProvince !== markedTotalInProvince) {
-                    console.error(`properties count in province ${province} failed to validate, calculated: ${String(cumTotalInProvince).padStart(3)}, marked: ${String(markedTotalInProvince).padStart(3)}`)
-                }
             }
-        })
+        }
 
-        const data = JSON.stringify(properties, null, 2)
-        fs.writeFile(path.join(__dirname, "properties.json"), data, (err) => {
-            if (err) throw err
-        })
-    }))
+        newReadme += line + '\n'
+    }
+
+    // parse
+    fs.readFileSync(README_PATH, "utf-8").split("\n").forEach(parseLine)
+    validateProvince() // 由于最后没有新的省份作为结尾符，所以要再跑一遍
+    validateTotal()
+
+    // dump
+    const data = JSON.stringify(collectedProperties, null, 2)
+    fs.writeFileSync(path.join(__dirname, "properties.json"), data, "utf-8")
+
+    // rewrite
+    fs.writeFileSync(path.join(BACKEND_DIR, "tmp/README.md"), newReadme, 'utf-8')
 }
 
 analyze()

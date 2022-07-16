@@ -1,4 +1,9 @@
+# mac
+**/.DS_Store
 
-.DS_Store
-./images/.DS_Store
-.idea/*
+# softwars
+.idea
+.vscode
+
+# nodejs
+**/node_modules
