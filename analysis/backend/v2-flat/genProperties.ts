@@ -1,10 +1,11 @@
 import * as fs from "fs";
 import path from "path";
-import {README_PATH} from "../const";
+import {BACKEND_DIR, README_PATH} from "../const";
 import {Property} from "./ds";
 
 function analyze() {
     let startCollecting = false
+    let newReadme = ""
 
     // 收集楼盘
     let collectedProperties: Property[] = []
@@ -50,54 +51,65 @@ function analyze() {
             markedTotal = parseInt(matchTotal[1])
 
         const matchProvince = line.match(/### (.*?)\s*\[\s*(\d+)\s*\]/)
+        const matchCity = line.match(/^-\s*\*\*(.*?)\s*[（(](\d+)[)）].*?\*\*(.*?)$/)
         // 等待匹配到第一个省份
         if (matchProvince)
             startCollecting = true
-        if (!startCollecting)
-            return
+        if (startCollecting) {
 
-        // 解析省份
-        if (matchProvince) {
-            countProvinces += 1
-            if (curProvince) validateProvince()
+            // 解析省份
+            if (matchProvince) {
+                countProvinces += 1
+                if (curProvince) validateProvince()
 
-            curProvince = matchProvince[1]
-            markedTotalInProvince = parseInt(matchProvince[2])
-            console.log(`parsing province ${curProvince}`)
-            cumTotalInProvince = 0
-            return;
+                curProvince = matchProvince[1]
+                markedTotalInProvince = parseInt(matchProvince[2])
+                console.log(`parsing province ${curProvince}`)
+                cumTotalInProvince = 0
+            }
+
+            // 解析城市
+            else if (matchCity) {
+                countCities += 1
+                curCity = matchCity[1]
+                markedTotalInCity = parseInt(matchCity[2])
+                let propertiesInCity = matchCity[3].split("，")
+                // 验证城市统计
+                if (propertiesInCity.length !== markedTotalInCity)
+                    console.error(`    properties count in city ${curCity} failed to validate, calculated: ${String(propertiesInCity.length).padStart(3)}, marked: ${String(markedTotalInCity).padStart(3)}`)
+                cumTotalInProvince += propertiesInCity.length
+
+                propertiesInCity.forEach((propertyStr: string) => {
+                    let property: Property = {name: "", city: curCity, province: curProvince}
+                    const matchPropertyLink = propertyStr.match(/\s*\[(.*?)\]\((.*?)\)/)
+                    if (matchPropertyLink) {
+                        property.name = matchPropertyLink[1]
+                        let parsedLink = matchPropertyLink[2]
+                        let newLink = parsedLink
+                        if (newLink.startsWith('.')) newLink = newLink.slice(2)
+                        if (newLink.split('/').length === 2) {
+                            // 重新归档到省份文件夹内
+                            let [imageDir, fileName] = newLink.split('/')
+                            newLink = [imageDir, curProvince, fileName].join('/')
+                        }
+                        property.link = newLink
+                        console.log({parsedLink, newLink, equal: parsedLink === newLink})
+                        line = line.replace(parsedLink, newLink)
+                    } else {
+                        property.name = propertyStr.split(" ").join("")
+                    }
+                    const matchPropertyMonth = property.name.match(/(.*?)\s*（(\d+)月）/)
+                    if (matchPropertyMonth) {
+                        property.name = matchPropertyMonth[1]
+                        property.month = parseInt(matchPropertyMonth[2])
+                    }
+
+                    collectedProperties.push(property)
+                })
+            }
         }
 
-        // 解析城市
-        const matchCity = line.match(/^-\s*\*\*(.*?)\s*[（(](\d+)[)）].*?\*\*(.*?)$/)
-        if (matchCity) {
-            countCities += 1
-            curCity = matchCity[1]
-            markedTotalInCity = parseInt(matchCity[2])
-            let propertiesInCity = matchCity[3].split("，")
-            // 验证城市统计
-            if (propertiesInCity.length !== markedTotalInCity)
-                console.error(`    properties count in city ${curCity} failed to validate, calculated: ${String(propertiesInCity.length).padStart(3)}, marked: ${String(markedTotalInCity).padStart(3)}`)
-            cumTotalInProvince += propertiesInCity.length
-
-            propertiesInCity.forEach((propertyStr: string) => {
-                let property: Property = {name: "", city: curCity, province: curProvince}
-                const matchPropertyLink = propertyStr.match(/\s*\[(.*?)\]\((.*?)\)/)
-                if (matchPropertyLink) {
-                    property.name = matchPropertyLink[1]
-                    property.link = matchPropertyLink[2]
-                } else {
-                    property.name = propertyStr.split(" ").join("")
-                }
-                const matchPropertyMonth = property.name.match(/(.*?)\s*（(\d+)月）/)
-                if (matchPropertyMonth) {
-                    property.name = matchPropertyMonth[1]
-                    property.month = parseInt(matchPropertyMonth[2])
-                }
-
-                collectedProperties.push(property)
-            })
-        }
+        newReadme += line + '\n'
     }
 
     // parse
@@ -108,6 +120,9 @@ function analyze() {
     // dump
     const data = JSON.stringify(collectedProperties, null, 2)
     fs.writeFileSync(path.join(__dirname, "properties.json"), data, "utf-8")
+
+    // rewrite
+    fs.writeFileSync(path.join(BACKEND_DIR, "tmp/README.md"), newReadme, 'utf-8')
 }
 
 analyze()
