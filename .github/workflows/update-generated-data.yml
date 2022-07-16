@@ -1,0 +1,50 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: auto-update-generated-data
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  update-generated-file:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    defaults:
+      run:
+        working-directory: 'development/backend/'
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          cache-dependency-path: 'development/backend/package-lock.json'
+      - run: npm i && npm i -g ts-node && ts-node analyze.ts && ts-node genCitiesForVisualization.ts
+      - name: check for changes
+        run: |
+          if git diff --exit-code; then
+            echo "has_changes=false" >> $GITHUB_ENV
+          else
+            echo "has_changes=true" >> $GITHUB_ENV
+          fi
+      - name: Commit and Create Pull Request
+        if: ${{ env.has_changes == 'true' }}
+        uses: peter-evans/create-pull-request@v4
+        with:
+          add-paths: |
+            data/generated/*.json
+          commit-message: "Update generated data"
+          title: 'Update generated data'
+          body: 'Auto update the the generated data'
+          labels: automated-pr
+          branch: automated/update-generated-data
+          delete-branch: true
