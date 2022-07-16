@@ -4,7 +4,7 @@ import {BACKEND_DIR} from "../const";
 import {CountryData} from "./region.ds";
 import {Address2PosMap, ICity} from "./ds";
 
-fs.readFile(path.join(BACKEND_DIR, "region/region.json"), 'utf-8', ((err, content) => {
+fs.readFile(path.join(BACKEND_DIR, "region/region-tree.json"), 'utf-8', ((err, content) => {
     if (err) throw err
 
     const data: CountryData = JSON.parse(content)

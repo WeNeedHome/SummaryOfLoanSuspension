@@ -72,7 +72,7 @@ async function analyze() {
         })
 
         const data = JSON.stringify(provinces, null, 2)
-        fs.writeFile(path.join(__dirname, "region.json"), data, (err) => {
+        fs.writeFile(path.join(__dirname, "region-tree.json"), data, (err) => {
             if (err) throw err
         })
     }))

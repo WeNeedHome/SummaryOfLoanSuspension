@@ -85,7 +85,7 @@ export function genMap(props: IGenMap) {
 
 
 const styles = encodeFeaturesFromFileToArray(path.join(FRONTEND_SRC_DIR, "components/google/theme-dark-simple-2.json"))
-const cities: CitiesOnMap = JSON.parse(fs.readFileSync(path.join(FRONTEND_SRC_DIR, "data/citiesOnMap.json"), "utf-8"))
+const cities: CitiesOnMap = JSON.parse(fs.readFileSync(path.join(FRONTEND_SRC_DIR, "data/cities-for-map.json"), "utf-8"))
 const circles = Object.values(cities).slice(0, 2).map(item => genCircleDraw(genCirclePoints(item.pos, 0.5, 10), "polyline"))
 
 genMap({

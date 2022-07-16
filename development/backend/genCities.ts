@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import path from "path";
 import {Property} from "./ds";
-import {FRONTEND_SRC_DATA_DIR, GEN_DATA_DIR} from "./const";
-import regionTree from "../../data/generated/region.json"
+import {GEN_DATA_DIR} from "./const";
+import regionTree from "../../data/generated/region-tree.json"
 import {Address, AddressWithCount} from "../frontend/react/src/ds";
 
 
@@ -53,12 +53,10 @@ fs.readFile(
             }
         })
 
-        fs.writeFile(
-            path.join(GEN_DATA_DIR, "citiesOnMap.json"),
-            JSON.stringify(citiesOnMap, null, 2),
-            (err1 => {
-                if (err1) throw err1
-            })
+        fs.writeFileSync(
+            path.join(GEN_DATA_DIR, "cities-for-visualization.json"),
+            JSON.stringify(Object.values(citiesOnMap), null, 2),
+            "utf-8"
         )
     })
 )

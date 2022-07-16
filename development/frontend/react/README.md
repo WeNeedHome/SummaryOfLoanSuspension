@@ -3,7 +3,7 @@
 ## run
 
 ```shell
-# should generate `data/citiesOnMap.json` first via backend
+# should generate `data/cities-for-map.json` first via backend
 # then run map via react
 
 npm run start
