@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import path from "path";
-import {BACKEND_DIR, DATA_GENERATED_DIR, IMAGES_DIR, README_PATH} from "./const";
+import {BACKEND_DIR, DATA_GENERATED_DIR, IMAGE_TYPE, IMAGE_TYPES, IMAGES_DIR, README_PATH} from "./const";
 import {Property} from "./ds/property";
 import {getCityNameUnderProvinceImagesDir, getImageUriRobust, getProvinceNameUnderImagesDir} from "./utils/uri";
 
@@ -98,8 +98,8 @@ function analyze() {
                     let parsedLink = matchPropertyLink[2]
                     let parsedLinkFrags = parsedLink.split('/')
 
+                    // 既有可能是单张图片，也可能是一个文件夹
                     let fileName = parsedLinkFrags[parsedLinkFrags.length - 1]
-                        || property.name // 有时候链接只有一个光秃秃的省份，所以用名字去匹配
                     let imageUri = getImageUriRobust(provinceDir, cityDir, fileName)
                     let newLink = [path.basename(IMAGES_DIR), imageUri].join('/')
                     property.link = newLink
