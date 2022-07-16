@@ -1,6 +1,6 @@
 # 全国各省市烂尾楼停贷通知汇总
 
-## 数据来源统计以及发起人： 已被封禁
+## 数据来源统计以及发起人： 已被封禁 
 
 *非专业精确数据，仅供参考，与数据模糊分析*
 
@@ -13,7 +13,7 @@
 ```txt
 毛主席在1962年七千人大会上的讲话：
 
-https://www.marxists.org/chinese/maozedong/1968/5-016.htm
+https://www.marxists.org/chinese/maozedong/1968/5-016.htm huogaibeikeng
 ```
 
 [~~互帮互助留言讨论区=>~~](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
