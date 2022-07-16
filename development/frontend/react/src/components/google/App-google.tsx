@@ -1,13 +1,16 @@
-import {Circle, GoogleMap, InfoBox, LoadScript, OverlayView} from "@react-google-maps/api"
+import {Circle, GoogleMap, LoadScript, OverlayView} from "@react-google-maps/api"
 
-import {AddressWithCount} from "../../ds";
 
-import citiesOnMap from "../../../../../../data/generated/cities-for-map.json"
 // ref: https://mapstyle.withgoogle.com/
 import theme from "./theme-dark-simple-2.json"
 
 // ref: https://stackoverflow.com/a/22581969/9422455
 import './google-map.css'
+
+import {AddressWithCount} from "../../ds";
+import citiesForVisualization_ from "../../data/cities-for-visualization.json"
+
+const citiesForVisualization: AddressWithCount[] = citiesForVisualization_
 
 const mapContainerStyle = {
     height: "800px",
@@ -32,9 +35,6 @@ const options = {
 
 
 export const App = () => {
-
-    console.log({citiesOnMap})
-
     return (
         <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_API_KEY as string}>
             <GoogleMap
@@ -47,17 +47,12 @@ export const App = () => {
                 mapContainerStyle={mapContainerStyle}
                 zoom={5}
                 center={center}
-                options={{
-                    disableDefaultUI: true,
-                    // streetViewControl: false,
-                    // mapTypeControl: false,
-                    // fullscreenControl:   false,
-                }}
+                options={{disableDefaultUI: true}}
 
             >
 
                 {
-                    Object.values(citiesOnMap).map((address: AddressWithCount) => {
+                    citiesForVisualization.map((address: AddressWithCount) => {
                         const id = [address.province, address.city, address.district].join("-")
                         return (
                             <Circle
@@ -79,15 +74,18 @@ export const App = () => {
                         <div style={{fontSize: 30, color: "yellow", fontWeight: 800, fontStyle: "italic"}}>We Need Home
                             !
                         </div>
-                        <div style={{fontWeight: 600, marginTop: "5px"}}>SummaryOfLoanSuspension, {new Date().toLocaleDateString()}</div>
+                        <div style={{
+                            fontWeight: 600,
+                            marginTop: "5px"
+                        }}>SummaryOfLoanSuspension, {new Date().toLocaleDateString()}</div>
                     </div>
                 </OverlayView>
 
                 <OverlayView position={{lat: 20.5, lng: 112}} mapPaneName={'floatPane'}>
 
-                        <div style={{color: "gray", textDecoration: "underline", fontStyle: "italic"}}>
-                            https://github.com/WeNeedHome/SummaryOfLoanSuspension
-                        </div>
+                    <div style={{color: "gray", textDecoration: "underline", fontStyle: "italic"}}>
+                        https://github.com/WeNeedHome/SummaryOfLoanSuspension
+                    </div>
 
                 </OverlayView>
 

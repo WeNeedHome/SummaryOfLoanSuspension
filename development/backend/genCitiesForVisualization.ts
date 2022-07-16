@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import path from "path";
-import {Property} from "./ds";
-import {GEN_DATA_DIR} from "./const";
-import regionTree from "../../data/generated/region-tree.json"
+import {Property} from "./ds/property";
+import {DATA_GENERATED_DIR} from "./const";
+import regionTree from "../../data/source/region-tree.json"
 import {Address, AddressWithCount} from "../frontend/react/src/ds";
 
 
@@ -34,29 +34,21 @@ export function getAddress(province_: string, city_: string): Address {
     throw new Error(`not found for ${id_}`)
 }
 
+const propertiesPath = path.join(DATA_GENERATED_DIR, "properties.json")
+console.log('reading data from file://' + propertiesPath)
+const data = fs.readFileSync(propertiesPath, "utf-8")
+const properties: Property[] = JSON.parse(data)
+const cities: Record<string, AddressWithCount> = {}
 
-fs.readFile(
-    path.join(GEN_DATA_DIR, "properties.json"),
-    "utf-8",
-    ((err, data) => {
-        if (err) throw err
+properties.forEach(property => {
+    const id = property.province + "-" + property.city
+    if (Object.keys(cities).includes(id))
+        cities[id].count += 1
+    else
+        cities[id] = {...getAddress(property.province, property.city), count: 1}
+})
 
-        const properties: Property[] = JSON.parse(data)
-        const citiesOnMap: Record<string, AddressWithCount> = {}
+const citiesForVisualizationPath = path.join(DATA_GENERATED_DIR, "cities-for-visualization.json")
+console.log('writing data into file://' + citiesForVisualizationPath)
+fs.writeFileSync(citiesForVisualizationPath, JSON.stringify(Object.values(cities), null, 2), "utf-8")
 
-        properties.forEach(property => {
-            const id = property.province + "-" + property.city
-            if (Object.keys(citiesOnMap).includes(id)) {
-                citiesOnMap[id].count += 1
-            } else {
-                citiesOnMap[id] = {...getAddress(property.province, property.city), count: 1}
-            }
-        })
-
-        fs.writeFileSync(
-            path.join(GEN_DATA_DIR, "cities-for-visualization.json"),
-            JSON.stringify(Object.values(citiesOnMap), null, 2),
-            "utf-8"
-        )
-    })
-)
