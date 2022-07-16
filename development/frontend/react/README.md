@@ -1,5 +1,13 @@
 # frontend
 
+## 数据
+
+由于`create-react-app`默认不可以引用工程外部的文件，所以我们需要把后端的数据文件给链接过来，方便`react`读取：
+
+```shell
+ln data/generated/cities-for-visualization.json development/frontend/react/src/data/
+```
+
 ## run
 
 ```shell

@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import path from "path";
-import {BACKEND_DIR, GEN_DATA_DIR, IMAGES_DIR, README_PATH} from "./const";
-import {Property} from "./ds";
+import {BACKEND_DIR, DATA_GENERATED_DIR, IMAGES_DIR, README_PATH} from "./const";
+import {Property} from "./ds/property";
 import {getCityNameUnderProvinceImagesDir, getImageUriRobust, getProvinceNameUnderImagesDir} from "./utils/uri";
 
 /**
@@ -145,7 +145,7 @@ function analyze() {
 
     // dump
     const data = JSON.stringify(collectedProperties, null, 2)
-    fs.writeFileSync(path.join(GEN_DATA_DIR, "properties.json"), data, "utf-8")
+    fs.writeFileSync(path.join(DATA_GENERATED_DIR, "properties.json"), data, "utf-8")
 
     // rewrite
     const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")

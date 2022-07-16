@@ -1,4 +1,4 @@
-import {Pos} from "../region/region.ds";
+import {Pos} from "../ds/region";
 import {PRECISION} from "./const";
 import * as polyline from "polyline";
 import {polylineEncodeFromPoses} from "./encodePolyline";

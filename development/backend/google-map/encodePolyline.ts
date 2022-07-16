@@ -1,4 +1,4 @@
-import {Pos} from "../region/region.ds";
+import {Pos} from "../ds/region";
 
 export function invert(s: string): string {
     return s.replace(/[01]/g, c => c === '1' ? '0' : '1')
