@@ -33,7 +33,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ## 数据概要
 
-### 总计【278+】
+### 总计【279+】
 
 全国总数便携计算代码（F12打开 console，复制回车即可）：
 
