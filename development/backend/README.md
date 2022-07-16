@@ -6,7 +6,7 @@
 
 ## 楼盘接口
 
-```typescript 
+```typescript
 // development/backend/property.ts
 export interface Property {
     province: string
@@ -17,7 +17,7 @@ export interface Property {
 }
 ```
 
-## 自动验证readme与生成楼盘数据 
+## 自动验证readme与生成楼盘数据
 
 如果会`nodejs`的话，可以运行以下语句，它将自动检查`README.md`文档中的计数问题，您可以根据提示进行逐一人工检查，直到确保准确：
 
@@ -26,9 +26,11 @@ ts-node development/backend/analyze.ts
 ```
 
 脚本使用提醒：
+
 1. `ts-node` 可以通过 `npm i -g ts-node`安装
-2. 脚本需要先初始化：`cd analysis/backend && npm i`
+2. 脚本需要先初始化：`cd development/backend && npm i`
 3. 建议直接加入hook脚本，每次commit的时候自动检查：
+
 ```shell
 echo 'ts-node development/backend/analyze.ts' >> .git/hooks/post-commit
 chmod +x .git/hooks/post-commit
@@ -119,6 +121,5 @@ output:
 
 ## 数据来源
 
-- 全国城市经纬度（文件：`data/region.json`）：https://github.com/boyan01/ChinaRegionDistrict
-- GoogleMapsApiKey: https://github.com/webcoiruser/tvc/blob/2c10cad726e92282ba3a8e672890bd91a40160ba/gradle.properties
-- 
+- 全国城市经纬度（文件：`data/region.json`）：<https://github.com/boyan01/ChinaRegionDistrict>
+- GoogleMapsApiKey: <https://github.com/webcoiruser/tvc/blob/2c10cad726e92282ba3a8e672890bd91a40160ba/gradle.properties>
