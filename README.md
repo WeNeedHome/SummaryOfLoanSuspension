@@ -18,7 +18,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 [~~互帮互助留言讨论区=>~~](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
 
-由于 discussion 的大部分聊天不遵守规则，所以我们关闭了 discussion。
+由于 discussion 的部分聊天不遵守规则，我们关闭了 discussion。
 
 ## 相关法律与案例支持
 
@@ -38,7 +38,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ### PR 基本格式规范
 
 - 1、新增项目信息，请务必修改 `README.md` 文件，以及修改全国、省、市总数！否则不予通过
-- 2、最好有图片
+- 2、必须附有图片等证明
 - 3、请记得检查是否需要解决冲突
 - 4、删除项目信息请提供复工图片，并上传至 `images` 文件夹相对应的省份
 
