@@ -92,8 +92,10 @@ function analyze() {
                             let [imageDir, fileName] = newLink.split('/')
                             newLink = [imageDir, curProvince, fileName].join('/')
                         }
+
                         property.link = newLink
-                        console.log({parsedLink, newLink, equal: parsedLink === newLink})
+                        const linkEqual = parsedLink === newLink
+                        if (!linkEqual) console.log({parsedLink, newLink, linkEqual})
                         line = line.replace(parsedLink, newLink)
                     } else {
                         property.name = propertyStr.split(" ").join("")

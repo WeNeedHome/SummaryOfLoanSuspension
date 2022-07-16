@@ -17,7 +17,9 @@
 https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
 
-[互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
+[~~互帮互助留言讨论区=>~~](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
+
+由于discussion的大部分聊天不遵守规则，所以我们关闭了discussion。
 
 ## pull request 基本格式规范
 
@@ -197,11 +199,18 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 - **沈阳市（4）：** 恒大西江天悦，恒大中央广场，恒大时代新城，金科集美东方
 - **大连市（2）：** [融创海逸长洲](images/辽宁省/大连融创海逸长洲.jpg) ，香海滨城二期
 
-### 上海 [ 3 ]
+### 上海 [ 4 ]
 
 - **崇明区（1）：** [崇明长兴岛泰禾大城小院](images/上海/Xingdao_Shanghai.png)
 - **嘉定区（1）：** [徐行佳兆业五期](images/上海/上海徐行佳兆业五期.jpeg)
 - **浦东新区（1）：** [临港万祥颐景园江南院](images/上海/上海临港万祥颐景园江南院.jpeg)
+- **浦东新区（1）：** [上海浦东新区君御公馆](images/上海/上海浦东新区君御公馆停贷通知书.png)
+
+### 北京市 [ 3 ]
+
+- **通州区（1）：** [禹洲朗廷湾（朗廷雅苑）](images/北京市/北京禹洲朗廷湾.jpeg)
+- **石景山区（1）：** [禧悦学府（悦创佳苑）](images/北京市/bj_xyxf.jpeg)
+- **朝阳区（1）：** [上东郡（澜悦景苑）](images/北京/澜悦景苑.jpeg)
 
 ### 浙江省 [ 3 ]
 
@@ -224,11 +233,6 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 
 - **贵阳市（2）：** 中天吾乡，中环国际阅湖
 
-### 北京市 [ 2 ]
-
-- **通州区（1）：** [禹洲朗廷湾（朗廷雅苑）](images/北京市/北京禹洲朗廷湾.jpeg)
-- **石景山区（1）：** [禧悦学府（悦创佳苑）](images/北京市/bj_xyxf.jpeg)
-
 ### 吉林省 [ 1 ]
 
 - **公主岭市（1）：** 恒大花溪谷或水世界
@@ -236,4 +240,5 @@ Notion数据库：https://www.notion.so/21dab14200e2478eb91c49b68d16495f
 ### 内蒙古自治区 [ 1 ]
 
 - **呼和浩特市（1）：** 香墅岭西区（10月）
+
 
