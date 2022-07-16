@@ -1,4 +1,12 @@
+# mac
+**/.DS_Store
 
-.DS_Store
-./images/.DS_Store
-.idea/*
+# softwars
+.idea
+.vscode
+
+# js
+**/node_modules
+
+# tmp
+**/tmp/**
