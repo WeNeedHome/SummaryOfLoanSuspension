@@ -14,20 +14,23 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: development/backend
+
     strategy:
       matrix:
-        node-version: [12.x, 18.x]
+        node-version: [18, 12]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: 
-        cd development/backend
+    - run:
         npm i
         npm i ts-node
         ts-node analyze.ts
