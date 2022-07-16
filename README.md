@@ -29,7 +29,9 @@
 https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 ```
 
-[互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
+[~~互帮互助留言讨论区=>~~](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions)
+
+由于discussion的大部分聊天不遵守规则，所以我们关闭了discussion。
 
 # 总数：【274+】
 
