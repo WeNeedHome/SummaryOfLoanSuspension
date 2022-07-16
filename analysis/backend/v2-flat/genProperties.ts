@@ -1,7 +1,19 @@
 import * as fs from "fs";
 import path from "path";
-import {BACKEND_DIR, README_PATH} from "../const";
+import {BACKEND_DIR, IMAGES_DIR, README_PATH} from "../const";
 import {Property} from "./ds";
+
+let provinceNamesUnderImagesDir = fs.readdirSync(IMAGES_DIR, {withFileTypes: true})
+    .filter(d => d.isDirectory())
+    .map(d => d.name)
+
+function getProvinceNameUnderImagesDir(inputProvinceName: string): string {
+    for (let provinceNameUnderImagesDir of provinceNamesUnderImagesDir) {
+        if (inputProvinceName.includes(provinceNameUnderImagesDir))
+            return provinceNameUnderImagesDir
+    }
+    throw new Error(`not find a proper province name under images dir for ${inputProvinceName}`)
+}
 
 function analyze() {
     let startCollecting = false
@@ -84,15 +96,18 @@ function analyze() {
                     const matchPropertyLink = propertyStr.match(/\s*\[(.*?)\]\((.*?)\)/)
                     if (matchPropertyLink) {
                         property.name = matchPropertyLink[1]
+
+                        // 重新归档到省份文件夹内
                         let parsedLink = matchPropertyLink[2]
                         let newLink = parsedLink
                         if (newLink.startsWith('.')) newLink = newLink.slice(2)
-                        if (newLink.split('/').length === 2) {
-                            // 重新归档到省份文件夹内
-                            let [imageDir, fileName] = newLink.split('/')
-                            newLink = [imageDir, curProvince, fileName].join('/')
-                        }
-
+                        let imageDir, fileName;
+                        let provinceDir = curProvince
+                        if (newLink.split('/').length === 2)
+                            [imageDir, fileName] = newLink.split('/')
+                        if (newLink.split('/').length === 3)
+                            [imageDir, provinceDir, fileName] = newLink.split('/')
+                        newLink = [imageDir, getProvinceNameUnderImagesDir(provinceDir), fileName].join('/')
                         property.link = newLink
                         const linkEqual = parsedLink === newLink
                         if (!linkEqual) console.log({parsedLink, newLink, linkEqual})
