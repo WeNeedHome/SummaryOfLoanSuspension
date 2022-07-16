@@ -16,3 +16,7 @@ export const DATA_SOURCE_DIR = path.join(DATA_DIR, "source")
 export const FRONTEND_DIR = path.join(DEVELOPMENT_DIR, "frontend")
 export const FRONTEND_SRC_DIR = path.join(FRONTEND_DIR, "src")
 export const FRONTEND_SRC_DATA_DIR = path.join(FRONTEND_SRC_DIR, "data")
+
+// files
+export const IMAGE_TYPES = ['png', 'jpg', 'jpeg'] as const
+export type IMAGE_TYPE = typeof IMAGE_TYPES[number]
