@@ -35,7 +35,8 @@
 
 1. 新增项目信息，请务必修改 `README.md` 文件，以及修改全国、省、市总数！否则不予通过
 2. 必须附有图片等证明 
-    <details><summary>点击查看：如何同时引用多张图片？</summary>如果一个楼盘有多张图片作为支撑材料，则在该省份/城市文件内再新建一个以该楼盘命名的文件夹存放，并加上"_"前缀以示区别，例如`images/广西/桂林/_桂林融创文旅城N4地块`，其下存放了两张图片，否则无法通过本地图片验证脚本[validateLocalImages.ts](development/backend/validateLocalImages.ts)</details>
+> 如何同时引用多张图片？
+> 如果一个楼盘有多张图片作为支撑材料，则在该省份/城市文件内再新建一个以该楼盘命名的文件夹存放，并加上"_"前缀以示区别，例如`images/广西/桂林/_桂林融创文旅城N4地块`，其下存放了两张图片，否则无法通过本地图片验证脚本 [validateLocalImages.ts](development/backend/validateLocalImages.ts)
 3. 请记得检查是否需要解决冲突
 4. 删除项目信息请提供复工图片，并上传至 `images` 文件夹相对应的省份
 
@@ -45,8 +46,8 @@
 
 ### 数据校验工作
 
-- [x] 基于CI，[analyze.ts](development/backend/analyze.ts)已实现每次 push 对 readme 文档中的计数（包括城市、省份、合计）、图片链接的有效性自动进行校验
-- [x] [validateLocalImages.ts](development/backend/validateLocalImages.ts)已实现对 images 文件夹中图片在文档中的引用进行核验（确保没有游离的图片）
+- [x] 基于CI，[analyze.ts](development/backend/analyze.ts) 已实现每次 push 对 readme 文档中的计数（包括城市、省份、合计）、图片链接的有效性自动进行校验
+- [x] [validateLocalImages.ts](development/backend/validateLocalImages.ts) 已实现对 images 文件夹中图片在文档中的引用进行核验（确保没有游离的图片）
 
 ## 数据概要
 
