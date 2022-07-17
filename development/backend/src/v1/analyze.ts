@@ -5,12 +5,12 @@ import {
     DATA_PROPERTIES_PATH,
     IMAGES_DIR,
     README_PATH
-} from "./const";
-import {Property} from "./ds/property";
-import {getCityNameUnderProvinceImagesDir, getImageUriRobust, getProvinceNameUnderImagesDir} from "./utils/uri";
-import {validateImageLink} from "./validateLocalImages";
+} from "../const";
+import {Property} from "../ds/property";
+import {getCityNameUnderProvinceImagesDir, getImageUriRobust, getProvinceNameUnderImagesDir} from "../utils/uri";
+import {validateImageLink} from "../supports/validateLocalImages";
 import {ArgumentParser} from "argparse";
-import {Errors} from "./ds/errors";
+import {Errors} from "../ds/errors";
 
 
 /**

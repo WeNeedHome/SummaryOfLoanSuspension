@@ -1,9 +1,9 @@
 import path from "path"
-import {DATA_GENERATED_DIR, IMAGES_DIR, PROJECT_DIR} from "./const";
+import {DATA_GENERATED_DIR, IMAGES_DIR, PROJECT_DIR} from "../const";
 import fs from "fs";
-import {Property} from "./ds/property";
-import {walkDirectory} from "./utils/general";
-import {Errors} from "./ds/errors";
+import {Property} from "../ds/property";
+import {walkDirectory} from "../utils/general";
+import {Errors} from "../ds/errors";
 
 /**
  * 检测一个图像链接是否能在本地文件夹中找到

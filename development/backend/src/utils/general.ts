@@ -1,13 +1,10 @@
 import fs from "fs";
 import path from "path";
 
-export function assertEqual(a: any, b: any) {
-    console.log('target: ', b)
-    if (a != b) {
-        console.error(`NOT_EQUAL: ${a} != ${b}\n`)
-    } else {
-        console.log("√\n")
-    }
+export function assertEqual(a: any, b: any, msg = ''): boolean {
+    if (a === b) return true
+    if (msg) console.error(msg)
+    throw new Error(`NOT_EQUAL: ${a} != ${b}\n`)
 }
 
 /**
@@ -19,8 +16,8 @@ export function assertEqual(a: any, b: any) {
  */
 export function* walkDirectory(
     fromDir: string,
-    yieldDirs: boolean = true,
-    yieldFiles: boolean = true,
+    yieldDirs: boolean                                                         = true,
+    yieldFiles: boolean                                                        = true,
     treatAsFile: ((fromDir: string, entryName: string) => boolean) | undefined = undefined
 ): Generator<string> {
     if (!fs.existsSync(fromDir)) throw new Error('directory not exist: ' + fromDir)

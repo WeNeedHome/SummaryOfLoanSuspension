@@ -14,9 +14,13 @@
 
 [~~--> 互帮互助留言讨论区=>~~](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions) （由于 discussion 的部分聊天不遵守规则，我们关闭了 discussion。）
 
-[--> 相关法律与审判案例支持](法理依据/相关法律与审判案例支持.md) 
+[--> 相关法律与审判案例支持](法理依据/相关法律与审判案例支持.md)
 
 ## 项目协同
+
+### 项目更新
+
+- 实现了按行输出，文档见 [`genMdFromPropertiesTree.ts`](./development/backend/README.md#genMdFromPropertiesTree.ts)，输出结果见 [按行输出楼盘的README版本](./README-by-lines.md)
 
 ### 目前项目计划
 
@@ -27,9 +31,13 @@
 1. [--> 新手请看：如何提交项目信息](PR-instruction.md)
 2. [--> 添加必看：新增停贷项目规范](CONTRIBUTING.md)
 
-### 开发相关
+## 开发相关
 
-本项目已集成CI，将自动核验数据的统计准确性，但对数据本身的真实性则由大家共同负责，开发相关的问题请见：
+### 持续集成
+
+本项目已集成CI，将自动核验数据的统计准确性，但对数据本身的真实性则由大家共同负责，具体见：[.github/workflows/update-generated-data.yml](.github/workflows/update-generated-data.yml)
+
+### 开发指引
 
 - [--> 后端](development/backend/README.md)
 - [--> 前端](development/frontend/README.md)
