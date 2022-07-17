@@ -16,33 +16,19 @@
 
 [--> 相关法律与审判案例支持](法理依据/相关法律与审判案例支持.md) 
 
-## PR 相关
+## 如何添加一个新的停贷项目
 
-### 如何创建 PR，并为本项目做贡献
-
-鉴于很多人对于 Git 较为生疏，这里就写上一篇文章来尽可能降低大家发 PR 为本项目增加信息的门槛，只需要一个浏览器即可完成操作。
-
-文章链接：[如何为本项目提交信息](如何为本项目提交信息.md)
-
-### 如何基于PR新增停贷项目条目
-
-- [ ] **有朋友愿意协助创建一个 PR 提交项目信息模板吗？（目前的流程对大家不是很友好）**
-
-1. 新增项目信息，请务必修改 `README.md` 文件，以及修改全国、省、市总数！否则不予通过
-2. 必须附有图片等证明 
-> 如何同时引用多张图片？
-> 如果一个楼盘有多张图片作为支撑材料，则在该省份/城市文件内再新建一个以该楼盘命名的文件夹存放，并加上"_"前缀以示区别，例如`images/广西/桂林/_桂林融创文旅城N4地块`，其下存放了两张图片，否则无法通过本地图片验证脚本 [validateLocalImages.ts](development/backend/validateLocalImages.ts)
-3. 请记得检查是否需要解决冲突
-4. 删除项目信息请提供复工图片，并上传至 `images` 文件夹相对应的省份
+1. [新手请看：如何提交项目信息](PR-instruction.md)
+2. [添加必看：新增停贷项目规范](PR-specification.md)
 
 ## 开发相关
 
-[**--> 点击查看：开发指引**](./development/README.md)
+如果您想一起参与贡献本项目或者实现自己的想法：[**--> 点击查看：开发指引**](./development/README.md)
 
-### 数据校验工作
+目前我们已实现：
 
-- [x] 基于CI，[analyze.ts](development/backend/analyze.ts) 已实现每次 push 对 readme 文档中的计数（包括城市、省份、合计）、图片链接的有效性自动进行校验
-- [x] [validateLocalImages.ts](development/backend/validateLocalImages.ts) 已实现对 images 文件夹中图片在文档中的引用进行核验（确保没有游离的图片）
+- [x] 基于CI，[analyze.ts](development/backend/analyze.ts) 会对 push 里 readme 文档中的计数、图片链接的有效性等自动进行校验并生成最新的城市数据，[genMap.ts](development/backend/genMap.ts) 会基于这些城市数据生成最新的可视化地图，最终渲染到本文档中
+- [x] [validateLocalImages.ts](development/backend/validateLocalImages.ts) 可以对 images 文件夹中图片在文档中的引用进行核验，以确保没有游离的图片
 
 ## 数据概要
 
@@ -99,7 +85,7 @@ console.log(i)
 
 - **通州区（1）：** [禹洲朗廷湾（朗廷雅苑）](images/北京/北京禹洲朗廷湾.jpeg)
 - **石景山区（1）：** [禧悦学府（悦创佳苑）](images/北京/禧悦学府.jpeg)
-- **朝阳区（1）：** [上东郡（澜悦景苑）](images/北京/澜悦景苑.jpeg)
+- **朝阳区（1）：** [上东郡（澜悦景苑）](images/北京/朝阳/澜悦景苑.jpeg)
 
 ### 重庆市 [ 13 ]
 
