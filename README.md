@@ -14,12 +14,7 @@
 
 [~~--> 互帮互助留言讨论区=>~~](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions) （由于 discussion 的部分聊天不遵守规则，我们关闭了 discussion。）
 
-## 相关法律与案例支持
-
-俗话说赤脚的不怕穿鞋的，但是很多中国人是真的只有到了**赤脚**的时候才会不怕**穿鞋的**，看到很多同胞还在害怕所谓的“*上征信*”而还在硬撑着不敢断供并继续选择当冤大头时很是痛心，其实我国明面上还是一个法制国家，大多数情况下还是有理可说的，故在本项目下的 `相关法律与审判案例支持.md` 文件里放上相关的成功审判案例与法律依据供同胞们学习与了解。
-另外，本人是互联网从业人员，并非法律专业人员，欢迎相关专业人士参与修改与补充！
-
-文章链接：[相关法律与审判案例支持](相关法律与审判案例支持.md)
+[--> 相关法律与审判案例支持](法理依据/相关法律与审判案例支持.md) 
 
 ## PR 相关
 
@@ -35,7 +30,8 @@
 
 1. 新增项目信息，请务必修改 `README.md` 文件，以及修改全国、省、市总数！否则不予通过
 2. 必须附有图片等证明 
-    <details><summary>点击查看：如何同时引用多张图片？</summary>如果一个楼盘有多张图片作为支撑材料，则在该省份/城市文件内再新建一个以该楼盘命名的文件夹存放，并加上"_"前缀以示区别，例如`images/广西/桂林/_桂林融创文旅城N4地块`，其下存放了两张图片，否则无法通过本地图片验证脚本[validateLocalImages.ts](development/backend/validateLocalImages.ts)</details>
+> 如何同时引用多张图片？
+> 如果一个楼盘有多张图片作为支撑材料，则在该省份/城市文件内再新建一个以该楼盘命名的文件夹存放，并加上"_"前缀以示区别，例如`images/广西/桂林/_桂林融创文旅城N4地块`，其下存放了两张图片，否则无法通过本地图片验证脚本 [validateLocalImages.ts](development/backend/validateLocalImages.ts)
 3. 请记得检查是否需要解决冲突
 4. 删除项目信息请提供复工图片，并上传至 `images` 文件夹相对应的省份
 
@@ -45,8 +41,8 @@
 
 ### 数据校验工作
 
-- [x] 基于CI，[analyze.ts](development/backend/analyze.ts)已实现每次 push 对 readme 文档中的计数（包括城市、省份、合计）、图片链接的有效性自动进行校验
-- [x] [validateLocalImages.ts](development/backend/validateLocalImages.ts)已实现对 images 文件夹中图片在文档中的引用进行核验（确保没有游离的图片）
+- [x] 基于CI，[analyze.ts](development/backend/analyze.ts) 已实现每次 push 对 readme 文档中的计数（包括城市、省份、合计）、图片链接的有效性自动进行校验
+- [x] [validateLocalImages.ts](development/backend/validateLocalImages.ts) 已实现对 images 文件夹中图片在文档中的引用进行核验（确保没有游离的图片）
 
 ## 数据概要
 
