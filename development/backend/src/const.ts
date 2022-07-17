@@ -1,8 +1,8 @@
 import path from "path";
 
 // backend level
-export const BACKEND_DIR = __dirname
-export const TMP_DIR = path.join(BACKEND_DIR, "tmp")
+export const BACKEND_SRC_DIR = __dirname
+export const BACKEND_DIR = path.dirname(BACKEND_SRC_DIR)
 export const DEVELOPMENT_DIR = path.dirname(BACKEND_DIR)
 
 // project level
