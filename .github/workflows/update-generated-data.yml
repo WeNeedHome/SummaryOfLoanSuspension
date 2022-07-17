@@ -36,12 +36,18 @@ jobs:
           else
             echo "has_changes=true" >> $GITHUB_ENV
           fi
+      - name: regenerate map
+        if: ${{ env.has_changes == 'true' }}
+        run: |
+          ts-node genMap.ts
+          ts-node genMap.ts -t google-theme-dark.json
+          ts-node genMap.ts -t google-theme-light.json
       - name: Commit and Create Pull Request
         if: ${{ env.has_changes == 'true' }}
         uses: peter-evans/create-pull-request@v4
         with:
           add-paths: |
-            data/generated/*.json
+            data/generated/*
           commit-message: "Update generated data"
           title: 'Update generated data'
           body: 'Auto update the the generated data'
