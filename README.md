@@ -56,7 +56,7 @@ https://www.marxists.org/chinese/maozedong/1968/5-016.htm
 
 ## 数据概要
 
-### 总计【298+】
+### 总计【299+】
 
 <details>
 <summary>可视化（Silver）</summary>
