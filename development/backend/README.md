@@ -1,11 +1,10 @@
 # backend
 
-## TODO
+[--> 后端TODO](../../TODO.md#后端)
 
-- [x] 确保每张图片都能与楼盘对应
-- [x] 增加了可视化脚本
+## 接口
 
-## 楼盘接口
+### 楼盘数据接口
 
 ```typescript
 // development/backend/ds/property.ts
@@ -18,64 +17,7 @@ export interface Property {
 }
 ```
 
-## 自动验证readme与生成楼盘数据
-
-如果会`nodejs`的话，可以运行以下语句，它将自动检查`README.md`文档中的计数问题，您可以根据提示进行逐一人工检查，直到确保准确：
-
-```shell
-ts-node development/backend/analyze.ts
-```
-
-脚本使用提醒：
-
-1. `ts-node` 可以通过 `npm i -g ts-node`安装
-2. 脚本需要先初始化：`cd development/backend && npm i`
-3. 建议直接加入hook脚本，每次commit的时候自动检查：
-
-```shell
-echo 'ts-node development/backend/analyze.ts' >> .git/hooks/post-commit
-chmod +x .git/hooks/post-commit
-```
-
-在`README.md`文档人工校验通过的情况下，该脚本输出：
-
-```text
-...
-parsing province 吉林省
-parsing province 内蒙古自治区
-总计25个省份，103个城市，276个楼盘
-楼盘合计校验通过！
-```
-
-同时它也会自动生成楼盘数据：
-
-```text
-// data/generated/properties.json
-[
-  {
-    "name": "恒大珑庭",
-    "city": "景德镇市",
-    "province": "江西省"
-  },
-  ...
-  {
-    "name": "鸿海城",
-    "city": "南昌市",
-    "province": "江西省",
-    "month": 10
-  },
-  ...
-    {
-    "name": "豫发白鹭源春晓三期",
-    "city": "郑州市",
-    "province": "河南省",
-    "link": "images/郑州航空港区豫发白鹭源春晓三期全体业主停贷告知书.jpg"
-  }
-  ...
-]
-```
-
-## 地图可视化数据结构
+### 城市数据接口
 
 ```typescript
 // frontend/react/src/property.ts
@@ -94,47 +36,53 @@ export interface Address {
 export interface AddressWithCount extends Address {
     count: number
 }
-
-export type CitiesOnMap = Record<string, AddressWithCount>
 ```
 
-## 生成地图可视化数据
+## 脚本
 
-在已有最新的`properties.json`的数据前提下，运行：
+### `analyze.ts`
+
+[analyze.ts](./src/analyze.ts) 脚本负责解析 [README.md](../../README.md) 文档，校验其市、省、国三级的数据合计，生成 [基于楼盘的结构化停贷数据文件](../../data/generated/properties.json)。该脚本已写入 CI，由 WeihanLi 维护。
+
+具体使用如下：
 
 ```shell
-ts-node develpment/backend/genCitiesForVisualization.ts
+ts-node analyze.ts
 ```
 
-output:
+### `genCitiesForVisualization.ts`
 
-```text
-{
-  "江西省-景德镇市": {
-    "province": "江西省",
-    "city": "景德镇市",
-    "pos": {
-      "lng": 117.178222,
-      "lat": 29.268945
-    },
-    "count": 3
-  },
-  ...
-}
-```
+[genCitiesForVisualization.ts](./src/genCitiesForVisualization.ts) 脚本负责解析基于前者生成的 [基于楼盘的结构化数据文件](../../data/generated/properties.json)，提供含有经纬度、楼盘合计的[基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)，可供于可视化。该脚本已写入 CI，由 WeihanLi 维护。
 
-## 生成地图
-
-`-t` 选项指定读取 `data/config/` 下以 `google-theme-` 为前缀的配置文件，并在`data/generated/`下生成对应后缀名的地图
+具体使用如下：
 
 ```shell
-ts-node development/backend/genMap.ts           # generate standard
-ts-node development/backend/genMap.ts -t light  # generate light
-ts-node development/backend/genMap.ts -t dark   # generate dark
+ts-node genCitiesForVisualization.ts
 ```
 
+### `genMap.ts`
+
+[genMap.ts](./src/genMap.ts) 脚本负责解析基于前者生成的 [基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)，对接Google Static Map API，生成基于城市的全国停贷地图：[基于城市的全国停贷地图（标准主题）](../../data/generated/visualization-standard.png)、[基于城市的全国停贷地图（淡色主题）](../../data/generated/visualization-light.png)、[基于城市的全国停贷地图（暗色主题）](../../data/generated/visualization-dark.png)。该脚本已写入 CI，由 WeihanLi 维护。
+
+具体使用如下：
+
+```shell
+ts-node development/backend/src/genMap.ts           # generate standard
+ts-node development/backend/src/genMap.ts -t light  # generate light
+ts-node development/backend/src/genMap.ts -t dark   # generate dark
+```
+
+## `validateLocalImages.ts`
+
+[validateLocalImages.ts](./src/validateLocalImages.ts) 可以对 [images](../../images) 目录下的文件的在 [README.md文档](../../README.md) 内的引用进行核验，以确保没有游离的文件。
+
+具体使用如下：
+
+```shell
+ts-node validateLocalImages.ts
+```
 
 ## 数据来源
 
-- 全国城市经纬度（文件：`data/region.json`）：<https://github.com/boyan01/ChinaRegionDistrict>
+- 全国城市经纬度：<https://github.com/boyan01/ChinaRegionDistrict>
 - GoogleMapsApiKey: <https://github.com/webcoiruser/tvc/blob/2c10cad726e92282ba3a8e672890bd91a40160ba/gradle.properties>

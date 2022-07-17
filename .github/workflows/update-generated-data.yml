@@ -28,7 +28,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: 'development/backend/package-lock.json'
-      - run: npm i && npm i -g ts-node && ts-node analyze.ts && ts-node genCitiesForVisualization.ts
+      - run: npm i && npm i -g ts-node && cd src && ts-node analyze.ts && ts-node genCitiesForVisualization.ts
       - name: check for changes
         run: |
           if git diff --exit-code; then

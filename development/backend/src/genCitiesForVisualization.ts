@@ -2,8 +2,8 @@ import * as fs from "fs";
 import path from "path";
 import {Property} from "./ds/property";
 import {DATA_GENERATED_DIR} from "./const";
-import regionTree from "../../data/source/region-tree.json"
-import {Address, AddressWithCount} from "../frontend/react/src/ds";
+import regionTree from "../../../data/source/region-tree.json"
+import {Address, AddressWithCount} from "../../frontend/react/src/ds";
 
 
 export function getAddress(province_: string, city_: string): Address {
