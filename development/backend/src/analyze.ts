@@ -20,6 +20,7 @@ function analyze(enableSortProvinces = false) {
     // 一些标志位
     let startCollecting = false
     let isModified = false
+    let errorsCount = 0
 
     // 用于省份排序输出
     let headingPart = ''
@@ -28,7 +29,6 @@ function analyze(enableSortProvinces = false) {
 
     // 收集楼盘
     let collectedProperties: Property[] = []
-    let collectedErrors: string[] = []
 
     // 统计全国
     let markedTotal = 0
@@ -50,9 +50,8 @@ function analyze(enableSortProvinces = false) {
     function validateTotal() {
         console.log(`截至目前，总计${countProvinces}个省份，${countCities}个城市，${cumTotal}个楼盘`)
         if (cumTotal !== markedTotal) {
-            const msg = `文档中楼盘总计的结果[${markedTotal}]可能错误`
-            console.error(msg)
-            collectedErrors.push(msg)
+            errorsCount += 1
+            console.error(`文档中楼盘总计的结果[${markedTotal}]可能错误`)
         } else {
             console.log(`√ 楼盘合计校验通过！`)
         }
@@ -64,9 +63,8 @@ function analyze(enableSortProvinces = false) {
 
         // 验证省份统计
         if (cumTotalInProvince !== markedTotalInProvince) {
-            const msg = `properties count in province ${curProvince} failed to validate, calculated: ${String(cumTotalInProvince).padStart(3)}, marked: ${String(markedTotalInProvince).padStart(3)}`
-            console.error(msg)
-            collectedErrors.push(msg)
+            errorsCount += 1
+            console.error(`properties count in province ${curProvince} failed to validate, calculated: ${String(cumTotalInProvince).padStart(3)}, marked: ${String(markedTotalInProvince).padStart(3)}`)
         }
     }
 
@@ -74,9 +72,9 @@ function analyze(enableSortProvinces = false) {
         // 标记总数
         const matchTotal = line.match(/总计【(\d+)\+】/)
         const matchProvince = line.match(/### (.*?)\s*\[\s*(\d+)\s*\]/)
-        const matchCity = line.match(/^-\s*\*\*(.*?)\s*[（(](\d+)[)）].*?\*\*(.*?)$/)
+        const matchCity = line.match(/^-\s*\*\*(.*?)\s*[（(](\d+)[)）].*?\*\*\s*(.*?)$/)
 
-        function handleProvince(matchProvince: RegExpMatchArray) {
+        function handleProvinceLine(matchProvince: RegExpMatchArray): string {
             countProvinces += 1
             if (curProvince) validateProvince() // 后一个省份解析前一个省份
 
@@ -88,20 +86,33 @@ function analyze(enableSortProvinces = false) {
             markedTotalInProvince = parseInt(matchProvince[2])
             console.log(`parsing province ${curProvince}`)
             cumTotalInProvince = 0
+            return line
         }
 
-        function handleCity(matchCity: RegExpMatchArray) {
+        function handleCityLine(matchCity: RegExpMatchArray): string {
             countCities += 1
             curCity = matchCity[1]
             cityDir = getCityNameUnderProvinceImagesDir(provinceDir, curCity)
             markedTotalInCity = parseInt(matchCity[2])
-            let propertiesInCity = matchCity[3].split(/[，,]/)
+            let propertiesInCity = matchCity[3].split(', ')
             // 验证城市统计
-            if (propertiesInCity.length !== markedTotalInCity)
+            if (propertiesInCity.length !== markedTotalInCity) {
+                errorsCount += 1
                 console.error(`    properties count in city ${curCity} failed to validate, calculated: ${String(propertiesInCity.length).padStart(3)}, marked: ${String(markedTotalInCity).padStart(3)}`)
+            }
             cumTotalInProvince += propertiesInCity.length
 
-            propertiesInCity.forEach((propertyStr: string) => {
+            let newPropertiesStr = propertiesInCity.map((propertyStr: string) => {
+                if (propertyStr.includes(',')) {
+                    errorsCount += 1
+                    console.error(`条目内部不应有英文逗号：${propertyStr}`)
+                }
+                // 去除多余的空格
+                let propertyStrStripped = propertyStr.replace(/^\s+/, '').replace(/\s+$/, '')
+                if (propertyStrStripped !== propertyStr) {
+                    isModified = true
+                    propertyStr = propertyStrStripped
+                }
                 let property: Property = {name: "", city: curCity, province: curProvince}
                 const matchPropertyLink = propertyStr.match(/\s*\[(.*?)\]\((.*?)\)/)
                 if (matchPropertyLink) {
@@ -131,7 +142,9 @@ function analyze(enableSortProvinces = false) {
                 }
 
                 collectedProperties.push(property)
-            })
+                return propertyStr
+            }).join(', ')
+            return line.replace(matchCity[3], newPropertiesStr)
         }
 
         // 解析总数
@@ -149,11 +162,11 @@ function analyze(enableSortProvinces = false) {
 
         // 解析省份
         if (matchProvince)
-            handleProvince(matchProvince)
+            line = handleProvinceLine(matchProvince)
 
         // 解析城市
         if (matchCity)
-            handleCity(matchCity)
+            line = handleCityLine(matchCity)
 
         // 更新省份下的数据
         provinceVals[provinceVals.length - 1] += line + "\n"
@@ -166,15 +179,15 @@ function analyze(enableSortProvinces = false) {
     validateTotal()
 
     // stop
-    if (collectedErrors.length > 0)
-        throw new Error(collectedErrors.join('\n'))
+    if (errorsCount)
+        throw new Error("未通过程序校验，累计错误数：" + errorsCount)
 
     // dump properties data
     const data = JSON.stringify(collectedProperties, null, 2)
     fs.writeFileSync(DATA_PROPERTIES_PATH, data, "utf-8")
     console.log('√ 已写入基于楼盘的停贷数据：file://' + DATA_PROPERTIES_PATH)
 
-    // sort provinces if necessary
+    // sort images if necessary
     if (enableSortProvinces) {
         isModified = true
         provinceVals = [...Array(provinceKeys.length).keys()]

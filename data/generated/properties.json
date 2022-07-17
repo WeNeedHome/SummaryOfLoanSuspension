@@ -269,6 +269,12 @@
     "province": "广西壮族自治区"
   },
   {
+    "name": "恒大城二期、三期",
+    "city": "柳州市",
+    "province": "广西壮族自治区",
+    "link": "images/广西/柳州恒大二三期停贷.jpg"
+  },
+  {
     "name": "中天吾乡",
     "city": "贵阳市",
     "province": "贵州省"
@@ -1105,6 +1111,12 @@
     "city": "扬州市",
     "province": "江苏省",
     "link": "images/江苏/扬州恒大观澜府.jpg"
+  },
+  {
+    "name": "恒泰悦珑府",
+    "city": "连云港市",
+    "province": "江苏省",
+    "link": "images/江苏/连云港/恒泰悦珑府.png"
   },
   {
     "name": "恒大珑庭",
