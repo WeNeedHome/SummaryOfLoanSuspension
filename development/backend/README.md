@@ -125,9 +125,14 @@ output:
 
 ## 生成地图
 
+`-t` 选项指定读取 `data/config/` 下以 `google-theme-` 为前缀的配置文件，并在`data/generated/`下生成对应后缀名的地图
+
 ```shell
-ts-node development/backend/genMap.ts
+ts-node development/backend/genMap.ts           # generate standard
+ts-node development/backend/genMap.ts -t light  # generate light
+ts-node development/backend/genMap.ts -t dark   # generate dark
 ```
+
 
 ## 数据来源
 
