@@ -3,7 +3,7 @@ import {ArgumentParser} from "argparse";
 
 import {DATA_CONFIG_DIR, DATA_VISUALIZATION_PATH, FRONTEND_REACT_SRC_DIR,} from "./const";
 import {drawPath, genCirclePoints} from "./google-map/genCirclePoints";
-import {AddressWithCount} from "../frontend/react/src/ds";
+import {AddressWithCount} from "../../frontend/react/src/ds";
 import {genMap} from "./google-map/genGoogleMap";
 import {encodeFeaturesFromFileToArray} from "./google-map/encodeFeatures";
 import path from "path";

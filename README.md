@@ -18,21 +18,19 @@
 
 ## 如何添加一个新的停贷项目
 
-1. [新手请看：如何提交项目信息](PR-instruction.md)
-2. [添加必看：新增停贷项目规范](CONTRIBUTING.md)
+1. [--> 新手请看：如何提交项目信息](PR-instruction.md)
+2. [--> 添加必看：新增停贷项目规范](CONTRIBUTING.md)
 
 ## 开发相关
 
-如果您想一起参与贡献本项目或者实现自己的想法：[**--> 点击查看：开发指引**](./development/README.md)
+本项目已集成CI，将自动核验数据的统计准确性，但对数据本身的真实性则由大家共同负责，开发相关的问题请见：
 
-目前我们已实现：
-
-- [x] 基于CI，[analyze.ts](development/backend/analyze.ts) 会对 push 里 readme 文档中的计数、图片链接的有效性等自动进行校验并生成最新的城市数据，[genMap.ts](development/backend/genMap.ts) 会基于这些城市数据生成最新的可视化地图，最终渲染到本文档中
-- [x] [validateLocalImages.ts](development/backend/validateLocalImages.ts) 可以对 images 文件夹中图片在文档中的引用进行核验，以确保没有游离的图片
+- [--> 后端](development/backend/README.md)
+- [--> 前端](development/frontend/README.md)
 
 ## 数据概要
 
-### 总计【304+】
+### 总计【304+】（实时更新）
 
 <details>
 <summary><b>点击查看：全国总数便携计算代码</b></summary>

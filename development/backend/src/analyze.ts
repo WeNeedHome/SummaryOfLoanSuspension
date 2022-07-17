@@ -186,7 +186,7 @@ function analyze(enableSortProvinces = false) {
 
     // rewrite readme if necessary
     if (isModified) {
-        const readmePathBackedUp = path.join(BACKEND_DIR, "tmp/README.md")
+        const readmePathBackedUp = README_PATH + ".bak"
         fs.cpSync(README_PATH, readmePathBackedUp)
         console.log('√ 已备份 README：file://' + readmePathBackedUp)
         fs.writeFileSync(README_PATH, [headingPart, provinceVals.join('')].join('\n').replace(/\n{2,9}/g, '\n\n'), 'utf-8')
