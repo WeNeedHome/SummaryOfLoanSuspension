@@ -1,0 +1,13 @@
+# mac
+**/.DS_Store
+
+# softwars
+.idea
+.vscode
+
+# js
+**/node_modules
+
+# tmp
+**/tmp/*
+**/*.bak
