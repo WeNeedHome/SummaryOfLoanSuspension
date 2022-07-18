@@ -18,10 +18,6 @@
 
 ## 项目协同
 
-### 项目更新
-
-- 实现了按行输出，文档见 [`genMdFromPropertiesTree.ts`](./development/backend/README.md#genMdFromPropertiesTree.ts)，输出结果见 [按行输出楼盘的README版本](./README-by-lines.md)
-
 ### 目前项目计划
 
 [--> TODO](./TODO.md)
@@ -35,7 +31,7 @@
 
 ### 持续集成
 
-本项目已集成CI，将自动核验数据的统计准确性，但对数据本身的真实性则由大家共同负责，具体见：[.github/workflows/update-generated-data.yml](.github/workflows/update-generated-data.yml)
+本项目已集成CI，将自动核验数据的统计准确性，但对数据本身的真实性则由大家共同负责，具体见：[workflows-update-generated-data.yml](.github/workflows/update-generated-data.yml)
 
 ### 开发指引
 
@@ -75,9 +71,9 @@ console.log(i)
 <img src="data/generated/visualization-dark.png" alt="visualization-dark">
 </details>
 
-- [结构化数据：基于楼盘的停贷数据](data/generated/properties.json)（含省市区、链接、月份）
-- [结构化数据：基于城市的停贷数据](data/generated/cities-for-visualization.json) （含省市区、楼盘统计数、经纬度）
-- [结构化数据：全国三级行政城市经纬度数据](data/source/region-tree.json)
+- [结构化数据：楼盘停贷数据(flat版)](data/generated/properties-flat.json)（含省市区、链接）
+- [结构化数据：楼盘停贷数据(tree版)](data/generated/properties-tree.json)（含省市区、链接）
+- [结构化数据：城市停贷数据](data/generated/cities-for-visualization.json) （含省市区、楼盘统计数、经纬度）
 
 ### 其他数据公示处
 
@@ -88,6 +84,8 @@ console.log(i)
 - ~~[Notion 数据库](https://www.notion.so/21dab14200e2478eb91c49b68d16495f)~~ (20220717已被恶意删除)
 
 ## 分省数据（按拼音排序）
+
+[--> 查看按数量排序版本](./README-by-lines.md)
 
 ### 安徽省 [ 2 ]
 
