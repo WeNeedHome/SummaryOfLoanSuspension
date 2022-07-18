@@ -1,6 +1,0 @@
-export enum Errors {
-    PROGRAMME_ERROR = "PROGRAMME_ERROR",
-    NOT_EQUAL = "NOT_EQUAL",
-    NOT_EXIST = "NOT_EXIST",
-    NOT_ALLOW_EMPTY = "NOT_ALLOW_EMPTY"
-}
