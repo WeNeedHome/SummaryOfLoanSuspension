@@ -3,7 +3,7 @@ import {encodeFeaturesFromFileToArray} from "./encodeFeatures";
 import path from "path";
 import {DATA_GENERATED_DIR, FRONTEND_REACT_SRC_DIR} from "../const";
 import axios from "axios";
-import {GOOGLE_MAP_API_KEY} from "../../frontend/react/src/const";
+import {GOOGLE_MAP_API_KEY} from "../../../frontend/react/src/const";
 import {paramsSerializer} from "./utils";
 import {createWriteStream} from "fs";
 
