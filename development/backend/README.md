@@ -1,81 +1,93 @@
-# backend
+# backend (v2)
 
-## TODO
+[--> 后端TODO](../../TODO.md#后端)
 
-- [x] 确保每张图片都能与楼盘对应
-- [x] 增加了可视化脚本
+## versions
 
-## 楼盘接口
+- [DEPRECIATED: V1](./src/v1/README.md)
+
+## core
+
+### 开发商、楼盘等数据网络接口
+
+该接口能搜索获得开发商数据（尽管有点瑕疵）：`https://fang.com/quanwangso/ajax/search.html?keyword=恒大&cityname=上海&num=1000`
+
+另外该网站还可基于楼盘搜索到开发商，这需要写一整套爬虫流程，感兴趣的朋友可以实现一下，属于 [TODO](../../TODO.md) 中的 `B001` 需求。
+
+该接口由 richardo876 提供，具体见：[建议新增分开发商数据,给开放商压力,让购房者注意规避 by junioresident · Pull Request #814](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/814)
+
+### 停贷数据基本接口
 
 ```typescript
-// development/backend/ds/property.ts
-export interface Property {
-    province: string
-    city: string
+// ds/property.ts
+export interface IItem {
     name: string
-    link?: string
-    month?: number
+    uri: string
 }
+
+export interface INode {
+    name: string
+    count: number   // 文档中的标记总数
+    children: any[]
+}
+
+export interface ICity extends INode {children: IItem[]}
+
+export interface IProv extends INode {children: ICity[]}
+
+export interface ITree extends INode {children: IProv[]}
 ```
 
-## 自动验证readme与生成楼盘数据
+### `genPropertiesTreeFromReadme.ts`
 
-如果会`nodejs`的话，可以运行以下语句，它将自动检查`README.md`文档中的计数问题，您可以根据提示进行逐一人工检查，直到确保准确：
+[genPropertiesTreeFromReadme.ts](src/genPropertiesTreeFromReadme.ts) 可以从 [README.md文档](../../README.md) 中解析出**树状的**
+停贷数据并存储，这相对于原先的 [analyze.ts](./src/v1/analyze.ts) 脚本来说有诸多好处。
+
+首先，原先的 `analyze.ts`
+脚本没有输出任何的中间结构，尽管它也基于局部组合实现了对省份的拼音排序，但是由于其没有构建树状结构，而是线性结构，导致其无法实现任意级别的序列重组。而 `genPropertiesTreeFromReadme.ts`
+则吸收了 `analyze.ts` 中的所有精华设计部分，并专注于输出树状结构，对于 `markdown` 重写等功能则留给其他脚本接续完成。
+
+用法：
 
 ```shell
-ts-node development/backend/analyze.ts
+ts-node genPropertiesTreeFromReadme.ts
 ```
 
-脚本使用提醒：
+输出位置： [properties-tree.json](../../data/generated/properties-tree.json)。
 
-1. `ts-node` 可以通过 `npm i -g ts-node`安装
-2. 脚本需要先初始化：`cd development/backend && npm i`
-3. 建议直接加入hook脚本，每次commit的时候自动检查：
+### `genMdFromPropertiesTree.ts`
+
+[genMdFromPropertiesTree.ts](src/genMdFromPropertiesTree.ts)
+可以对基于 [genPropertiesTreeFromReadme.ts](src/genPropertiesTreeFromReadme.ts)
+输出的 [properties-tree.json](../../data/generated/properties-tree.json)
+结构树的基础上，进行自由重组，然后重新生成markdown文件，并且支持与原有的 `README.md` 进行无缝拼接（`-j`参数），从而生成一份新的 `README.md` 文件。
+
+用法：
 
 ```shell
-echo 'ts-node development/backend/analyze.ts' >> .git/hooks/post-commit
-chmod +x .git/hooks/post-commit
+ts-node genMdFromPropertiesTree.ts -h # 查看使用说明
+
+# 默认按拼音增序进行三级排序（一直排到项目级别）（排头兵：安徽-合肥-恒大……），并输出到`README-by-lines.md`文件（纯省份文件）
+ts-node genMdFromPropertiesTree.ts                
+        
+# 按数量减序进行二级排序（一直排到城市级别）（排头兵：河南-郑州），并输出到`README-by-lines.md`文件
+ts-node genMdFromPropertiesTree.ts -b count -d 2  
+
+# 修改输出文件地址，:waring: 注意，如果修改为本工程的 README.md 文档，将直接覆盖！
+ts-node genMdFromPropertiesTree.ts -t /tmp/README.md 
+
+# 与 readme 文档合并输出完整的 README 文档
+ts-node genMdFromPropertiesTree.ts -j
 ```
 
-在`README.md`文档人工校验通过的情况下，该脚本输出：
+由此可知，我们只需要使用 `ts-node genMdFromPropertiesTree.ts -j -t ../../README.md` 即可以直接实现覆写 README
+的效果，但是请注意，这样的操作是不可逆的，所以必要时要记得备份。
 
-```text
-...
-parsing province 吉林省
-parsing province 内蒙古自治区
-总计25个省份，103个城市，276个楼盘
-楼盘合计校验通过！
-```
+由于目前，我们还未确定是否采用按行输出项目的方案，因此本方案仅试运行，晚点我们发个PR探讨一下。
 
-同时它也会自动生成楼盘数据：
+## visualization
 
-```text
-// data/generated/properties.json
-[
-  {
-    "name": "恒大珑庭",
-    "city": "景德镇市",
-    "province": "江西省"
-  },
-  ...
-  {
-    "name": "鸿海城",
-    "city": "南昌市",
-    "province": "江西省",
-    "month": 10
-  },
-  ...
-    {
-    "name": "豫发白鹭源春晓三期",
-    "city": "郑州市",
-    "province": "河南省",
-    "link": "images/郑州航空港区豫发白鹭源春晓三期全体业主停贷告知书.jpg"
-  }
-  ...
-]
-```
-
-## 地图可视化数据结构
+### 城市数据接口
 
 ```typescript
 // frontend/react/src/property.ts
@@ -94,42 +106,49 @@ export interface Address {
 export interface AddressWithCount extends Address {
     count: number
 }
-
-export type CitiesOnMap = Record<string, AddressWithCount>
 ```
 
-## 生成地图可视化数据
+### `genCitiesForVisualization.ts`
 
-在已有最新的`properties.json`的数据前提下，运行：
+[genCitiesForVisualization.ts](src/supports/genCitiesForVisualization.ts)
+脚本负责解析基于前者生成的 [基于楼盘的结构化数据文件](../../data/generated/properties.json)
+，提供含有经纬度、楼盘合计的[基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)，可供于可视化。该脚本已写入 CI，由 WeihanLi 维护。
+
+用法：
 
 ```shell
-ts-node develpment/backend/genCitiesForVisualization.ts
+ts-node genCitiesForVisualization.ts
 ```
 
-output:
+### `genMap.ts`
 
-```text
-{
-  "江西省-景德镇市": {
-    "province": "江西省",
-    "city": "景德镇市",
-    "pos": {
-      "lng": 117.178222,
-      "lat": 29.268945
-    },
-    "count": 3
-  },
-  ...
-}
-```
+[genMap.ts](src/supports/genMap.ts) 脚本负责解析基于前者生成的 [基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)
+，对接Google Static Map API，生成基于城市的全国停贷地图：[基于城市的全国停贷地图（标准主题）](../../data/generated/visualization-standard.png)
+、[基于城市的全国停贷地图（淡色主题）](../../data/generated/visualization-light.png)
+、[基于城市的全国停贷地图（暗色主题）](../../data/generated/visualization-dark.png)。该脚本已写入 CI，由 WeihanLi 维护。
 
-## 生成地图
+用法：
 
 ```shell
-ts-node development/backend/genMap.ts
+ts-node development/backend/src/genMap.ts           # generate standard
+ts-node development/backend/src/genMap.ts -t light  # generate light
+ts-node development/backend/src/genMap.ts -t dark   # generate dark
 ```
 
-## 数据来源
+## others
 
-- 全国城市经纬度（文件：`data/region.json`）：<https://github.com/boyan01/ChinaRegionDistrict>
+### `validateLocalImages.ts`
+
+[validateLocalImages.ts](src/supports/validateLocalImages.ts) 可以对 [images](../../images)
+目录下的文件的在 [README.md文档](../../README.md) 内的引用进行核验，以确保没有游离的文件。
+
+用法：
+
+```shell
+ts-node validateLocalImages.ts
+```
+
+## references
+
+- 全国城市经纬度：<https://github.com/boyan01/ChinaRegionDistrict>
 - GoogleMapsApiKey: <https://github.com/webcoiruser/tvc/blob/2c10cad726e92282ba3a8e672890bd91a40160ba/gradle.properties>
