@@ -19,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: 'development/backend/'
+        working-directory: 'development/backend/src'
 
     steps:
       - uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: 'development/backend/package-lock.json'
-      - run: npm i && npm i -g ts-node && cd src && ts-node analyze.ts && ts-node genCitiesForVisualization.ts
+      - run: npm i && npm i -g ts-node && ts-node ./v1/analyze.ts && ts-node ./supports/genCitiesForVisualization.ts && ts-node genPropertiesTreeFromReadme.ts
       - name: check for changes
         run: |
           if git diff --exit-code; then
@@ -39,9 +39,9 @@ jobs:
       - name: regenerate map
         if: ${{ env.has_changes == 'true' }}
         run: |
-          ts-node genMap.ts
-          ts-node genMap.ts -t google-theme-dark.json
-          ts-node genMap.ts -t google-theme-light.json
+          ts-node ./supports/genMap.ts
+          ts-node ./supports/genMap.ts -t google-theme-dark.json
+          ts-node ./supports/genMap.ts -t google-theme-light.json
       - name: Commit and Create Pull Request
         if: ${{ env.has_changes == 'true' }}
         uses: peter-evans/create-pull-request@v4
