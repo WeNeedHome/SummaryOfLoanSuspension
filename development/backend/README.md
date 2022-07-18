@@ -8,6 +8,14 @@
 
 ## core
 
+### 开发商、楼盘等数据网络接口
+
+该接口能搜索获得开发商数据（尽管有点瑕疵）：`https://fang.com/quanwangso/ajax/search.html?keyword=恒大&cityname=上海&num=1000`
+
+另外该网站还可基于楼盘搜索到开发商，这需要写一整套爬虫流程，感兴趣的朋友可以实现一下，属于 [TODO](../../TODO.md) 中的 `B001` 需求。
+
+该接口由 richardo876 提供，具体见：[建议新增分开发商数据,给开放商压力,让购房者注意规避 by junioresident · Pull Request #814](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/814)
+
 ### 停贷数据基本接口
 
 ```typescript
