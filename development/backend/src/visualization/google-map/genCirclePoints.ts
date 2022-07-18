@@ -1,5 +1,5 @@
 import * as polyline from "polyline";
-import {getGeoFrom} from "./algo/geo";
+import {getGeoFrom} from "./algos/geo";
 
 /**
  *

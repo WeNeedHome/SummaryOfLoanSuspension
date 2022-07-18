@@ -1,5 +1,5 @@
-import {assertEqual} from "../../utils/general";
-import {encodeNum} from "../algo/encodePolyline";
+import {assertEqual} from "../../../utils/general";
+import {encodeNum} from "../algos/encodePolyline";
 
 assertEqual(encodeNum(-179.9832104), '`~oia@')
 assertEqual(encodeNum(38.5), '_p~iF',)

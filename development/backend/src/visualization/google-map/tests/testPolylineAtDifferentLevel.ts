@@ -1,4 +1,4 @@
-import {encodeNum, encodePoint, encodePoints} from "../algo/encodePolyline";
+import {encodeNum, encodePoint, encodePoints} from "../algos/encodePolyline";
 import * as polyline from "polyline";
 
 const points = [

@@ -34,7 +34,7 @@
 
 ## 手动实现polyline算法
 
-具体见 [encodePolyline.ts](algo/encodePolyline.ts)，有时间再更吧。
+具体见 [encodePolyline.ts](algos/encodePolyline.ts)，有时间再更吧。
 
 ## 手动实现绘圆算法
 

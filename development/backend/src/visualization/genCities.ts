@@ -1,9 +1,9 @@
 import * as fs from "fs";
 import path from "path";
-import {Property} from "../ds/property";
 import {DATA_GENERATED_DIR} from "../const";
 import regionTree from "../../../../data/source/region-tree.json"
 import {Address, AddressWithCount} from "../../../frontend/react/src/ds";
+import {Property} from "../v1/ds";
 
 
 export function getAddress(province_: string, city_: string): Address {
@@ -34,7 +34,7 @@ export function getAddress(province_: string, city_: string): Address {
     throw new Error(`not found for ${id_}`)
 }
 
-const propertiesPath = path.join(DATA_GENERATED_DIR, "properties.json")
+const propertiesPath = path.join(DATA_GENERATED_DIR, "properties-flat.json")
 console.log('reading data from file://' + propertiesPath)
 const data = fs.readFileSync(propertiesPath, "utf-8")
 const properties: Property[] = JSON.parse(data)

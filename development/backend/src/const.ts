@@ -18,12 +18,13 @@ export const FRONTEND_REACT_SRC_DIR = path.join(FRONTEND_REACT_DIR, "src")
 
 // data dir
 export const DATA_CONFIG_DIR    = path.join(DATA_DIR, "config")
+export const DATA_CONFIG_GOOGLE_THEME_PATH = path.join(DATA_CONFIG_DIR, 'google-themes')
 export const DATA_GENERATED_DIR = path.join(DATA_DIR, "generated")
 export const DATA_SOURCE_DIR    = path.join(DATA_DIR, "source")
 
 // generated data dir
 export const PROPERTIES_TREE_PATH    = path.join(DATA_GENERATED_DIR, 'properties-tree.json')
-export const DATA_PROPERTIES_PATH    = path.join(DATA_GENERATED_DIR, "properties.json")
+export const PROPERTIES_FLAT_PATH    = path.join(DATA_GENERATED_DIR, "properties-flat.json")
 export const DATA_VISUALIZATION_PATH = path.join(DATA_GENERATED_DIR, "cities-for-visualization.json")
 
 // regex for parsing readme(v1)

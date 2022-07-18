@@ -12,8 +12,8 @@
 ## 后端
 
 - [ ] B001:基于楼盘数据，查找开发商，生成停贷开发商数据（issue: 2022/07/18）
-- [x] B002: 确保每张图片都能与楼盘对应，具体见：[validateLocalImages.ts](development/backend/src/supports/validateLocalImages.ts)
-- [x] B003: 增加了可视化脚本，具体见：[genMap.ts](development/backend/src/supports/genMap.ts)
+- [x] B002: 确保每张图片都能与楼盘对应，具体见：[validateLocalImages.ts](development/backend/src/validateLocalImages.ts)
+- [x] B003: 增加了可视化脚本，具体见：[genMap.ts](development/backend/src/visualization/genMap.ts)
 - [ ] B004: 实现所有图片按省/市二级分类（目前仍有许多图片未严格分类到城市文件夹内）
 - [ ] B005: 实现所有图片按省/市/区三级分类
 - [ ] ...

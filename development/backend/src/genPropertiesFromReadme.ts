@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 import {Errors} from "./ds/errors";
-import {IItem, INode} from "./ds/property";
+import {IFlatItem, IItem, INode} from "./ds/property";
 import {
     DATA_GENERATED_DIR,
     ITEM_SEP,
@@ -17,7 +17,10 @@ import {
 
 const collectProv = () => curData.children.push(curProv)
 const collectCity = () => curProv.children.push(curCity)
-const collectItem = () => curCity.children.push(curItem)
+const collectItem = () => {
+    curCity.children.push(curItem)
+    flatItems.push({...curItem, province: curProv.name, city: curCity.name})
+}
 
 /**
  * 提取：省份名，省内数量
@@ -150,9 +153,13 @@ const validate = () => {
  * 存储结构化停贷数据
  */
 const writeSuspensionData = () => {
-    const SUSPENSION_DATA_PATH = path.join(DATA_GENERATED_DIR, "properties-tree.json")
-    fs.writeFileSync(SUSPENSION_DATA_PATH, JSON.stringify(curData, null, 2), 'utf-8')
-    console.log('wrote suspension data into file://' + SUSPENSION_DATA_PATH)
+    const PROPERTIES_TREE_PATH = path.join(DATA_GENERATED_DIR, "properties-tree.json")
+    fs.writeFileSync(PROPERTIES_TREE_PATH, JSON.stringify(curData, null, 2), 'utf-8')
+    console.log('wrote suspension data into file://' + PROPERTIES_TREE_PATH)
+
+    const PROPERTIES_FLAT_PATH = path.join(DATA_GENERATED_DIR, "properties-flat.json")
+    fs.writeFileSync(PROPERTIES_FLAT_PATH, JSON.stringify(flatItems, null, 2), 'utf-8')
+    console.log('wrote suspension data into file://' + PROPERTIES_FLAT_PATH)
 }
 
 
@@ -172,10 +179,11 @@ const rewriteReadmeFile = () => {
 let isStarted = false
 let isEnded   = false
 
-const curData: INode = {name: '中华人民共和国', count: 0, children: []}
-let curProv: INode   = {name: '', count: 0, children: []}
-let curCity: INode   = {name: '', count: 0, children: []}
-let curItem: IItem   = {name: '', uri: ''}
+const curData: INode         = {name: '中华人民共和国', count: 0, children: []}
+let curProv: INode           = {name: '', count: 0, children: []}
+let curCity: INode           = {name: '', count: 0, children: []}
+let curItem: IItem           = {name: '', uri: ''}
+const flatItems: IFlatItem[] = []
 
 const contentRaw = fs.readFileSync(README_PATH, 'utf-8')
 const contentNew = contentRaw.split('\n').map(parseLine).join('\n')
