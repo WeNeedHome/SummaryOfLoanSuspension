@@ -1,5 +1,3 @@
-
-
 /**
  * 第二版接口，for development/backend/src/genPropertiesFromReadme.ts
  */

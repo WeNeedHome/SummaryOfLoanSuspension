@@ -18,6 +18,7 @@ export const FRONTEND_REACT_SRC_DIR = path.join(FRONTEND_REACT_DIR, "src")
 
 // data dir
 export const DATA_CONFIG_DIR    = path.join(DATA_DIR, "config")
+export const DATA_CONFIG_GOOGLE_THEME_PATH = path.join(DATA_CONFIG_DIR, 'google-themes')
 export const DATA_GENERATED_DIR = path.join(DATA_DIR, "generated")
 export const DATA_SOURCE_DIR    = path.join(DATA_DIR, "source")
 

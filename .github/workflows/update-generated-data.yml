@@ -22,17 +22,25 @@ jobs:
         working-directory: 'development/backend/src'
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: setup environment for git
+        uses: actions/checkout@v3
+
+      - name: setup environemnt for node
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: 'development/backend/package-lock.json'
-      - run: |
-          npm i && npm i -g ts-node
+
+      - name: setup environment for project
+        run: npm i && npm i -g ts-node
+
+      - name: generate and validate properties data
+        run: |
           ts-node genPropertiesFromReadme.ts  # 生成停贷数据（同时生成tree与flat）
           ts-node genMdFromPropertiesTree.ts  # tree --> 新的readme
           ts-node validateLocalImages.ts      # 验证本地图片索引
+
       - name: check for changes
         run: |
           if git diff --exit-code; then
@@ -40,15 +48,15 @@ jobs:
           else
             echo "has_changes=true" >> $GITHUB_ENV
           fi
-      - name: regenerate map
+
+      - name: regenerate map if local changes detected
         if: ${{ env.has_changes == 'true' }}
         run: |
           cd visualization
-          ts-node genCitiesForVisualization.ts    # flat --> 城市数据
-          ts-node genMap.ts                       # 城市数据 --> 地图
-          ts-node genMap.ts -t google-theme-dark.json
-          ts-node genMap.ts -t google-theme-light.json
-      - name: Commit and Create Pull Request
+          ts-node genCitie.ts         # flat --> 城市数据
+          ts-node genMap.ts -t all    # 城市数据 --> 地图
+
+      - name: commit and pr if local changes detected
         if: ${{ env.has_changes == 'true' }}
         uses: peter-evans/create-pull-request@v4
         with:
