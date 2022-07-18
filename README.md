@@ -22,10 +22,11 @@
 
 [--> TODO](./TODO.md)
 
-### 更新一个新的停贷项目
+### PR 三部曲
 
-1. [--> 新手请看：如何提交项目信息](PR-instruction.md)
-2. [--> 添加必看：新增停贷项目规范](CONTRIBUTING.md)
+1. [--> 1. 新手请看：如何提交项目信息](PR-instruction.md)
+2. [--> 2. 添加请看：新增停贷项目规范](CONTRIBUTING.md)
+3. [--> 3. 冲突请看：如何修正提交冲突](PR-resolving-conflicts.md)
 
 ## 开发相关
 
