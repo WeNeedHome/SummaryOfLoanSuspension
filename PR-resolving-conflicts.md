@@ -1,4 +1,4 @@
-# 如何解决大家 PR 冲突的问题（例如：总数错误）
+# PR 冲突修正
 
 ## 前提概要
 
@@ -198,8 +198,51 @@ ts-node genMdFromPropertiesTree.ts  # tree --> 新的readme
 
 TADA !
 
-### 步骤六：提交并合入自己的远程仓库、副仓库与主仓库
+### 步骤六：提交并合入
+
+首先先推到自己的仓库：
 
 ```
-
+git add -A
+git commit
+git push origin main
 ```
+
+如下，冇问题啊：
+
+![picture 26](.imgs/PR-resolving-conflicts-1658148285425-1471334fb7e9464da747b0b40689fc5d9a1960d71a3bec1bf1b4e4b31f479a39.png)  
+
+这个时候就要和主仓库开始交互了，我们先拉取一下最新的，因为主仓库在我们改动本地文件时期，可能已经有人动过了：
+
+```sh
+git pull upstream main
+```
+
+不过幸运的是，在我们写这篇文章时没有：
+
+![picture 27](.imgs/PR-resolving-conflicts-1658148630231-588abf60f5c164ddad286e2d5a10f16fd2d32001d413efc884e40cf3f2dfa079.png)  
+
+那就，so easy 啦：
+
+```sh
+git push upstream main
+```
+
+![picture 28](.imgs/PR-resolving-conflicts-1658148658719-a11972919aab4ad6a711f3caf3b8631be22d1c117c532ecaf970ead7b7c60f52.png)  
+
+至此，所有冲突都已经，并且可以保证有效，不放心的还可以去 [Action Page](https://github.com/WeNeedHome/SummaryOfLoanSuspension/actions) 看一看：
+
+![picture 29](.imgs/PR-resolving-conflicts-1658148705693-cb1c721160fd4f423ed8974e1f2fc50a890b0d8d98d03bc34e8cbe4bdfee3516.png)  
+
+
+## At Last
+
+感谢阅读到最后，不容易！
+
+祝全体早日有房！（其实我自己并没有房，但作为坚定的无产阶级，我必须挺你们，尽管这并不能帮助我降低自己的租金，lol）
+
+（by the way，明天正好是我生日啦，回想起来这两天与 WeNeedHome 的点点滴滴，还是会心潮澎湃，尽管接下来我可能会逐步降低维护的频率了。）
+
+我相信很多人都像最近爆火的那对年轻小夫妻一样，也是曾经心里有海，眼里有光。
+
+所以，快乐是如何消失了的呢。
