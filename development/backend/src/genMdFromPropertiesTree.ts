@@ -62,7 +62,9 @@ export const genPropertiesMd = (sourcePath: string, targetPath: string, sortBy: 
 }
 
 
-const parser = new ArgumentParser({description: '将 JSON 格式的停贷数据转成 markdown 格式'})
+const parser = new ArgumentParser({
+    description: '将 JSON 格式的停贷数据转成 markdown 格式'
+})
 parser.add_argument('-s', '--sourcePath', {
     default: PROPERTIES_TREE_PATH,
     help   : '输入的JSON格式的停贷数据文件位置'
