@@ -21,13 +21,13 @@ export function getAllLinks(propertiesSourceType: PROPERTIES_SOURCE_TYPE): strin
 
     switch (propertiesSourceType) {
         case 'flat':
-            // 从 properties-tree.json 中读取
+            // 从 properties-flat.json 中读取
             const properties: Property[] = JSON.parse(fs.readFileSync(path.join(DATA_GENERATED_DIR, "properties.json"), "utf-8"))
             return properties.filter(property => property.link).map(property => property.link) as string[]
         case 'tree':
-            // 从 properties.json 中读取
+            // 从 properties-tree.json 中读取
             return fs.readFileSync(path.join(DATA_GENERATED_DIR, "properties-tree.json"), "utf-8").split('\n')
-                .filter(s => s.includes('image'))
+                .filter(s => s.includes('images'))
                 .map(matchUri)
         default:
             throw new Error(Errors.INVALID_INPUT)
@@ -50,7 +50,7 @@ export function validateImageSource(propertiesSourceType: PROPERTIES_SOURCE_TYPE
     if (errors.length > 0) {
         for (let error of errors)
             console.error(error)
-        throw new Error('failed to validate local images source')
+        throw new Error('failed to validate local images source, qualified image uris are: ' + imageLinks)
     } else {
         console.log('passed local image sources validation √')
     }

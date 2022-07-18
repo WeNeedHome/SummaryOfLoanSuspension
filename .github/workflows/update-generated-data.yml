@@ -37,9 +37,9 @@ jobs:
 
       - name: generate and validate properties data
         run: |
-          ts-node genPropertiesFromReadme.ts  # 生成停贷数据（同时生成tree与flat）
-          ts-node validateLocalImages.ts      # 验证本地图片索引
-          ts-node genMdFromPropertiesTree.ts  # tree --> 新的readme
+          ts-node genPropertiesFromReadme.ts &&   # 生成停贷数据（同时生成tree与flat）
+          ts-node validateLocalImages.ts     &&   # 验证本地图片索引
+          ts-node genMdFromPropertiesTree.ts      # tree --> 新的readme
 
       - name: check for changes
         run: |
@@ -53,7 +53,7 @@ jobs:
         if: ${{ env.has_changes == 'true' }}
         run: |
           cd visualization
-          ts-node genCitie.ts         # flat --> 城市数据
+          ts-node genCities.ts      && # flat --> 城市数据
           ts-node genMap.ts -t all    # 城市数据 --> 地图
 
       - name: commit and pr if local changes detected
