@@ -19,7 +19,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: 'development/backend/'
+        working-directory: 'development/backend/src'
 
     steps:
       - uses: actions/checkout@v3
@@ -28,7 +28,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
           cache-dependency-path: 'development/backend/package-lock.json'
-      - run: npm i && npm i -g ts-node && cd src && ts-node analyze.ts && ts-node genCitiesForVisualization.ts
+      - run: |
+          npm i && npm i -g ts-node
+          ts-node genPropertiesFromReadme.ts  # 生成停贷数据（同时生成tree与flat）
+          ts-node genMdFromPropertiesTree.ts  # tree --> 新的readme
+          ts-node validateLocalImages.ts      # 验证本地图片索引
       - name: check for changes
         run: |
           if git diff --exit-code; then
@@ -39,7 +43,9 @@ jobs:
       - name: regenerate map
         if: ${{ env.has_changes == 'true' }}
         run: |
-          ts-node genMap.ts
+          cd visualization
+          ts-node genCitiesForVisualization.ts    # flat --> 城市数据
+          ts-node genMap.ts                       # 城市数据 --> 地图
           ts-node genMap.ts -t google-theme-dark.json
           ts-node genMap.ts -t google-theme-light.json
       - name: Commit and Create Pull Request
