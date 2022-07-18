@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
-import {IMAGES_DIR} from "../const";
-import {throws} from "assert";
+import {IMAGES_DIR, PROJECT_DIR} from "../const";
+import {Errors} from "../ds/errors";
 
 export const provinceNamesUnderImagesDir = fs.readdirSync(IMAGES_DIR, {withFileTypes: true})
     .filter(d => d.isDirectory())
@@ -35,4 +35,16 @@ export function getImageUriRobust(provinceDir: string, cityDir: string | undefin
             return imgUri
     }
     throw new Error(`not found image from ${imgUri}`)
+}
+
+/**
+ * 检测一个图像链接是否能在本地文件夹中找到
+ * @param link
+ */
+export function validateImageLink(link: string): boolean {
+    if (!link) throw new Error(Errors.NOT_ALLOW_EMPTY)
+
+    const imagePath = path.join(PROJECT_DIR, link)
+    if (!fs.existsSync(imagePath)) throw new Error(Errors.NOT_EXIST + ': ' + link)
+    return true
 }

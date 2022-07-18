@@ -3,7 +3,7 @@ import {ArgumentParser} from "argparse";
 
 import {PROPERTIES_TREE_PATH, README_PATH, REG_END, REG_START} from "./const";
 
-import {ITree, SORT_BY} from "./ds/property";
+import {ITree, SORT_BY, SORT_BY_DICT_CN} from "./ds/property";
 import {depth2Chinese} from "./utils/conversion";
 import {formatItemLine} from "./utils/format";
 import {sortTree} from "./algos/node";
@@ -37,7 +37,7 @@ export const genPropertiesMd = (sourcePath: string, targetPath: string, sortBy: 
     propertiesTree = sortTree(propertiesTree, sortBy, sortDepth)
     console.log(`sorted properties tree by ${sortBy} with depth of ${sortDepth}`)
 
-    const lines: string[] = [`## 分省数据 (总计：${propertiesTree.count}+，按${depth2Chinese(sortDepth)}级${sortBy}）\n`]
+    const lines: string[] = [`## 分省数据 (总计：**${propertiesTree.count}+**，按${depth2Chinese(sortDepth)}级${SORT_BY_DICT_CN[sortBy]}）\n`]
     readLines()
     let content = lines.join('\n')
 
@@ -72,7 +72,7 @@ parser.add_argument('-t', '--targetPath', {
     help   : '输出的MARKDOWN格式的停贷数据文件位置，注意由于图片链接都是相对位置，所以默认情况下只有输出到根目录才有效'
 })
 parser.add_argument('-b', '--sortBy', {
-    choices: Object.values(SORT_BY), default: SORT_BY.pronunciation,
+    choices: [...SORT_BY], default: 'count',
     help   : '排序依据，即按拼音升序或者按数量降序'
 })
 parser.add_argument('-d', '--sortDepth', {
