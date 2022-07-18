@@ -38,8 +38,8 @@ jobs:
       - name: generate and validate properties data
         run: |
           ts-node genPropertiesFromReadme.ts  # 生成停贷数据（同时生成tree与flat）
-          ts-node genMdFromPropertiesTree.ts  # tree --> 新的readme
           ts-node validateLocalImages.ts      # 验证本地图片索引
+          ts-node genMdFromPropertiesTree.ts  # tree --> 新的readme
 
       - name: check for changes
         run: |
