@@ -110,7 +110,7 @@ export interface AddressWithCount extends Address {
 
 ### `genCitiesForVisualization.ts`
 
-[genCitiesForVisualization.ts](src/supports/genCitiesForVisualization.ts)
+[genCitiesForVisualization.ts](src/visualization/genCitiesForVisualization.ts)
 脚本负责解析基于前者生成的 [基于楼盘的结构化数据文件](../../data/generated/properties.json)
 ，提供含有经纬度、楼盘合计的[基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)，可供于可视化。该脚本已写入 CI，由 WeihanLi 维护。
 
@@ -122,7 +122,7 @@ ts-node genCitiesForVisualization.ts
 
 ### `genMap.ts`
 
-[genMap.ts](src/supports/genMap.ts) 脚本负责解析基于前者生成的 [基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)
+[genMap.ts](src/genMap.ts) 脚本负责解析基于前者生成的 [基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)
 ，对接Google Static Map API，生成基于城市的全国停贷地图：[基于城市的全国停贷地图（标准主题）](../../data/generated/visualization-standard.png)
 、[基于城市的全国停贷地图（淡色主题）](../../data/generated/visualization-light.png)
 、[基于城市的全国停贷地图（暗色主题）](../../data/generated/visualization-dark.png)。该脚本已写入 CI，由 WeihanLi 维护。
@@ -139,7 +139,7 @@ ts-node development/backend/src/genMap.ts -t dark   # generate dark
 
 ### `validateLocalImages.ts`
 
-[validateLocalImages.ts](src/supports/validateLocalImages.ts) 可以对 [images](../../images)
+[validateLocalImages.ts](src/validateLocalImages.ts) 可以对 [images](../../images)
 目录下的文件的在 [README.md文档](../../README.md) 内的引用进行核验，以确保没有游离的文件。
 
 用法：

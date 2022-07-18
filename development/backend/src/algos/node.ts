@@ -2,13 +2,13 @@ import {INode, ITree, SORT_BY} from "../ds/property";
 
 export const sortNode = (node: INode, sortBy: SORT_BY, depth: number): INode => {
     switch (sortBy) {
-        case SORT_BY.pronunciation:
+        case "pronunciation":
             node.children = node.children.sort((n1, n2) => n1.name.localeCompare(n2.name, 'zh'))
             break
-        case SORT_BY.count:
+        case 'count':
             node.children = node.children.sort((n1, n2) => n2.count - n1.count)
             break
-        case SORT_BY.default:
+        case 'default':
             break
         default:
             break
@@ -26,7 +26,7 @@ export const sortNode = (node: INode, sortBy: SORT_BY, depth: number): INode => 
  * @param sortDepth: 排序深度，1即排省份，2即排城市，3即排项目
  */
 export const sortTree = (tree: ITree, sortBy: SORT_BY, sortDepth = 3): ITree => {
-    if (!Object.values(SORT_BY).includes(sortBy))
+    if (!SORT_BY.includes(sortBy))
         console.warn(`sortBy of ${sortBy} not in ${SORT_BY}`)
     return sortNode(tree, sortBy, sortDepth)
 }

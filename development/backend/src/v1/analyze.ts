@@ -6,11 +6,15 @@ import {
     IMAGES_DIR,
     README_PATH
 } from "../const";
-import {Property} from "../ds/property";
-import {getCityNameUnderProvinceImagesDir, getImageUriRobust, getProvinceNameUnderImagesDir} from "../utils/uri";
-import {validateImageLink} from "../supports/validateLocalImages";
+import {
+    getCityNameUnderProvinceImagesDir,
+    getImageUriRobust,
+    getProvinceNameUnderImagesDir,
+    validateImageLink
+} from "../utils/uri";
 import {ArgumentParser} from "argparse";
 import {Errors} from "../ds/errors";
+import {Property} from "./ds";
 
 
 /**
