@@ -38,19 +38,19 @@ export interface IProv extends INode {children: ICity[]}
 export interface ITree extends INode {children: IProv[]}
 ```
 
-### `genPropertiesTreeFromReadme.ts`
+### `genPropertiesFromReadme.ts`
 
-[genPropertiesTreeFromReadme.ts](src/genPropertiesTreeFromReadme.ts) 可以从 [README.md文档](../../README.md) 中解析出**树状的**
+[genPropertiesFromReadme.ts](src/genPropertiesFromReadme.ts) 可以从 [README.md文档](../../README.md) 中解析出**树状的**
 停贷数据并存储，这相对于原先的 [analyze.ts](./src/v1/analyze.ts) 脚本来说有诸多好处。
 
 首先，原先的 `analyze.ts`
-脚本没有输出任何的中间结构，尽管它也基于局部组合实现了对省份的拼音排序，但是由于其没有构建树状结构，而是线性结构，导致其无法实现任意级别的序列重组。而 `genPropertiesTreeFromReadme.ts`
+脚本没有输出任何的中间结构，尽管它也基于局部组合实现了对省份的拼音排序，但是由于其没有构建树状结构，而是线性结构，导致其无法实现任意级别的序列重组。而 `genPropertiesFromReadme.ts`
 则吸收了 `analyze.ts` 中的所有精华设计部分，并专注于输出树状结构，对于 `markdown` 重写等功能则留给其他脚本接续完成。
 
 用法：
 
 ```shell
-ts-node genPropertiesTreeFromReadme.ts
+ts-node genPropertiesFromReadme.ts
 ```
 
 输出位置： [properties-tree.json](../../data/generated/properties-tree.json)。
@@ -58,7 +58,7 @@ ts-node genPropertiesTreeFromReadme.ts
 ### `genMdFromPropertiesTree.ts`
 
 [genMdFromPropertiesTree.ts](src/genMdFromPropertiesTree.ts)
-可以对基于 [genPropertiesTreeFromReadme.ts](src/genPropertiesTreeFromReadme.ts)
+可以对基于 [genPropertiesFromReadme.ts](src/genPropertiesFromReadme.ts)
 输出的 [properties-tree.json](../../data/generated/properties-tree.json)
 结构树的基础上，进行自由重组，然后重新生成markdown文件，并且支持与原有的 `README.md` 进行无缝拼接（`-j`参数），从而生成一份新的 `README.md` 文件。
 
@@ -122,7 +122,7 @@ ts-node genCitiesForVisualization.ts
 
 ### `genMap.ts`
 
-[genMap.ts](src/genMap.ts) 脚本负责解析基于前者生成的 [基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)
+[genMap.ts](src/visualization/genMap.ts) 脚本负责解析基于前者生成的 [基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)
 ，对接Google Static Map API，生成基于城市的全国停贷地图：[基于城市的全国停贷地图（标准主题）](../../data/generated/visualization-standard.png)
 、[基于城市的全国停贷地图（淡色主题）](../../data/generated/visualization-light.png)
 、[基于城市的全国停贷地图（暗色主题）](../../data/generated/visualization-dark.png)。该脚本已写入 CI，由 WeihanLi 维护。

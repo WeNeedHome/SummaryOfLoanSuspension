@@ -34,7 +34,7 @@ export function getAddress(province_: string, city_: string): Address {
     throw new Error(`not found for ${id_}`)
 }
 
-const propertiesPath = path.join(DATA_GENERATED_DIR, "properties.json")
+const propertiesPath = path.join(DATA_GENERATED_DIR, "properties-flat.json")
 console.log('reading data from file://' + propertiesPath)
 const data = fs.readFileSync(propertiesPath, "utf-8")
 const properties: Property[] = JSON.parse(data)

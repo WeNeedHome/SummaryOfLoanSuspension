@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import {
     BACKEND_DIR,
-    DATA_PROPERTIES_PATH,
+    PROPERTIES_FLAT_PATH,
     IMAGES_DIR,
     README_PATH
 } from "../const";
@@ -188,8 +188,8 @@ function analyze(enableSortProvinces = false) {
 
     // dump properties data
     const data = JSON.stringify(collectedProperties, null, 2)
-    fs.writeFileSync(DATA_PROPERTIES_PATH, data, "utf-8")
-    console.log('√ 已写入基于楼盘的停贷数据：file://' + DATA_PROPERTIES_PATH)
+    fs.writeFileSync(PROPERTIES_FLAT_PATH, data, "utf-8")
+    console.log('√ 已写入基于楼盘的停贷数据：file://' + PROPERTIES_FLAT_PATH)
 
     // sort images if necessary
     if (enableSortProvinces) {

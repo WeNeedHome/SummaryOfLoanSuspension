@@ -1,11 +1,16 @@
 
 
 /**
- * 第二版接口，for development/backend/src/genPropertiesTreeFromReadme.ts
+ * 第二版接口，for development/backend/src/genPropertiesFromReadme.ts
  */
 export interface IItem {
     name: string
     uri: string
+}
+
+export interface IFlatItem extends IItem{
+    city: string
+    province: string
 }
 
 export interface INode {

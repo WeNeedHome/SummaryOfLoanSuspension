@@ -1,11 +1,11 @@
 import * as fs from "fs";
 import {ArgumentParser} from "argparse";
 
-import {DATA_CONFIG_DIR, DATA_VISUALIZATION_PATH, FRONTEND_REACT_SRC_DIR,} from "./const";
-import {drawPath, genCirclePoints} from "./visualization/google-map/genCirclePoints";
-import {AddressWithCount} from "../../frontend/react/src/ds";
-import {genMap} from "./visualization/google-map/genGoogleMap";
-import {encodeFeaturesFromFileToArray} from "./visualization/google-map/encodeFeatures";
+import {DATA_CONFIG_DIR, DATA_VISUALIZATION_PATH} from "../const";
+import {drawPath, genCirclePoints} from "./google-map/genCirclePoints";
+import {AddressWithCount} from "../../../frontend/react/src/ds";
+import {genMap} from "./google-map/genGoogleMap";
+import {encodeFeaturesFromFileToArray} from "./google-map/encodeFeatures";
 import path from "path";
 
 require('axios-debug-log') // to debug, enable `DEBUG=axios`, ref: https://stackoverflow.com/a/51727245/9422455

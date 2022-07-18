@@ -23,7 +23,7 @@ export const DATA_SOURCE_DIR    = path.join(DATA_DIR, "source")
 
 // generated data dir
 export const PROPERTIES_TREE_PATH    = path.join(DATA_GENERATED_DIR, 'properties-tree.json')
-export const DATA_PROPERTIES_PATH    = path.join(DATA_GENERATED_DIR, "properties.json")
+export const PROPERTIES_FLAT_PATH    = path.join(DATA_GENERATED_DIR, "properties-flat.json")
 export const DATA_VISUALIZATION_PATH = path.join(DATA_GENERATED_DIR, "cities-for-visualization.json")
 
 // regex for parsing readme(v1)
