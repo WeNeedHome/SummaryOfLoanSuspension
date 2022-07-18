@@ -4,8 +4,13 @@
 
 ## 解决方案列表
 
-> 以下解决方案基本解决了 feature001
-> 
+> 以下方案基本解决了 F001 与 F002
+
+### 基于 vue + 高德地图
+
+由 aiheihe 维护，见： [aiheihe/WeNeedHome: https://aiheihe.github.io/WeNeedHome/](https://github.com/aiheihe/WeNeedHome)
+
+> 以下方案基本解决了 F001
 
 ### 基于 react + google-map-api
 

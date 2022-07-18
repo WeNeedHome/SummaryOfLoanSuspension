@@ -32,6 +32,6 @@ export const SORT_BY = ["default", "pronunciation", 'count'] as const
 export type SORT_BY = typeof SORT_BY[number]
 export const SORT_BY_DICT_CN: Record<SORT_BY, string> = {
     default      : "默认",
-    pronunciation: "拼音生序",
+    pronunciation: "拼音升序",
     count        : "数量降序"
 }
