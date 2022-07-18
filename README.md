@@ -12,7 +12,7 @@
 
 [--> 毛主席在 1962 年七千人大会上的讲话](https://www.marxists.org/chinese/maozedong/1968/5-016.htm)
 
-[~~--> 互帮互助留言讨论区=>~~](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions) （遵守规则拒绝政治敏感，不然会再次关闭 discussion。）
+[--> 互帮互助留言讨论区=>](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions) （遵守规则拒绝政治敏感，不然会再次关闭 discussion。）
 
 [--> 相关法律与审判案例支持](法理依据/相关法律与审判案例支持.md)
 
