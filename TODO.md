@@ -4,8 +4,9 @@
 
 - [x] C001: 完善PR文档，让新手知道如何提交项目信息，具体见：[PR-instruction.md](./PR-instruction.md)
 - [ ] C002: 增加PR模板，让用户在PR时能按照约定进行（尚未完成），具体见：[CONTRIBUTING.md](./CONTRIBUTING.md)
-- [ ] C003: 考虑是否要按行显示楼盘，具体见：[#786: Propose 修改数据展示的结构](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/786)
+- [x] C003: 考虑是否要按行显示楼盘，具体见：[#786: Propose 修改数据展示的结构](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/786)。已实现，见：commit@1f42bf121a2634baee6114f446ec70cab86f273d，但尚未确认将分行 README 作为主版本
 - [ ] C004: 增加版本自动计数器
+- [ ] C005: 建议打开 issue
 - [ ] ...
 
 ## 后端
