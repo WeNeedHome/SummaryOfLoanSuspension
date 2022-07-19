@@ -18,11 +18,11 @@
 
 ## 项目协同
 
-### 目前项目计划
+### 计划
 
 [--> TODO](./TODO.md)
 
-### PR 三部曲
+### 提交
 
 1. [--> 1. 新手请看：如何提交项目信息](PR-instruction.md)
 2. [--> 2. 添加请看：新增停贷项目规范](CONTRIBUTING.md)
@@ -33,16 +33,15 @@
 sh ./run-validate.sh
 ``` 
 
-## 开发相关
-
-1. :sparkles: 本项目已集成CI，将自动核验数据的统计准确性，具体见：[workflows-update-generated-data.yml](.github/workflows/update-generated-data.yml.bak)
-
-2. :rocket: 20220719已实现开发商数据抓取，但还需要更多的单元测试与样本测试，具体见 [backend-py](./development/backend/py/README.md)
-
-### 开发指引
+### 开发
 
 - [--> 后端](development/backend/README.md)
 - [--> 前端](development/frontend/README.md)
+
+1. :sparkles: 本项目已集成CI，将自动核验数据的统计准确性，具体见：[backend-nodejs](./development/backend/nodejs/README.md)
+
+2. :rocket: 20220719已实现开发商数据抓取，但还需要更多的单元测试与样本测试，具体见：[backend-python](./development/backend/py/README.md)
+
 
 ## 数据概要
 
@@ -65,7 +64,7 @@ console.log(i)
 ```
 </details>
 
-### 数据 （基于本 README 文档生成）
+### 数据
 
 <details>
 <summary><b>点击查看：可视化地图（浅色）</b></summary>
