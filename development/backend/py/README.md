@@ -1,5 +1,13 @@
 # python - backend
 
+## problems
+
+- [ ] 程序中只检测新房可能是不够稳健的，刚核实一个楼盘时发现不属于房天下的新房分类，而是二手房：https://gz.newhouse.fang.com/house/s/a9%BA%A3%C9%CF%C3%F7%D4%C2/?refer=sy_seach ，参见：[recover vanke lunasea by vk20220 · Pull Request #769 · WeNeedHome/SummaryOfLoanSuspension](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/769)
+
+## features
+
+- [ ] 增加楼盘价格的接口，用于统计与估算事件影响度，参见：[统计涉及人数 & 总金额？ · Discussion #888 · WeNeedHome/SummaryOfLoanSuspension](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/888)
+
 ## objective
 
 本项目主要是基于爬虫获取开发商、楼盘等数据，从而对接停贷数据，获得更丰富的数据维度。

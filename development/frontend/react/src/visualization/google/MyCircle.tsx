@@ -1,4 +1,4 @@
-import {Pos} from "../../ds";
+import {Pos} from "../ds";
 import {Circle} from "@react-google-maps/api";
 
 export interface MyCircleProps {

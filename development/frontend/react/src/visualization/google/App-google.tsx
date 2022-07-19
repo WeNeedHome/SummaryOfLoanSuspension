@@ -1,7 +1,7 @@
 import {GoogleMap, LoadScript, OverlayView} from "@react-google-maps/api"
 
-import {GOOGLE_MAP_API_KEY} from "../../const";
-import {AddressWithCount} from "../../ds";
+import {GOOGLE_MAP_API_KEY} from "../const";
+import {AddressWithCount} from "../ds";
 import {MyCircle} from "./MyCircle";
 
 import theme from "../../data/google-theme.json" // custom style, ref: https://mapstyle.withgoogle.com/

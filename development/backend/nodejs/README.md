@@ -10,7 +10,7 @@ nodejs部分主要负责本项目的数据校验与地图生成。
 
 - [三级行政区数据接口](src/ds/region.ts)
 - [停贷楼盘数据接口](src/ds/property.ts)
-- [城市可视化数据接口](../../frontend/react/src/ds.ts)
+- [城市可视化数据接口](../../frontend/react/src/visualization/ds.ts)
 
 ## core
 
