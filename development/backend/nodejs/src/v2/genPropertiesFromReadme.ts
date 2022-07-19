@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-import { IFlatItem, IItem, INode } from "./ds/property";
 import {
     DATA_GENERATED_DIR,
     ITEM_SEP,
@@ -12,7 +11,8 @@ import {
     REG_PROV,
     REG_START,
     REG_TOTAL
-} from "./const";
+} from "../const";
+import { IFlatItem, IItem, INode } from "../itree/ds";
 
 const collectProv = () => curData.children.push(curProv)
 const collectCity = () => curProv.children.push(curCity)
@@ -62,6 +62,9 @@ const parseCityLine = (line: string): string => {
     const itemsStrRaw = matched[3]
     const itemsStrNew = parseItems(itemsStrRaw)
     collectCity()
+    if (curCity.count !== curCity.children.length)
+        console.error(line, curCity)
+
     return line.replace(itemsStrRaw, itemsStrNew)
 }
 
@@ -76,7 +79,10 @@ const parseLine = (line: string): string => {
         curData.count = parseInt((line.match(REG_TOTAL) as RegExpMatchArray)[1])
 
     // 开始匹配是结束匹配的子集，所以需要率先对结束匹配做一些限定
-    if (isStarted && REG_END.test(line)) isEnded = true
+    if (isStarted && REG_END.test(line)) {
+        if (!isEnded) collectProv()
+        isEnded = true
+    }
     if (REG_START.test(line)) isStarted = true
 
     // 开始匹配

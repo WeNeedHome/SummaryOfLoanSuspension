@@ -1,11 +1,11 @@
 import path from "path"
 import {DATA_GENERATED_DIR, IMAGES_DIR} from "./const";
 import fs from "fs";
-import {PROPERTIES_SOURCE_TYPE} from "./ds/property";
 import {walkDirectory} from "./utils/general";
 import {Errors} from "./ds/errors";
 import {ArgumentParser} from "argparse";
 import {Property} from "./v1/ds";
+import { PROPERTIES_SOURCE_TYPE } from "./itree/reshape";
 
 
 /**

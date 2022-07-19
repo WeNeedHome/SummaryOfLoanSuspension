@@ -146,7 +146,7 @@ git pull upstream branch-for-resolving-unqualified-pr
 ```sh
 cd development/backend
 # 没有安装ts-node前要， npm i && npm i -g ts-node
-ts-node src/genPropertiesFromReadme.ts
+ts-node src/genProperties.ts
 ```
 
 程序输出结果表示，有三个错误，并且是和上海有关的：
@@ -169,9 +169,9 @@ TADA !
 
 ```sh
 cd src
-ts-node genPropertiesFromReadme.ts  # 生成停贷数据（同时生成tree与flat）
+ts-node genProperties.ts  # 生成停贷数据（同时生成tree与flat）
 ts-node validateLocalImages.ts      # 验证本地图片索引
-ts-node genMdFromPropertiesTree.ts  # tree --> 新的readme
+ts-node genMarkdown.ts  # tree --> 新的readme
 ```
 
 看吧，竟然还藏着错误呢！原来还有一张图没链接上！
@@ -189,9 +189,9 @@ ts-node genMdFromPropertiesTree.ts  # tree --> 新的readme
 再次运行
 
 ```sh
-ts-node genPropertiesFromReadme.ts  # 生成停贷数据（同时生成tree与flat）
+ts-node genProperties.ts  # 生成停贷数据（同时生成tree与flat）
 ts-node validateLocalImages.ts      # 验证本地图片索引
-ts-node genMdFromPropertiesTree.ts  # tree --> 新的readme
+ts-node genMarkdown.ts  # tree --> 新的readme
 ```
 
 ![picture 25](.imgs/PR-resolving-conflicts-1658148159185-b8e33bd1e8e0e1774995fcb0835f43ff4fb51720a607d40b10bf6458598ed6e1.png)  
