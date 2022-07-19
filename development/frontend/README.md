@@ -12,6 +12,8 @@
 
 - 基于 react + google-map-api，由 markshawn2020 维护，基于`react`、`backend`的数据结构、`google-map-api`，见 [frontend/react](./react)
 
+- 基于 react + open-street-map，由 robothot 与 markshawn2020 维护，见 [frontend/leaflet](./leaflet) 与 [feat: 添加 Leaflet 项目作为地图打点，可以在web上预览 by robothot · Pull Request #899 · WeNeedHome/SummaryOfLoanSuspension](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/899#issuecomment-1188979251)
+
 - 基于 nginx + php，由 NishizakiHayato 维护，基于nginx+php，见 [frontend/php_proxy](./php_proxy)
 
 - 单页面可视化，由UAreSky维护，基于`html`实现的单页面可视化，见 [frontend/single-page](./single-page)

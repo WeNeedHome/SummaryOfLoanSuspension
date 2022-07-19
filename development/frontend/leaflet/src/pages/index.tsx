@@ -9,7 +9,7 @@ type DataInfo = {
         lat: number
     }
     count: number
-} 
+}
 
 const App = () => {
     const [data, setData] = useState<DataInfo[]>([])
@@ -17,6 +17,7 @@ const App = () => {
         fetch('https://raw.githubusercontent.com/robothot/SummaryOfLoanSuspension/main/data/generated/cities-for-visualization.json')
             .then((resp) => resp.json())
             .then((jsonData) => {
+                console.log(jsonData)
                 setData(jsonData)
             })
     }, [])
