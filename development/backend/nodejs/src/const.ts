@@ -29,8 +29,8 @@ export const PROPERTIES_FLAT_PATH    = path.join(DATA_GENERATED_DIR, "properties
 export const DATA_VISUALIZATION_PATH = path.join(DATA_GENERATED_DIR, "cities-for-visualization.json")
 
 // regex for parsing readme(v1)
-export const REG_START = /## 分省数据/
-export const REG_END   = /## 其他曝光/
+export const REG_START = /^## 分省数据/
+export const REG_END   = /^## \S/
 export const REG_TOTAL = /总计【(\d+)\+】/ // countryTotal
 export const REG_PROV  = /### (.*?)\s*\[\s*(\d+)\s*\]/ // provinceName, provinceTotal
 export const REG_CITY  = /^-\s*\*\*(.*?)\s*[（(](\d+)[)）].*?\*\*\s*(.*?)$/ // cityName, cityTotal, properties
