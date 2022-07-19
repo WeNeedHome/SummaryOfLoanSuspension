@@ -68,12 +68,12 @@ console.log(i)
 
 <details>
 <summary><b>点击查看：可视化地图（浅色）</b></summary>
-<img src="data/generated/visualization-light.png" alt="visualization-light">
+<img src="data/generated/visualization-light-wwm.png" alt="visualization-light">
 </details>
 
 <details>
 <summary><b>点击查看：可视化地图（深色）</b></summary>
-<img src="data/generated/visualization-dark.png" alt="visualization-dark">
+<img src="data/generated/visualization-dark-wwm.png" alt="visualization-dark">
 </details>
 
 - [结构化数据：楼盘停贷数据(flat版)](data/generated/properties-flat.json)（含省市区、链接）

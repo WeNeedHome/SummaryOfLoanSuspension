@@ -17,6 +17,7 @@
 - [ ] B004: 实现所有图片按省/市二级分类（目前仍有许多图片未严格分类到城市文件夹内）
 - [ ] B005: 实现所有图片按省/市/区三级分类
 - [ ] B006: OCR提取银行等相关信息，见 [#840](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/840)
+- [x] B007: 因为[#911](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/911)，实现了添加水印
 - [ ] ...
 
 ## 前端
