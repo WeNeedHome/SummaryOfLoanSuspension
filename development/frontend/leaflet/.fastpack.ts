@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import FastpackPluginLessLoader from '@weblif/plugin-less-loader'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import { getFastpackConfig } from '@weblif/fastpack'
@@ -23,7 +24,6 @@ export default getFastpackConfig({
         loading: '/components/Loading',
         layout: '/layouts'
     },
-    publicPath: '/ms-template',
     plugins: [
         new FastpackPluginLessLoader({}),
         new WebpackChainPlugin()
