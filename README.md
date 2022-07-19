@@ -35,9 +35,9 @@ sh ./run-validate.sh
 
 ## 开发相关
 
-### 持续集成
+1. :sparkles: 本项目已集成CI，将自动核验数据的统计准确性，具体见：[workflows-update-generated-data.yml](.github/workflows/update-generated-data.yml.bak)
 
-本项目已集成CI，将自动核验数据的统计准确性，但对数据本身的真实性则由大家共同负责，具体见：[workflows-update-generated-data.yml](.github/workflows/update-generated-data.yml)
+2. :rocket: 20220719已实现开发商数据抓取，但还需要更多的单元测试与样本测试，具体见 [backend-py](./development/backend/py/README.md)
 
 ### 开发指引
 

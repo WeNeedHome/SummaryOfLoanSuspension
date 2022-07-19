@@ -4,12 +4,12 @@
 
 ## versions
 
-- [DEPRECIATED: V1](./src/v1/README.md)
+- [DEPRECIATED: V1](nodejs/src/v1/README.md)
 
 ## interface
 
-- [三级行政区数据接口](./src/ds/region.ts)
-- [停贷楼盘数据接口](./src/ds/property.ts)
+- [三级行政区数据接口](nodejs/src/ds/region.ts)
+- [停贷楼盘数据接口](nodejs/src/ds/property.ts)
 - [城市可视化数据接口](../frontend/react/src/ds.ts)
 
 ## core
@@ -25,8 +25,8 @@
 
 ### `genPropertiesFromReadme.ts`
 
-[genPropertiesFromReadme.ts](src/genPropertiesFromReadme.ts) 可以从 [README.md文档](../../README.md) 中解析出 **树状的**
-停贷数据并存储，这相对于原先的 [analyze.ts](./src/v1/analyze.ts) 脚本来说有诸多好处。
+[genPropertiesFromReadme.ts](nodejs/src/genPropertiesFromReadme.ts) 可以从 [README.md文档](../../README.md) 中解析出 **树状的**
+停贷数据并存储，这相对于原先的 [analyze.ts](nodejs/src/v1/analyze.ts) 脚本来说有诸多好处。
 
 首先，原先的 `analyze.ts`
 脚本没有输出任何的中间结构，尽管它也基于局部组合实现了对省份的拼音排序，但是由于其没有构建树状结构，而是线性结构，导致其无法实现任意级别的序列重组。而 `genPropertiesFromReadme.ts`
@@ -42,7 +42,7 @@ ts-node genPropertiesFromReadme.ts
 
 ### `genMdFromProperties.ts`
 
-[genMdFromPropertiesTree.ts](src/genMdFromPropertiesTree.ts)
+[genMdFromPropertiesTree.ts](nodejs/src/genMdFromPropertiesTree.ts)
 可以对 [properties-tree.json](../../data/generated/properties-tree.json)
 结构树的基础上，进行自由重组，然后重新生成markdown文件，并且支持与原有的 `README.md` 进行无缝拼接（`-j`参数），从而生成一份新的 `README.md` 文件。
 
@@ -69,7 +69,7 @@ ts-node genMdFromPropertiesTree.ts -j
 
 ### `validateLocalImages.ts`
 
-[validateLocalImages.ts](src/validateLocalImages.ts) 可以对 [images](../../images)
+[validateLocalImages.ts](nodejs/src/validateLocalImages.ts) 可以对 [images](../../images)
 目录下的文件的在 [README.md文档](../../README.md) 内的引用进行核验，以确保没有游离的文件。
 
 用法：
@@ -82,7 +82,7 @@ ts-node validateLocalImages.ts
 
 ### `genCities.ts`
 
-[genCities.ts](src/visualization/genCities.ts)
+[genCities.ts](nodejs/src/visualization/genCities.ts)
 脚本负责解析 [基于楼盘的结构化数据文件](../../data/generated/properties.json)
 ，提供含有经纬度、楼盘合计的[基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)，可供于可视化。该脚本已写入 CI，由 WeihanLi 维护。
 
@@ -94,7 +94,7 @@ ts-node genCities.ts
 
 ### `genMap.ts`
 
-[genMap.ts](src/visualization/genMap.ts)
+[genMap.ts](nodejs/src/visualization/genMap.ts)
 脚本负责解析 [基于城市的结构化停贷数据文件](../../data/generated/cities-for-visualization.json)
 ，对接Google Static Map API，生成基于城市的全国停贷地图：[基于城市的全国停贷地图（标准主题）](../../data/generated/visualization-standard.png)
 、[基于城市的全国停贷地图（淡色主题）](../../data/generated/visualization-light.png)

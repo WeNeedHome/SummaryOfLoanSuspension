@@ -32,7 +32,7 @@ const parseProvLine = (line: string): string => {
 
     let matched = line.match(REG_PROV) as RegExpMatchArray
     curProv     = {name: matched[1], count: parseInt(matched[2]), children: []}
-    console.log('parsing province: ' + curProv.name)
+    // console.log('parsing province: ' + curProv.name) # since we have powerful error track, the log is unnecessary now
     return line
 }
 

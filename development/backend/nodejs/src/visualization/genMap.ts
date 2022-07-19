@@ -3,8 +3,8 @@ import fs, {createWriteStream} from "fs";
 import axios from "axios";
 import {ArgumentParser} from "argparse";
 
-import {GOOGLE_MAP_API_KEY} from "../../../frontend/react/src/const";
-import {AddressWithCount} from "../../../frontend/react/src/ds";
+import {GOOGLE_MAP_API_KEY} from "../../../../frontend/react/src/const";
+import {AddressWithCount} from "../../../../frontend/react/src/ds";
 
 import {DATA_CONFIG_GOOGLE_THEME_PATH, DATA_GENERATED_DIR, DATA_VISUALIZATION_PATH} from "../const";
 import {Errors} from "../ds/errors";
