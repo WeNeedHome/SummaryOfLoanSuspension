@@ -1,0 +1,36 @@
+{
+    "name": "ms-template",
+    "private": true,
+    "version": "0.0.1-canary",
+    "license": "MIT",
+    "scripts": {
+        "start": "fastpack dev",
+        "start:frame": "cross-env MainFrame=true fastpack dev ",
+        "build": "cross-env fastpack build",
+        "lint:script": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
+        "test": "jest"
+    },
+    "dependencies": {
+        "@ant-design/icons": "4.7.0",
+        "@weblif/fast-ui": "0.24.0",
+        "@weblif/react-top-loading-bar": "2.1.2",
+        "axios": "0.27.2",
+        "dayjs": "1.11.3",
+        "react-leaflet": "^4.0.1"
+    },
+    "devDependencies": {
+        "@types/leaflet": "^1.7.11",
+        "@types/react": "18.0.15",
+        "@types/react-dom": "18.0.6",
+        "@weblif/configure": "0.0.2",
+        "@weblif/fastpack": "1.12.3-canary",
+        "@weblif/plugin-less-loader": "^2.3.9",
+        "cross-env": "7.0.3",
+        "eslint-webpack-plugin": "3.2.0"
+    },
+    "overrides": {
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-router-dom": "6.3.0"
+    }
+}
