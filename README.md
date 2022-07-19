@@ -46,7 +46,7 @@ sh ./run-validate.sh
 
 ## 数据概要
 
-### 总计【315+】（实时更新）
+### 总计【316+】（实时更新）
 
 <details>
 <summary><b>点击查看：全国总数便携计算代码</b></summary>
