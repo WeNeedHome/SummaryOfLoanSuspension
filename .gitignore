@@ -8,6 +8,10 @@
 # js
 **/node_modules
 
+# py
+**/venv
+**/__pycache__
+
 # tmp
 **/tmp/*
 **/*.bak
