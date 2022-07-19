@@ -1,6 +1,9 @@
 import {INode, ITree, SORT_BY} from "../ds/property";
 
 export const sortNode = (node: INode, sortBy: SORT_BY, depth: number): INode => {
+    // 当没有孩子的时候，已经是属于楼盘级别了，数量排序已失效，所以不如转成拼音排序
+    if (node.children.length && !node.children[0].children) sortBy = "pronunciation"
+
     switch (sortBy) {
         case "pronunciation":
             node.children = node.children.sort((n1, n2) => n1.name.localeCompare(n2.name, 'zh'))
@@ -13,9 +16,10 @@ export const sortNode = (node: INode, sortBy: SORT_BY, depth: number): INode => 
         default:
             break
     }
-    if (depth > 1) {
-        node.children = node.children.map(child => sortNode(child, sortBy, depth - 1))
-    }
+
+    // recursive
+    if (depth > 1) node.children = node.children.map(child => sortNode(child, sortBy, depth - 1))
+
     return node
 }
 

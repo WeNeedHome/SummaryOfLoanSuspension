@@ -155,11 +155,11 @@ const validate = () => {
 const writeSuspensionData = () => {
     const PROPERTIES_TREE_PATH = path.join(DATA_GENERATED_DIR, "properties-tree.json")
     fs.writeFileSync(PROPERTIES_TREE_PATH, JSON.stringify(curData, null, 2), 'utf-8')
-    console.log('wrote suspension data into file://' + PROPERTIES_TREE_PATH)
+    console.log('wrote properties data into file://' + PROPERTIES_TREE_PATH)
 
     const PROPERTIES_FLAT_PATH = path.join(DATA_GENERATED_DIR, "properties-flat.json")
     fs.writeFileSync(PROPERTIES_FLAT_PATH, JSON.stringify(flatItems, null, 2), 'utf-8')
-    console.log('wrote suspension data into file://' + PROPERTIES_FLAT_PATH)
+    console.log('wrote properties data into file://' + PROPERTIES_FLAT_PATH)
 }
 
 
