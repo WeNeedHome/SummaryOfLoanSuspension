@@ -70,7 +70,7 @@ export const genPropertiesMd = (style: MdProvinceStyle, sourcePath: string, targ
     propertiesTree = sortITree(propertiesTree, sortBy, sortDepth)
     console.log(`sorted properties tree by ${sortBy} with depth of ${sortDepth}`)
 
-    let writer: string = `## 分省数据 (总计：**${propertiesTree.count}+**，按${depth2Chinese(sortDepth)}级${SORT_BY_DICT_CN[sortBy]}）\n`
+    let writer: string = `## 分省数据 (总计：【**${propertiesTree.count}+**】，按${depth2Chinese(sortDepth)}级${SORT_BY_DICT_CN[sortBy]}）\n`
     readLines()
 
     if (joinReadmePath) {

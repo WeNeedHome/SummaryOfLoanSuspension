@@ -10,6 +10,9 @@ V3 版本抽象出了停贷数据的结构树 [`ITree`](./src/itree/ds.ts)
 基于 `ITree`，我们实现的 [`genProperties`](./src/genProperties.ts)
 与 [`genMarkdown`](./src/genMarkdown.ts) 两个主函数，已经能够同时读取旧版与新版 readme 文档。
 
+例如 `ts-node genMarkdown.ts -b pronunciation -j README.md -t README.md`
+可以实现无脑生成按拼音排序的 readme 文档。
+
 ## versions
 
 - [DEPRECIATED: V1](src/v1/README.md)
