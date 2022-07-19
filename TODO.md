@@ -22,7 +22,7 @@
 ## 前端
 
 - [x] F001: 以城市为单位，实现可视化统计
-- [ ] F002: 以楼盘为单位，实现可视化，思路：结合城市与小区，对接开源的地图库，例如：[Leaflet](https://github.com/Leaflet/Leaflet) 或者其他，基于每个小区的轮廓数据画polygon
+- [x] F002: 以小区为单位，实现可视化，思路：结合城市与小区，对接开源的地图库，例如：[Leaflet](https://github.com/Leaflet/Leaflet) 或者其他，基于每个小区的轮廓数据画polygon
 - [ ] F003: 以小区为单位，统计开发商信息，思路：搜索城市与小区，看是否有相关的开发商信息，爬虫并汇总数据
 - [ ] F004: 对没有来源的楼盘数据做特殊标识，见：https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/860#discussioncomment-3180057
 - [ ] ...
