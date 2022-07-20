@@ -61,7 +61,7 @@ ts-node genMarkdown.ts -t /tmp/README.md
 ts-node genMarkdown.ts -j
 ```
 
-由此可知，我们只需要使用 `ts-node genMarkdown.ts -j -t ../../README.md` 即可以直接实现覆写 README
+由此可知，我们只需要使用 `ts-node genMarkdown.ts -b pronunciation -j README.md -t README.md` 即可以直接实现覆写 README
 的效果，但是请注意，这样的操作是不可逆的，所以必要时要记得备份。
 
 ### `validateLocalImages.ts`
