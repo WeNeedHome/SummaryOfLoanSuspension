@@ -2,7 +2,7 @@ import * as fs from "fs";
 import path from "path";
 import {DATA_GENERATED_DIR} from "../const";
 import regionTree from "../../../../../data/source/region-tree.json"
-import {Address, AddressWithCount} from "../../../../frontend/react/src/ds";
+import {Address, AddressWithCount} from "../../../../frontend/react/src/visualization/ds";
 import {Property} from "../v1/ds";
 
 

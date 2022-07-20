@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-import {Errors} from "./ds/errors";
-import {IFlatItem, IItem, INode} from "./ds/property";
 import {
     DATA_GENERATED_DIR,
     ITEM_SEP,
@@ -13,7 +11,8 @@ import {
     REG_PROV,
     REG_START,
     REG_TOTAL
-} from "./const";
+} from "../const";
+import { IFlatItem, IItem, INode } from "../itree/ds";
 
 const collectProv = () => curData.children.push(curProv)
 const collectCity = () => curProv.children.push(curCity)
@@ -63,6 +62,9 @@ const parseCityLine = (line: string): string => {
     const itemsStrRaw = matched[3]
     const itemsStrNew = parseItems(itemsStrRaw)
     collectCity()
+    if (curCity.count !== curCity.children.length)
+        console.error(line, curCity)
+
     return line.replace(itemsStrRaw, itemsStrNew)
 }
 
@@ -72,39 +74,25 @@ const parseCityLine = (line: string): string => {
  */
 const parseLine = (line: string): string => {
 
-    // 已结束判退
-    if (isEnded)
-        return line
-
-    // 确认结束判退，并回收最后一个省份
-    if (REG_END.test(line)) {
-        isEnded = true
-        collectProv()
-        return line
-    }
-
-    // 总数在省份数据之前，因此先匹配
+    // 这句话可以独立运行，反正只会匹配到一次，与程序状态无关
     if (REG_TOTAL.test(line))
-        if (curData.count) throw new Error(Errors.IMPOSSIBLE)
-        else curData.count = parseInt((line.match(REG_TOTAL) as RegExpMatchArray)[1])
+        curData.count = parseInt((line.match(REG_TOTAL) as RegExpMatchArray)[1])
 
-    // 确认是否开始
-    if (REG_START.test(line))
-        if (isStarted) throw new Error(Errors.IMPOSSIBLE)
-        else isStarted = true
+    // 开始匹配是结束匹配的子集，所以需要率先对结束匹配做一些限定
+    if (isStarted && REG_END.test(line)) {
+        if (!isEnded) collectProv()
+        isEnded = true
+    }
+    if (REG_START.test(line)) isStarted = true
 
-    // 未开始判退
-    if (!isStarted)
-        return line
+    // 开始匹配
+    if (isStarted && !isEnded) {
+        // 解析省份
+        if (REG_PROV.test(line)) line = parseProvLine(line)
 
-    // 解析省份
-    if (REG_PROV.test(line))
-        return parseProvLine(line)
-
-    // 解析城市
-    else if (REG_CITY.test(line))
-        return parseCityLine(line)
-
+        // 解析城市
+        if (REG_CITY.test(line)) line = parseCityLine(line)
+    }
     return line
 }
 

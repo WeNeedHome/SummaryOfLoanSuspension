@@ -1,4 +1,4 @@
-import {IItem} from "../ds/property";
+import { IItem } from "../itree/ds";
 
 export const formatItemLine = (item: IItem) => {
     return item.uri

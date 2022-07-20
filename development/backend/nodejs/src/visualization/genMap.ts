@@ -1,18 +1,20 @@
 import path from "path";
-import fs, {createWriteStream} from "fs";
+import fs from "fs";
 import axios from "axios";
-import {ArgumentParser} from "argparse";
+import { ArgumentParser } from "argparse";
 
-import {GOOGLE_MAP_API_KEY} from "../../../../frontend/react/src/const";
-import {AddressWithCount} from "../../../../frontend/react/src/ds";
+import { GOOGLE_MAP_API_KEY } from "../../../../frontend/react/src/visualization/const";
+import { AddressWithCount } from "../../../../frontend/react/src/visualization/ds";
 
-import {DATA_CONFIG_GOOGLE_THEME_PATH, DATA_GENERATED_DIR, DATA_VISUALIZATION_PATH} from "../const";
-import {Errors} from "../ds/errors";
+import { DATA_CONFIG_GOOGLE_THEME_PATH, DATA_GENERATED_DIR, DATA_VISUALIZATION_PATH } from "../const";
+import { Errors } from "../ds/errors";
 
-import {Lang} from "./google-map/ds";
-import {encodeFeaturesFromFileToArray} from "./google-map/encodeFeatures";
-import {paramsSerializer} from "./google-map/utils";
-import {drawPath, genCirclePoints} from "./google-map/genCirclePoints";
+import { Lang } from "./google-map/ds";
+import { encodeFeaturesFromFileToArray } from "./google-map/encodeFeatures";
+import { paramsSerializer } from "./google-map/utils";
+import { drawPath, genCirclePoints } from "./google-map/genCirclePoints";
+import Jimp from 'jimp'
+
 
 /**
  * ref: https://developers.google.com/maps/documentation/maps-static/start
@@ -40,7 +42,6 @@ export interface IGenMap {
 }
 
 export const getPolylineForCities = (): string[] => {
-    const cities: AddressWithCount[] = JSON.parse(fs.readFileSync(DATA_VISUALIZATION_PATH, "utf-8"))
     console.log('reading cities data from file://' + DATA_VISUALIZATION_PATH)
     return Object.values(cities).map(item => drawPath(genCirclePoints(
         item.pos.lat,                                           // lat
@@ -83,10 +84,28 @@ export function genMap(props: IGenMap) {
         }
     )
         .then(res => {
-            const fp     = path.join(DATA_GENERATED_DIR, `visualization-${props.themeName?.replace('.json', '') || 'standard'}.${format}`)
-            const writer = createWriteStream(fp);
-            res.data.pipe(writer)
-            console.log("wrote image to file://" + fp)
+            const fp  = path.join(DATA_GENERATED_DIR, `visualization-${props.themeName?.replace('.json', '') || 'standard'}.${format}`)
+            const fp2 = fp.replace('.png', '-wwm.png')
+            res.data.pipe(fs.createWriteStream(fp))
+                .on('finish', async () => {
+                    console.log("wrote image to file://" + fp)
+                    // TODO: Jimp只支持bitmap格式.fnt结尾的字体，我费了很长时间都没搞定一份可以用的。。有人看到了帮个忙呗，希望能用中文写我们的声明
+                    // 只有黑色主题才需要白色字体
+                    const font  = await Jimp.loadFont(props.themeName?.includes('dark') ? Jimp.FONT_SANS_16_WHITE : Jimp.FONT_SANS_16_BLACK);
+                    // read image: https://github.com/oliver-moran/jimp/tree/master/packages/jimp
+                    const image = await Jimp.read(fp);
+
+                    [
+                        `[${new Date().toLocaleDateString()}] ${totalCities} cities, ${totalProperties} projects`,
+                        'https://github.com/WeNeedHome/SummaryOfLoanSuspension',
+                    ]
+                        .forEach((s, i) => {
+                            image.print(font, 10, 30 + i * 20, s)
+                        })
+                    await image.write(fp2)
+                    console.log('wrote image to file://' + fp2)
+                })
+
         })
         .catch(err => {
             console.error({err})
@@ -94,8 +113,11 @@ export function genMap(props: IGenMap) {
 }
 
 
-const polylineForCities               = getPolylineForCities()
 const availableGoogleThemes: string[] = fs.readdirSync(DATA_CONFIG_GOOGLE_THEME_PATH)
+const cities: AddressWithCount[]      = JSON.parse(fs.readFileSync(DATA_VISUALIZATION_PATH, "utf-8"))
+const polylineForCities               = getPolylineForCities()
+const totalCities                     = cities.length
+const totalProperties                 = cities.reduce((p, c) => p + c.count, 0)
 
 
 const parser = new ArgumentParser({

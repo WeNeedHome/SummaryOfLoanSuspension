@@ -30,7 +30,7 @@ def search_property_by_name(property_name: str, city_name: str) -> IDBProperty:
 
 
 def get_property_name_from_id(property_id: str, city: str = None) -> str:
-    raise search_property_by_id(property_id)["ProjName"]
+    return search_property_by_id(property_id)["ProjName"]
 
 
 def get_property_id_from_name(property_name: str, city: str) -> str:
