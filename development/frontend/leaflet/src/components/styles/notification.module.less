@@ -1,0 +1,37 @@
+.notification {
+    cursor: pointer;
+    padding: 4px;
+    vertical-align: middle;
+}
+
+.notificationOverlay {
+    width: 336px;
+    height: 500px;
+}
+
+.notificationTabs {
+    height: 300px;
+    padding: .5em;
+}
+
+.notificationDropdown {
+    height: 100%;
+}
+
+.notificationBottom {
+    > div {
+        display: inline-block;
+        cursor: pointer;
+        width: 50%;
+        height: 46px;
+        color: rgba(0,0,0,.85);
+        line-height: 46px;
+        text-align: center;
+        border-top: 1px solid #f0f0f0;
+        border-radius: 0 0 2px 2px;
+        transition: all .3s;
+        &:hover {
+            background-color: #f5f5f5;
+        }
+    }
+}

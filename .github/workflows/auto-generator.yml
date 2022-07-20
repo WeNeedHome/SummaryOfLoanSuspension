@@ -1,0 +1,68 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: auto-generator
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  update-generated-file:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+
+    defaults:
+      run:
+        working-directory: '.'
+
+    steps:
+      - name: ( 1/7 ) setup environment for git
+        uses: actions/checkout@v3
+
+#      - name: ( 2/7 ) setup environemnt for node
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version: ${{ matrix.node-version }}
+#          cache: 'npm'
+#          cache-dependency-path: 'development/backend/nodejs/package-lock.json'
+
+      - name: ( 2/7 ) cache node_modules  # ref: https://dev.to/mattpocockuk/how-to-cache-nodemodules-in-github-actions-with-yarn-24eh
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: ( 3/7 ) setup environment for project
+        run: cd development/backend/nodejs && npm i && npm i -g ts-node
+
+      - name: ( 4/7 ) generate and validate properties data
+        run: sh ./run-validate.sh
+
+      - name: ( 5/7 ) genrate map to ensure latest
+        run: sh ./run-visualization.sh
+
+      - name: ( 6/7 ) check for changes
+        run: |
+          if git diff --exit-code; then
+            echo "has_changes=false" >> $GITHUB_ENV
+          else
+            echo "has_changes=true" >> $GITHUB_ENV
+          fi
+
+      - name: ( 7/7 ) commit and pr if local changes detected
+        if: ${{ env.has_changes == 'true' }}
+        uses: peter-evans/create-pull-request@v4
+        with:
+          add-paths: |
+            data/generated/*
+          commit-message: "Update generated data"
+          title: 'Update generated data'
+          body: 'Auto update the the generated data'
+          labels: automated-pr
+          branch: automated/update-generated-data
+          delete-branch: true
