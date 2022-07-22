@@ -11,6 +11,7 @@
     "@types/node": "^16.11.44",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "antd": "^4.21.7",
     "d3-request": "^1.0.6",
     "deck.gl": "^8.8.4",
     "mapbox-gl": "^2.9.1",

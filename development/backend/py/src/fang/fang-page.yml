@@ -1,0 +1,55 @@
+# 说实话，这网站除了数据还可以之外，根本没人用
+
+detail: # 最最最最最重要的一个接口
+  type: json
+  title: 非常详细的一个接口
+  path: /loupan/{id}/house/ajax/fixtiousPhoneGet/?newcode={id}
+
+home:
+  type: html
+  title: 楼盘首页
+  path: /loupan/{id}.htm
+house-detail:
+  type: html
+  title: 楼盘详情
+  path: /loupan/{id}/housedetail.htm
+activity:
+  type: html
+  title: 楼盘动态
+  path: /loupan/{id}/dongtai/
+album:
+  type: html
+  title: 楼盘相册
+  path: /loupan/{id}/photo/
+style:
+  type: html
+  title: 户型
+  path: /loupan/{id}/photo/list_900.htm
+report:
+  type: html
+  title: 楼盘报告
+  path: /loupan/{id}/housereport.html
+source:
+  type: html
+  title: 房源
+  path: /loupan/{id}/fangyuan.htm
+comment:
+  type: html
+  title: 点评
+  path: /loupan/{id}/dianping/
+bbs:
+  type: html
+  title: 业主论坛 # 全是模板，无一真人
+  path: /loupan/{id}/bbs/
+trend:
+  type: html
+  title: 房价走势
+  path: /loupan/{id}/fangjia.htm
+second-hand:
+  type: html
+  title: 二手房
+  path: /loupan/{id}/chushou/
+rent:
+  type: html
+  title: 租房
+  path: /loupan/{id}/chuzu/
