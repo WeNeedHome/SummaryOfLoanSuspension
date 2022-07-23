@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using Yarp.ReverseProxy.Transforms;
 
 var builder = WebApplication.CreateBuilder(args);
