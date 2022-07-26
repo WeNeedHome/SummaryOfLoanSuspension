@@ -611,6 +611,10 @@ sh ./run-validate.sh
 
 ### 鑫苑 [ * ]
 
+### 郑州康桥地产集团 [ * ]
+
+- 关联项目: 郑州市新郑市康桥那云溪
+
 ## 其他曝光
 
 - 天渝骄园(延期14个月), 梁溪本源(基本停工), 协信城立方(停工一年多),新力翡翠湾, 梁溪官邸(停工半年)，见：[#900](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/900)
