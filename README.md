@@ -64,7 +64,8 @@ sh ./run-validate.sh
 
 <details>
 <summary><b>点击查看：全国停贷地图（浅色）</b></summary>
-<img src="data/generated/visualization-light-wwm.png" alt="visualization-light">
+<img src="data/generated/visualization-light-wwm.png" alt="vis
+ualization-light">
 </details>
 
 <details>
@@ -81,7 +82,7 @@ sh ./run-validate.sh
 - ~~[Notion 数据库](https://www.notion.so/21dab14200e2478eb91c49b68d16495f)~~ (
   20220717已被恶意删除)
 
-## 分省数据 (总计：【**322+**】，按三级拼音升序）
+## 分省数据 (总计：【**323+**】，按三级拼音升序）
 
 ### 安徽省 [ 2 ]
 
@@ -490,7 +491,7 @@ sh ./run-validate.sh
   [太原市融创中心](images/山西省/太原市/太原市融创中心.png),
   泰禾金尊府
 
-### 陕西省 [ 22 ]
+### 陕西省 [ 23 ]
 
 - **西安市（21）：** 
   [当代嘉宝公园悦](images/陕西省/西安市/当代嘉宝公园悦停贷告知书.png),
@@ -516,7 +517,9 @@ sh ./run-validate.sh
   正荣紫阙台
 - **咸阳市（1）：** 
   [融创御河宸院DK6](images/陕西省/咸阳市/咸阳融创御河宸院DK6全体业主停货告知书.png)
-
+- **延安市（1）：** 
+  [延安融创宸院](images/陕西省/延安/延安融创宸院DK3和DK4全体业主停货告知书.png)
+  
 ### 上海市 [ 7 ]
 
 - **崇明区（1）：** 
