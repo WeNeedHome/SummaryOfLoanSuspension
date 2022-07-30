@@ -64,8 +64,7 @@ sh ./run-validate.sh
 
 <details>
 <summary><b>点击查看：全国停贷地图（浅色）</b></summary>
-<img src="data/generated/visualization-light-wwm.png" alt="vis
-ualization-light">
+<img src="data/generated/visualization-light-wwm.png" alt="visualization-light">
 </details>
 
 <details>
