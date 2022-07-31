@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
-import {IMAGES_DIR, PROJECT_DIR} from "../const";
-import {Errors} from "../ds/errors";
+import { IMAGES_DIR, PROJECT_DIR } from "../const";
+import { Errors } from "../ds/errors";
 
 export const provinceNamesUnderImagesDir = fs.readdirSync(IMAGES_DIR, {withFileTypes: true})
     .filter(d => d.isDirectory())
@@ -41,10 +41,26 @@ export function getImageUriRobust(provinceDir: string, cityDir: string | undefin
  * 检测一个图像链接是否能在本地文件夹中找到
  * @param link
  */
-export function validateImageLink(link: string): boolean {
+export function validateUri(link: string): boolean {
     if (!link) throw new Error(Errors.NOT_ALLOW_EMPTY)
 
     const imagePath = path.join(PROJECT_DIR, link)
     if (!fs.existsSync(imagePath)) throw new Error(Errors.NOT_EXIST + ': ' + link)
     return true
+}
+
+/**
+ * 检测一个图像链接是否能在本地文件夹中找到，但不报错
+ * @param uri
+ */
+export const checkUriExists = (uri: string): boolean => {
+    return uri.length > 0 && fs.existsSync(path.join(PROJECT_DIR, uri))
+}
+
+export const getPathRobust = (fp: string): string => {
+    if (!fp.startsWith('/'))
+        fp = path.join(PROJECT_DIR, fp)
+    if (!fs.existsSync(path.dirname(fp)))
+        throw new Error('fp not exists at file://' + fp)
+    return fp
 }

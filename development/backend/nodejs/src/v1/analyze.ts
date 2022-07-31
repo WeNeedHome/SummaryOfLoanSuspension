@@ -10,7 +10,7 @@ import {
     getCityNameUnderProvinceImagesDir,
     getImageUriRobust,
     getProvinceNameUnderImagesDir,
-    validateImageLink
+    validateUri
 } from "../utils/uri";
 import {ArgumentParser} from "argparse";
 import {Errors} from "../ds/errors";
@@ -130,7 +130,7 @@ function analyze(enableSortProvinces = false) {
                     let fileName = parsedLinkFrags[parsedLinkFrags.length - 1]
                     let imageUri = getImageUriRobust(provinceDir, cityDir, fileName)
                     let newLink = [path.basename(IMAGES_DIR), imageUri].join('/')
-                    validateImageLink(newLink)
+                    validateUri(newLink)
                     property.link = newLink
                     if (parsedLink !== newLink) {
                         isModified = true
