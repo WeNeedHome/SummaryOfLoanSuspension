@@ -72,6 +72,16 @@ sh ./run-validate.sh
 <img src="data/generated/visualization-dark-wwm.png" alt="visualization-dark">
 </details>
 
+<details>
+<summary><b>点击查看：在线地图！</b></summary>
+我们做了一个在线地图，来让不方便使用 GitHub 的普通人看到这些数据。<br>
+* 域名：https://building.lulaolu.com<br>
+* 仓库：https://github.com/ritajie/incomplete-projects
+
+欢迎来为这个地图做贡献！
+![alt text](https://github.com/ritajie/incomplete-projects/blob/master/incomplete_projects/static/img/demo.png?raw=true)
+</details>
+
 ### 其他数据公示处
 
 - ~~项目发起人~~ (被 ban 了）
