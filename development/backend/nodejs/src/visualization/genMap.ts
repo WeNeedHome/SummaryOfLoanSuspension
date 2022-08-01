@@ -90,30 +90,46 @@ export function genMap(props: IGenMap) {
                 .on('finish', async () => {
                     console.log("wrote raw       image to file://" + fp)
 
-                    const image = await Jimp.read(fp); // read image: https://github.com/oliver-moran/jimp/tree/master/packages/jimp
+                    var numberOfTries = 5
 
-                    // title
-                    image.print(await Jimp.loadFont(await getBmfPath(BMF_TITLE_RED_STROKE_PATH)),
-                        10, 20, '全国停贷地图')
-
-                    // sub-title
-                    image.print(
-                        await Jimp.loadFont(await getBmfPath(props.themeName?.includes('dark') ? BMF_TITLE_WHITE_PATH : BMF_TITLE_BLACK_PATH)), // 只有黑色主题才需要白色字体
-                        10, 50, `截至${new Date().toLocaleDateString()}，已涉及${totalCities} 城市, ${totalProperties} 楼盘`
-                    )
-
-                    // footer
-                    image.print(await Jimp.loadFont(await getBmfPath(BMF_FOOTER_PATH)),
-                        153, height - 24/*footer-size*/ - 2, '开源地址：https://github.com/WeNeedHome')
-
-                    await image.write(fp2)
-                    console.log('wrote watermarked image to file://' + fp2)
+                    while(numberOfTries > 0) {
+                        try{
+                            const image = await Jimp.read(fp); // read image: https://github.com/oliver-moran/jimp/tree/master/packages/jimp
+    
+                            // title
+                            image.print(await Jimp.loadFont(await getBmfPath(BMF_TITLE_RED_STROKE_PATH)),
+                                10, 20, '全国停贷地图')
+        
+                            // sub-title
+                            image.print(
+                                await Jimp.loadFont(await getBmfPath(props.themeName?.includes('dark') ? BMF_TITLE_WHITE_PATH : BMF_TITLE_BLACK_PATH)), // 只有黑色主题才需要白色字体
+                                10, 50, `截至${new Date().toLocaleDateString()}，已涉及${totalCities} 城市, ${totalProperties} 楼盘`
+                            )
+        
+                            // footer
+                            image.print(await Jimp.loadFont(await getBmfPath(BMF_FOOTER_PATH)),
+                                153, height - 24/*footer-size*/ - 2, '开源地址：https://github.com/WeNeedHome')
+        
+                            await image.write(fp2)
+                            console.log('wrote watermarked image to file://' + fp2)
+                            break;
+                        } 
+                        catch (e:any){
+                            numberOfTries-- 
+                            await delay(500)
+                            console.log(e,'error, ' + numberOfTries + ' more tries')
+                        }
+                    }
                 })
 
         })
         .catch(err => {
             console.error({err})
         })
+}
+
+function delay(milliseconds : number) {
+    return new Promise(resolve => setTimeout( resolve, milliseconds));
 }
 
 
