@@ -409,7 +409,7 @@ sh ./run-validate.sh
 - **泰州市（1）：** 
   恒大御景半岛
 - **无锡市（1）：** 
-  天渝骄园
+  [天渝骄园](images/江苏省/无锡市/wuxi_天渝骄园.png)
 - **扬州市（1）：** 
   [恒大观澜府](images/江苏省/扬州市/扬州恒大观澜府.jpg)
 - **镇江市（2）：** 
@@ -619,7 +619,7 @@ sh ./run-validate.sh
 
 ## 其他曝光
 
-- 天渝骄园(延期14个月), 梁溪本源(基本停工), 协信城立方(停工一年多),新力翡翠湾, 梁溪官邸(停工半年)，见：[#900](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/900)
+- 梁溪本源(基本停工), 协信城立方(停工一年多),新力翡翠湾, 梁溪官邸(停工半年)，见：[#900](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/900)
 
 - 河北-邢台-皓顺壹号院，见：[#940](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/940)
 
