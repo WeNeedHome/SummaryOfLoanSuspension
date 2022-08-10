@@ -731,3 +731,28 @@ sh ./run-validate.sh
 
 - 山东省青岛市西海岸新区融创影都学府三期项目如不能在2022年9月30日之前全面复工，将采取动态还贷，[告知书](./others/山东省青岛市西海岸新区融创影都学府三期/青岛西海岸新区融创影都学府三期.jpeg)在此。
 
+- 河北省-邯郸市-北湖尚水湾 [#65](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/65)
+
+- 河北省-三河市-天洋城同心圆，水岸花语，百世金谷产业基地二期 3个烂尾小区 [#110](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/110)
+
+- 湖北省-黄石市-黄石广场，开发商已破产！ [#134](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/134) [图一](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/c798e3a792f58be11a522e1f024777e5cf27c56c/images/%E9%BB%84%E7%9F%B3%E5%B8%82%E9%BB%84%E7%9F%B3%E5%B9%BF%E5%9C%BA%E5%BC%80%E5%8F%91%E5%95%86%E7%A0%B4%E4%BA%A7%E7%83%82%E5%B0%BE%E5%9B%BE%E4%B8%80.png) [图二](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/c798e3a792f58be11a522e1f024777e5cf27c56c/images/%E9%BB%84%E7%9F%B3%E5%B8%82%E9%BB%84%E7%9F%B3%E5%B9%BF%E5%9C%BA%E5%BC%80%E5%8F%91%E5%95%86%E7%A0%B4%E4%BA%A7%E7%83%82%E5%B0%BE%E5%9B%BE%E4%BA%8C.png)
+
+- 河北省-保定市-涞水新城华银城人才家园 [#159](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/159)
+
+- 天津市-[南开区凌宾路地铁B口西侧-融创宸院（华川园）](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/53d4a3fd467974d86d727ff3151132c67b4e8493/images/%E5%8D%97%E5%BC%80%E5%8C%BA%E8%9E%8D%E5%88%9B%E5%AE%B8%E9%99%A2.jpg)，[西青区津同公路与子牙桥交口-蓝光雍绵半岛](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/53d4a3fd467974d86d727ff3151132c67b4e8493/images/%E8%A5%BF%E9%9D%92%E5%8C%BA%E9%9B%8D%E7%BB%B5%E5%8D%8A%E5%B2%9B.jpg) 两个烂尾楼 [#161](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/161)
+
+- 广西壮族自治区-桂林市-合凯山水国际 [#217](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/217)
+
+- 河南省-许昌市-铂悦山，博林首府，恒大悦龙台 3个停工楼盘 [#234](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/234)
+
+- 福建省-福州市-永泰青云小镇 [#258](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/258)
+
+- 河南省-三门峡市-航科城，开阳盛世，中海国际，春天城 4个烂尾项目 [#261](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/261)
+
+- 陕西省-西安市-贞观首府 [#262](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/262)
+
+- 湖北省-宜昌市-宜昌夷陵区恒大名都二期（2021.8停工）[#269](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/269)
+
+- 云南省-昆明市-永鑫哈弗中心（9月），锦艺昆明之光（10月）（缺告知书） [#272](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/272)
+
+- 湖北省-孝感市-云梦县衍泽新都 [#274](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/274)
