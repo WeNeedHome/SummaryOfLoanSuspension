@@ -4,9 +4,12 @@
 export interface IItem {
     name: string
     uri: string
+    developer: string
 }
 
-export interface IFlatItem extends IItem {
+export interface IFlatItem {
+    name: string
+    uri: string
     city: string
     province: string
 }
