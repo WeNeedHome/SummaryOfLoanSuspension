@@ -1,7 +1,7 @@
 import fs from "fs";
 import { ArgumentParser } from "argparse";
 
-import { PROPERTIES_TREE_PATH, REG_END, REG_START } from "./const";
+import { PROPERTIES_TREE_PATH, REG_END_DEVELOPER, REG_START } from "./const";
 
 import { depth2Chinese } from "./utils/conversion";
 import { Errors } from "./ds/errors";
@@ -97,7 +97,7 @@ export const genPropertiesMd = (style: MdProvinceStyle, sourcePath: string, targ
         let isStarted               = false
         let isEnded                 = false
         for (let line of linesRaw) {
-            if (isStarted && /^## 其他曝光/.test(line)) isEnded = true
+            if (isStarted && REG_END_DEVELOPER.test(line)) isEnded = true
             if (REG_START.test(line)) isStarted = true
             if (!isStarted) linesBefore.push(line)
             if (isEnded) linesAfter.push(line)
