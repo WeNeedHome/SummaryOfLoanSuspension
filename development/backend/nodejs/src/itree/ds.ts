@@ -7,9 +7,7 @@ export interface IItem {
     developer: string
 }
 
-export interface IFlatItem {
-    name: string
-    uri: string
+export interface IFlatItem extends IItem {
     city: string
     province: string
 }
