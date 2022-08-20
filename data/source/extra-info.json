@@ -861,5 +861,60 @@
     "湖南省-郴州市-郴州鲲鹏商贸城":{
         "developer":"郴州市鲲鹏房地产开发有限公司",
         "fang.com":"https://www.fang.com/xinfang/chenzhou-2719223768/"
+    },
+    "吉林省-公主岭市-恒大花溪谷或水世界":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江苏省-常州市-三盛璞悦湾":{
+        "developer":"三盛控股（集团）有限公司",
+        "developer-subsidiary":"常州润盛房地产开发有限公司",
+        "fang.com":"https://cz.esf.fang.com/loupan/1820158072.htm"
+    },
+    "江苏省-连云港市-恒泰悦珑府":{
+        "developer":"恒泰集团",
+        "developer-subsidiary":"连云港恒泰置业有限公司",
+        "fang.com":"https://www.fang.com/xinfang/lyg-1812136140/"
+    },
+    "江苏省-南京市-金陵华夏中心":{
+        "developer":"华夏幸福",
+        "fang.com":"https://www.fang.com/xinfang/nanjing-1810180544/"
+    },
+    "江苏省-南通市-阳光城未来悦":{
+        "developer":"阳光城集团",
+        "fang.com":""
+    },
+    "江苏省-苏州市-泰禾金尊府":{
+        "developer":"泰禾",
+        "fang.com":""
+    },
+    "江苏省-苏州市-阳光城檀苑":{
+        "developer":"阳光城集团",
+        "fang.com":""
+    },
+    "江苏省-宿迁市-恒大悦澜湾":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江苏省-泰州市-恒大御景半岛":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江苏省-无锡市-天渝骄园":{
+        "developer":"启迪协信科技城投资集团有限公司",
+        "developer-subsidiary":"无锡协信远信房地产开发有限公司",
+        "fang.com":"https://wuxi.esf.fang.com/loupan/1822091642.htm"
+    },
+    "江苏省-扬州市-恒大观澜府":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江苏省-镇江市-恒大童世界":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江苏省-镇江市-句容市宝华镇泰禾金尊府":{
+        "developer":"泰禾",
+        "fang.com":""
     }
 }
