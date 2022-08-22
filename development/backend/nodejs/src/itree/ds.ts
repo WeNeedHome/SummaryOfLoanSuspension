@@ -4,6 +4,7 @@
 export interface IItem {
     name: string
     uri: string
+    developer: string
 }
 
 export interface IFlatItem extends IItem {
