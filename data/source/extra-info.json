@@ -687,7 +687,7 @@
         "fang.com":"https://wuhan.esf.fang.com/loupan/2610153220.htm"
     },
     "湖北省-武汉市-当代铭山筑(人福国际健康城)":{
-        "developer":"当代置业",
+        "developer":"武汉当代科技产业集团股份有限公司",
         "developer-subsidiary":"武汉珂美立德生物医药有限公司",
         "fang.com":"https://www.fang.com/xinfang/wuhan-2610155448/"
     },
@@ -1102,6 +1102,104 @@
     },
     "山西省-太原市-泰禾金尊府":{
         "developer":"泰禾",
+        "fang.com":""
+    },
+    "陕西省-西安市-当代嘉宝公园悦":{
+        "developer":"当代置业（中国）有限公司",
+        "developer-subsidiary":"西安嘉宝摩码置业有限公司",
+        "fang.com":"https://www.fang.com/xinfang/ankang-3619170182/"
+    },
+    "陕西省-西安市-德杰状元府邸":{
+        "developer":"重庆德杰地产集团有限公司",
+        "developer-subsidiary":"西安新杰尚置业有限公司",
+        "fang.com":"https://xian.esf.fang.com/loupan/3610190012.htm"
+    },
+    "陕西省-西安市-国际幸福城":{
+        "developer":"陕西宏润实业集团有限公司",
+        "developer-subsidiary":"陕西宏润房地产开发有限公司",
+        "leju.com":"https://house.leju.com/sx35005/"
+    },
+    "陕西省-西安市-鄠邑区名仕华庭":{
+        "developer":"西安双成置业有限公司",
+        "xhume.cc":"https://xhume.cc/plugin.php?id=tom_tcfangchan&site=1&mod=mendianinfo&mendian_id=6"
+    },
+    "陕西省-西安市-锦业6号府邸":{
+        "developer":"锦业地产集团有限公司",
+        "developer-subsidiary":"陕西世纪锦业地产有限公司",
+        "anjuke.com":"https://mobile.anjuke.com/esf/xa-cm1061049/"
+    },
+    "陕西省-西安市-乐华城香榭庄园":{
+        "developer":"乐华恒业集团",
+        "developer-subsidiary":"陕西逸阳房地产开发有限公司",
+        "fang.com":"https://www.fang.com/xinfang/xian-3610191136/"
+    },
+    "陕西省-西安市-绿地璀璨天城二期":{
+        "developer":"绿地",
+        "fang.com":""
+    },
+    "陕西省-西安市-绿地新里程三期兰亭公馆":{
+        "developer":"绿地",
+        "fang.com":""
+    },
+    "陕西省-西安市-世茂璀璨倾城二期":{
+        "developer":"世茂集团",
+        "fang.com":""
+    },
+    "陕西省-西安市-万和郡":{
+        "developer":"隆基泰和",
+        "anjuke.com":"https://xa.fang.anjuke.com/loupan/409071.html"
+    },
+    "陕西省-西安市-西安灞桥区易合坊":{
+        "developer":"西安四德置业有限公司",
+        "anjuke.com":"https://xa.anjuke.com/community/view/830911"
+    },
+    "陕西省-西安市-西安当代境MOMA":{
+        "developer":"当代置业（中国）有限公司",
+        "developer-subsidiary":"西安君华置业有限公司",
+        "fang.com":"https://www.fang.com/xinfang/xian-3610191838/"
+    },
+    "陕西省-西安市-西安沣东新城君合天玺":{
+        "developer":"武汉当代科技产业集团股份有限公司",
+        "developer-subsidiary":"陕西冠泽房地产开发有限公司",
+        "fang.com":"https://www.fang.com/xinfang/xian-3610190682/"
+    },
+    "陕西省-西安市-西安恒大文化旅游城":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "陕西省-西安市-西安康桥悦蓉园":{
+        "developer":"康桥地产集团有限公司",
+        "fang.com":"https://xian.esf.fang.com/loupan/3610190566.htm"
+    },
+    "陕西省-西安市-西安名京院望":{
+        "developer":"西安名京房地产开发有限公司",
+        "anjuke.com":"https://xa.anjuke.com/community/view/1286851"
+    },
+    "陕西省-西安市-西安铭鸿中心二期":{
+        "developer":"西安浩丰房地产开发有限公司",
+        "fang.com":"https://xian.esf.fang.com/loupan/3610191006/housedetail.htm"
+    },
+    "陕西省-西安市-西安远洋合能枫丹唐悦二期":{
+        "developer":"合能地产",
+        "developer-subsidiary":"西安合能美房地产开发有限公司",
+        "fang.com":"https://xian.esf.fang.com/loupan/3610190922.htm"
+    },
+    "陕西省-西安市-阳光100阿尔勒":{
+        "developer":"阳光100",
+        "developer-subsidiary":"陕西金源纳帕房地产开发有限公司",
+        "fang.com":"https://xian.newhouse.fang.com/loupan/3611002970.htm"
+    },
+    "陕西省-西安市-正荣紫阙峯著":{
+        "developer":"正荣集团有限公司",
+        "developer-subsidiary":"西安正弘丰置业有限公司",
+        "fang.com":"https://www.fang.com/xiaoqu/xian-3610191490/"
+    },
+    "陕西省-咸阳市-融创御河宸院DK6":{
+        "developer":"融创",
+        "fang.com":""
+    },
+    "陕西省-延安市-延安融创宸院":{
+        "developer":"融创",
         "fang.com":""
     }
 }
