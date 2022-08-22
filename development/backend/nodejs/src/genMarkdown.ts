@@ -76,7 +76,7 @@ export const genPropertiesMd = (style: MdProvinceStyle, sourcePath: string, targ
             writer += `### ${key} 【${value.length}】\n`
             total += value.length
         });
-        writer += `\n### 开发商总共统计楼盘数 ${total} [数据源](data/source/extra-info.json)`
+        writer += `\n### 开发商总数 ${Object.entries(developerDic).length} 统计楼盘数 ${total} [数据源](data/source/extra-info.json)`
         writer += '\n'
         console.log('finished writing developers')
     }
