@@ -973,5 +973,51 @@
     "江西省-宜春市-恒大绿洲四期":{
         "developer":"恒大",
         "fang.com":""
+    },
+    "辽宁省-大连市-大连市鑫创科技健康小镇":{
+        "developer":"鑫苑",
+        "developer-subsidiary":"大连鑫颐仁居实业有限公司",
+        "fang.com":"https://dl.esf.fang.com/loupan/1618121127.htm"
+    },
+    "辽宁省-大连市-融创海逸长洲":{
+        "developer":"融创",
+        "fang.com":""
+    },
+    "辽宁省-大连市-香海滨城二期":{
+        "developer":"大连绿源房地产开发有限公司",
+        "developer-subsidiary":"普兰店市市政房屋开发有限公司",
+        "fang.com":"https://www.fang.com/xiaoqu/dl-1618760837/"
+    },
+    "辽宁省-沈阳市-恒大盛京珺庭":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "辽宁省-沈阳市-恒大时代新城":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "辽宁省-沈阳市-恒大文化旅游城":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "辽宁省-沈阳市-恒大西江天悦":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "辽宁省-沈阳市-恒大中央广场":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "辽宁省-沈阳市-金科集美东方":{
+        "developer":"金科地产集团股份有限公司",
+        "fang.com":""
+    },
+    "内蒙古自治区-呼和浩特市-香墅岭西区":{
+        "developer":"内蒙古鼎诚房地产开发有限责任公司",
+        "fang.com":"https://www.fang.com/xiaoqu/nm-1510804715/"
+    },
+    "宁夏回族自治区-银川市-恒大珺睿府":{
+        "developer":"恒大",
+        "fang.com":""
     }
 }
