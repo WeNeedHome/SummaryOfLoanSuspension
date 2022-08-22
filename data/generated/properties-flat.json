@@ -1458,7 +1458,7 @@
   {
     "name": "天渝骄园",
     "uri": "images/江苏省/无锡市/wuxi_天渝骄园.png",
-    "developer": "启迪协信科技城投资集团有限公司",
+    "developer": "协信控股",
     "city": "无锡市",
     "province": "江苏省"
   },
@@ -1682,7 +1682,7 @@
   {
     "name": "胶州协信天骄云麓",
     "uri": "images/山东省/青岛市/胶州协信天骄云麓.jpeg",
-    "developer": "重庆协信远创实业有限公司",
+    "developer": "协信控股",
     "city": "青岛市",
     "province": "山东省"
   },
@@ -1799,13 +1799,6 @@
     "province": "山西省"
   },
   {
-    "name": "世茂璀璨倾城二期（7月）",
-    "uri": "images/陕西省/西安市/西安世茂璀璨倾城二期停贷告知书.png",
-    "developer": "",
-    "city": "西安市",
-    "province": "陕西省"
-  },
-  {
     "name": "当代嘉宝公园悦",
     "uri": "images/陕西省/西安市/当代嘉宝公园悦停贷告知书.png",
     "developer": "当代置业（中国）有限公司",
@@ -1862,9 +1855,9 @@
     "province": "陕西省"
   },
   {
-    "name": "世茂璀璨倾城二期",
+    "name": "世茂璀璨倾城二期（7月）",
     "uri": "images/陕西省/西安市/西安世茂璀璨倾城二期停贷告知书.png",
-    "developer": "",
+    "developer": "世茂集团",
     "city": "西安市",
     "province": "陕西省"
   },
