@@ -916,5 +916,62 @@
     "江苏省-镇江市-句容市宝华镇泰禾金尊府":{
         "developer":"泰禾",
         "fang.com":""
+    },
+    "江西省-赣州市-绿地博览城":{
+        "developer":"绿地",
+        "fang.com":""
+    },
+    "江西省-赣州市-于都县恒大御景北区":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江西省-景德镇市-恒大翡翠华庭":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江西省-景德镇市-恒大珑庭":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江西省-景德镇市-恒大悦府":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江西省-南昌市-恒大珺庭":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江西省-南昌市-恒大林溪府":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江西省-南昌市-鸿海城":{
+        "developer":"鸿海地产",
+        "fang.com":"https://nc.esf.fang.com/loupan/2310200356.htm"
+    },
+    "江西省-南昌市-新力城":{
+        "developer":"新力地产集团有限公司",
+        "fang.com":""
+    },
+    "江西省-南昌市-中金中心":{
+        "developer":"江西中金黄金珠宝置业有限公司",
+        "fang.com":"https://www.fang.com/xinfang/nc-2310199870/"
+    },
+    "江西省-萍乡市-恒大御府二期":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江西省-萍乡市-庄和中央华府":{
+        "developer":"庄和集团",
+        "developer-subsidiary":"江西萍乡庄和房地产开发有限公司",
+        "anjuke.com":"https://m.anjuke.com/px/loupan/465757/"
+    },
+    "江西省-新余市-恒大翡翠华庭":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江西省-宜春市-恒大绿洲四期":{
+        "developer":"恒大",
+        "fang.com":""
     }
 }
