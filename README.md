@@ -91,7 +91,7 @@ sh ./run-validate.sh
 - ~~[Notion 数据库](https://www.notion.so/21dab14200e2478eb91c49b68d16495f)~~ (
   20220717已被恶意删除)
 
-## 分省数据 (总计：【**325+**】，按三级拼音升序）
+## 分省数据 (总计：【**327+**】，按三级拼音升序）
 
 ### 安徽省 [ 2 ]
 
@@ -159,18 +159,20 @@ sh ./run-validate.sh
 - **中山市（1）：** 
   泰禾金尊府
 
-### 广西壮族自治区 [ 22 ]
+### 广西壮族自治区 [ 24 ]
 
 - **北海市（1）：** 
   [融创海映兰屿三期](images/广西壮族自治区/北海市/广西北海市融创海映兰屿三期业主集体中止还贷告知书.png)
 - **崇左市（1）：** 
   [广西扶绥恒大文化旅游康养城](images/广西壮族自治区/崇左市/广西扶绥恒大文化旅游康养城停贷告知书.png)
-- **桂林市（5）：** 
+- **桂林市（7）：** 
   [桂林恒大城（10月）](images/广西壮族自治区/桂林市/桂林恒大城.jpg),
   [桂林融创文旅城N4地块](images/广西壮族自治区/桂林市/_桂林融创文旅城N4地块),
   灵川汇金万象新城（11月）,
   [融创文旅城N5地块（12月）](images/广西壮族自治区/桂林市/桂林融创文旅城N5地块揽云府西苑全体业主强制延期还贷告知书.png),
   [融创文旅城N7地块（10月）](images/广西壮族自治区/桂林市/桂林融创N7.png)
+  [山水国际](images/广西壮族自治区/桂林市/山水国际和山水华庭停贷告知函.jpg),
+  [山水华庭](images/广西壮族自治区/桂林市/山水国际和山水华庭停贷告知函.jpg)
 - **柳州市（2）：** 
   [恒大城二期、三期](images/广西壮族自治区/柳州市/柳州恒大二三期停贷.jpg),
   [鹿寨县麓湖公园里](images/广西壮族自治区/柳州市/鹿寨县麓湖公园里全体业主决定于2022年8月20日强制停贷告知书.jpg)
@@ -662,6 +664,7 @@ sh ./run-validate.sh
 ### 正阳县中原城置业集团有限公司 【1】
 ### 正荣集团有限公司 【1】
 ### 桂林市灵川县万象商贸城有限公司 【1】
+### 桂林市合凯实业有限公司 【2】
 ### 株洲诚建房地产开发有限公司 【1】
 ### 株洲塔山房地产开发有限公司 【1】
 ### 株洲华晨房地产开发有限责任公司 【3】
@@ -740,8 +743,6 @@ sh ./run-validate.sh
 - 河北省-保定市-涞水新城华银城人才家园 [#159](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/159)
 
 - 天津市-[南开区凌宾路地铁B口西侧-融创宸院（华川园）](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/53d4a3fd467974d86d727ff3151132c67b4e8493/images/%E5%8D%97%E5%BC%80%E5%8C%BA%E8%9E%8D%E5%88%9B%E5%AE%B8%E9%99%A2.jpg)，[西青区津同公路与子牙桥交口-蓝光雍绵半岛](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/53d4a3fd467974d86d727ff3151132c67b4e8493/images/%E8%A5%BF%E9%9D%92%E5%8C%BA%E9%9B%8D%E7%BB%B5%E5%8D%8A%E5%B2%9B.jpg) 两个烂尾楼 [#161](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/161)
-
-- 广西壮族自治区-桂林市-合凯山水国际 [#217](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/217)
 
 - 河南省-许昌市-铂悦山，博林首府，恒大悦龙台 3个停工楼盘 [#234](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/234)
 
