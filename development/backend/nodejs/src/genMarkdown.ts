@@ -1,7 +1,7 @@
 import fs from "fs";
 import { ArgumentParser } from "argparse";
 
-import { PROPERTIES_TREE_PATH, REG_END, REG_START } from "./const";
+import { PROPERTIES_TREE_PATH, REG_END_DEVELOPER, REG_START } from "./const";
 
 import { depth2Chinese } from "./utils/conversion";
 import { Errors } from "./ds/errors";
@@ -44,6 +44,7 @@ export const formatItem = (style: MdProvinceStyle, item: IItem, index: number, i
 
 export const genPropertiesMd = (style: MdProvinceStyle, sourcePath: string, targetPath: string, sortBy: SORT_BY, sortDepth: number, joinReadmePath: string) => {
     const readLines = () => {
+        let developerDic: {[dev: string]: string[]} = {};
         propertiesTree.children.map((prov) => {
             // add province node
             writer += formatProvince(style, prov.name, prov.count)
@@ -55,13 +56,29 @@ export const genPropertiesMd = (style: MdProvinceStyle, sourcePath: string, targ
                 // 解析项目
                 city.children.forEach((item, index, items) => {
                     writer += formatItem(style, item, index, items)
+                    if (item.developer.length > 0) {
+                        if (developerDic[item.developer] == null) {
+                            developerDic[item.developer] = []
+                        }
+                        developerDic[item.developer].push(item.name)
+                    }
                 })
 
                 // 最后一个项目之后再补一行（因为本身不换行）
                 writer += '\n'
             })
         })
-        console.log('finished reading lines')
+        console.log('finished writing items')
+
+        writer += '\n## 开发商数据（按拼音排序）\n'
+        var total = 0
+        Object.entries(developerDic).sort().reverse().forEach(([key, value]) => {
+            writer += `### ${key} 【${value.length}】\n`
+            total += value.length
+        });
+        writer += `\n### 开发商总共统计楼盘数 ${total} [数据源](data/source/extra-info.json)`
+        writer += '\n'
+        console.log('finished writing developers')
     }
 
     let propertiesTree: ITree = JSON.parse(fs.readFileSync(sourcePath, 'utf-8'))
@@ -80,7 +97,7 @@ export const genPropertiesMd = (style: MdProvinceStyle, sourcePath: string, targ
         let isStarted               = false
         let isEnded                 = false
         for (let line of linesRaw) {
-            if (isStarted && REG_END.test(line)) isEnded = true
+            if (isStarted && REG_END_DEVELOPER.test(line)) isEnded = true
             if (REG_START.test(line)) isStarted = true
             if (!isStarted) linesBefore.push(line)
             if (isEnded) linesAfter.push(line)

@@ -14,8 +14,8 @@
 - [ ] B001:基于楼盘数据，查找开发商，生成停贷开发商数据（issue: 2022/07/18）
 - [x] B002: 确保每张图片都能与楼盘对应，具体见：[validateLocalImages.ts](development/backend/nodejs/src/validateLocalImages.ts)
 - [x] B003: 增加了可视化脚本，具体见：[genMap.ts](development/backend/nodejs/src/visualization/genMap.ts)
-- [ ] B004: 实现所有图片按省/市二级分类（目前仍有许多图片未严格分类到城市文件夹内）
-- [ ] B005: 实现所有图片按省/市/区三级分类
+- [x] B004: 实现所有图片按省/市二级分类（目前仍有许多图片未严格分类到城市文件夹内）
+- [x] B005: 实现所有图片按省/市/区三级分类
 - [ ] B006: OCR提取银行等相关信息，见 [#840](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/840)
 - [x] B007: 因为[#911](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/911)，实现了添加水印
 - [ ] ...
