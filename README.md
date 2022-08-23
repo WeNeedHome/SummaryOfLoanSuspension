@@ -753,6 +753,10 @@ sh ./run-validate.sh
 - 河南省-三门峡市-航科城，开阳盛世，中海国际，春天城 4个烂尾项目 [#261](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/261)
 
 - 陕西省-西安市-贞观首府 [#262](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/262)
+- 陕西省-西安市-世茂璀璨倾城二期[10亿美元债违约、总负债超4600亿，世茂业主怎么办？](https://mp.weixin.qq.com/s/snzj98PNtkiWYfWgoAB3mA)、
+[西安世茂璀璨倾城2期已经烂尾？官方回复最新进展来了](https://www.163.com/dy/article/HDHSVSVN0553I4HO.html)、
+[面临烂尾，业主忍不住开团了](https://www.163.com/dy/article/HC2RO5F40553F4FM.html)、
+[恶人先告状——评厦门国际信托有限公司诉前财产保全案](https://mp.weixin.qq.com/s/364jiDqHurRpMllas9W1cQ)
 
 - 湖北省-宜昌市-宜昌夷陵区恒大名都二期（2021.8停工）[#269](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/269)
 
