@@ -664,6 +664,7 @@ sh ./run-validate.sh
 ### 正阳县中原城置业集团有限公司 【1】
 ### 正荣集团有限公司 【1】
 ### 桂林市灵川县万象商贸城有限公司 【1】
+### 桂林市合凯实业有限公司 【2】
 ### 株洲诚建房地产开发有限公司 【1】
 ### 株洲塔山房地产开发有限公司 【1】
 ### 株洲华晨房地产开发有限责任公司 【3】
@@ -742,8 +743,6 @@ sh ./run-validate.sh
 - 河北省-保定市-涞水新城华银城人才家园 [#159](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/159)
 
 - 天津市-[南开区凌宾路地铁B口西侧-融创宸院（华川园）](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/53d4a3fd467974d86d727ff3151132c67b4e8493/images/%E5%8D%97%E5%BC%80%E5%8C%BA%E8%9E%8D%E5%88%9B%E5%AE%B8%E9%99%A2.jpg)，[西青区津同公路与子牙桥交口-蓝光雍绵半岛](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/53d4a3fd467974d86d727ff3151132c67b4e8493/images/%E8%A5%BF%E9%9D%92%E5%8C%BA%E9%9B%8D%E7%BB%B5%E5%8D%8A%E5%B2%9B.jpg) 两个烂尾楼 [#161](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/161)
-
-- 广西壮族自治区-桂林市-合凯山水国际 [#217](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/217)
 
 - 河南省-许昌市-铂悦山，博林首府，恒大悦龙台 3个停工楼盘 [#234](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/234)
 
