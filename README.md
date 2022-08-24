@@ -729,6 +729,8 @@ sh ./run-validate.sh
 - 赣榆区香港城、华中郡府等：这些盘已有十年以上历史，不知道相关业主利益是否解决，因此借此机会也放上来。具体见：[大家来说说赣榆的烂尾楼_赣榆吧_百度贴吧.pdf](others/【图片】大家来说说赣榆的烂尾楼_赣榆吧_百度贴吧.pdf)
 。参考来源：https://tieba.baidu.com/p/4710142504
 
+- 河南省-商丘市-鸿山美景 [图](https://user-images.githubusercontent.com/110381329/182118827-41b3e82a-0201-4254-8025-6ee729dcb23f.PNG)
+
 - 山东省青岛市西海岸新区融创影都学府三期项目如不能在2022年9月30日之前全面复工，将采取动态还贷，[告知书](./others/山东省青岛市西海岸新区融创影都学府三期/青岛西海岸新区融创影都学府三期.jpeg)在此。
 
 - 河北省-邯郸市-北湖尚水湾 [#65](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/65)
