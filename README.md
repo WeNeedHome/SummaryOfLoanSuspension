@@ -556,7 +556,6 @@ sh ./run-validate.sh
   [恒大翡翠华庭](images/四川省/德阳市/四川德阳恒大翡翠华庭.jpg)
 - **都江堰市（1）：** 
   [融创文旅滨江新区（8月）](images/四川省/都江堰市/都江堰市融创文旅滨江新区全体业主决定2022年8月30日强制停贷告知书.jpg)
-  [恒大云锦华庭（9月）]
 - **广安市（1）：** 
   帝谷公园城三期
 - **泸州市（1）：** 
@@ -624,6 +623,8 @@ sh ./run-validate.sh
 ## 其他曝光
 
 - 梁溪本源(基本停工), 协信城立方(停工一年多),新力翡翠湾, 梁溪官邸(停工半年)，见：[#900](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/900)
+
+- 四川省-都江堰市-恒大云锦华庭（9月）（缺告知书）
 
 - 河北-邢台-皓顺壹号院，见：[#940](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/940)
 
