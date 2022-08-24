@@ -756,3 +756,5 @@ sh ./run-validate.sh
 - 云南省-昆明市-永鑫哈弗中心（9月），锦艺昆明之光（10月）（缺告知书） [#272](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/272)
 
 - 湖北省-孝感市-云梦县衍泽新都 [#274](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/274)
+
+- 江苏省-扬州市-江都区金奥文昌公馆 开发商破产，监管资金已空，楼盘自去年已经停工 [开发商债权申报](https://user-images.githubusercontent.com/38778288/180631681-31d1acb2-a6d5-4650-8ad4-4ddc352a9641.jpeg)
