@@ -15,6 +15,7 @@ import { ITree } from "./itree/ds";
 import { validateITree } from "./itree/validate";
 import { tree2flat } from "./itree/reshape";
 import { ArgumentParser } from "argparse";
+import extraInfo from "../../../../data/source/extra-info.json";
 import path from "path";
 
 
@@ -33,12 +34,19 @@ const parseItem = (s: string) => {
             s2 = s2.replace(/\s+/g, '')
             if (!s2) return; // no string to parse
 
+            var name = s2;
+            var uri = '';
+            var developer = '';
             const mItemWithUri = s2.match(REG_ITEM_WITH_URI)
-            if (mItemWithUri)
-                curCity.children.push({name: mItemWithUri[1], uri: mItemWithUri[2]})
-            else {
-                curCity.children.push({name: s2, uri: ''})
+            if (mItemWithUri) {
+                name = mItemWithUri[1];
+                uri = mItemWithUri[2];
             }
+            let extraInfoKey = curProv.name + '-' + curCity.name + '-' + name.split('（')[0];
+            if (extraInfo[extraInfoKey] != null) {
+                developer = extraInfo[extraInfoKey]['developer']
+            }
+            curCity.children.push({name, uri, developer});
         })
 }
 
