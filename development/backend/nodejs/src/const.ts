@@ -38,6 +38,7 @@ export const BMF_TITLE_RED_STROKE_PATH = path.join(DATA_CONFIG_BMF_DIR, 'title-r
 // regex for parsing readme(v1)
 export const REG_START         = /^## 分省数据/
 export const REG_END           = /^## \S/
+export const REG_END_DEVELOPER = /^## 其他曝光/
 export const REG_TOTAL         = /总计[:：]\s*【\**(\d+)\+\**】/ // countryTotal
 export const REG_PROV          = /^### (.*?)\s*\[\s*(\d+)\s*\]/ // provinceName, provinceTotal
 export const REG_CITY          = /^-\s*\*\*(.*?)\s*[（(](\d+)[)）].*?\*\*\s*(.*?)$/ // cityName, cityTotal, properties
