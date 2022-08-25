@@ -10,10 +10,11 @@ export const tree2flat = (t: ITree): IFlatItem[] => {
         p.children.forEach(c => {
             c.children.forEach(i => {
                 f.push({
-                    name    : i.name,
-                    uri     : i.uri,
-                    city    : c.name,
-                    province: p.name
+                    name     : i.name,
+                    uri      : i.uri,
+                    developer: i.developer,
+                    city     : c.name,
+                    province : p.name
                 })
             })
         })
