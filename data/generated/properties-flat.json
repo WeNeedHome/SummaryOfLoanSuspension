@@ -413,6 +413,13 @@
     "province": "河北省"
   },
   {
+    "name": "恒大绿洲",
+    "uri": "images/河北省/邯郸市/邯郸恒大绿洲.jpg",
+    "developer": "",
+    "city": "邯郸市",
+    "province": "河北省"
+  },
+  {
     "name": "鸿坤凤凰城五期（8月）",
     "uri": "",
     "developer": "北京鸿坤伟业房地产开发有限公司",
@@ -941,6 +948,13 @@
     "name": "郑州鑫苑国际新城",
     "uri": "images/河南省/郑州市/郑州鑫苑国际新城.jpg",
     "developer": "鑫苑",
+    "city": "郑州市",
+    "province": "河南省"
+  },
+  {
+    "name": "瀚海航城",
+    "uri": "images/河南省/郑州市/瀚海航城告知书.png",
+    "developer": "",
     "city": "郑州市",
     "province": "河南省"
   },
@@ -1520,7 +1534,8 @@
   },
   {
     "name": "世茂泰禾南昌院子",
-    "uri": "images/江西/泰禾南昌院子告知书.png",
+    "uri": "images/江西省/南昌市/_世茂泰禾南昌院子",
+    "developer": "",
     "city": "南昌市",
     "province": "江西省"
   },
@@ -2243,6 +2258,13 @@
     "uri": "",
     "developer": "云南澄德房地产开发有限公司",
     "city": "玉溪市",
+    "province": "云南省"
+  },
+  {
+    "name": "大理的小院子北区（12月）",
+    "uri": "images/云南省/大理白族自治州/_大理的小院子北区",
+    "developer": "",
+    "city": "大理白族自治州",
     "province": "云南省"
   },
   {
