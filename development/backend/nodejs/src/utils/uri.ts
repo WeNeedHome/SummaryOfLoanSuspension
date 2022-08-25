@@ -54,7 +54,7 @@ export function validateUri(link: string): boolean {
  * @param uri
  */
 export const checkUriExists = (uri: string): boolean => {
-    return uri.length > 0 && fs.existsSync(path.join(PROJECT_DIR, uri))
+    return uri.length > 0 && (uri.startsWith('https://') || fs.existsSync(path.join(PROJECT_DIR, uri)))
 }
 
 export const getPathRobust = (fp: string): string => {
