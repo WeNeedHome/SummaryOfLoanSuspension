@@ -252,6 +252,20 @@
     "province": "广西壮族自治区"
   },
   {
+    "name": "山水国际",
+    "uri": "images/广西壮族自治区/桂林市/山水国际和山水华庭停贷告知函.jpg",
+    "developer": "",
+    "city": "桂林市",
+    "province": "广西壮族自治区"
+  },
+  {
+    "name": "山水华庭",
+    "uri": "images/广西壮族自治区/桂林市/山水国际和山水华庭停贷告知函.jpg",
+    "developer": "",
+    "city": "桂林市",
+    "province": "广西壮族自治区"
+  },
+  {
     "name": "恒大城二期、三期",
     "uri": "images/广西壮族自治区/柳州市/柳州恒大二三期停贷.jpg",
     "developer": "恒大",
@@ -1750,6 +1764,13 @@
     "province": "山东省"
   },
   {
+    "name": "恒大养生谷",
+    "uri": "images/山东省/淄博市/_淄博恒大养生谷",
+    "developer": "",
+    "city": "淄博市",
+    "province": "山东省"
+  },
+  {
     "name": "宝能城一期（8月）",
     "uri": "",
     "developer": "宝能",
@@ -1949,6 +1970,13 @@
     "name": "阳光100阿尔勒（8月）",
     "uri": "",
     "developer": "阳光100",
+    "city": "西安市",
+    "province": "陕西省"
+  },
+  {
+    "name": "中南上悦城四期",
+    "uri": "images/陕西省/西安市/西安市西咸新区中南上悦城四期停贷告知书.png",
+    "developer": "",
     "city": "西安市",
     "province": "陕西省"
   },
