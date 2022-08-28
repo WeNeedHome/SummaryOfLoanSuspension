@@ -1052,6 +1052,7 @@
     },
     "山东省-青岛市-西海岸新区世茂•香奈公馆":{
         "developer":"世茂集团",
+        "developer-subsidiary":"青岛华皓瑞信置业有限公司",
         "leju.com":"https://house.leju.com/qd155322/xinxi/"
     },
     "山东省-青岛市-中南林樾小区":{
@@ -1143,7 +1144,8 @@
     },
     "陕西省-西安市-世茂璀璨倾城二期":{
         "developer":"世茂集团",
-        "fang.com":""
+        "developer-subsidiary":"陕西开城实业有限公司",
+        "anjuke.com":"https://xa.fang.anjuke.com/loupan/445601.html"
     },
     "陕西省-西安市-万和郡":{
         "developer":"隆基泰和",
@@ -1392,5 +1394,46 @@
         "developer":"中润控股集团（中国）有限公司",
         "developer-subsidiary":"杭州中润瑞丰置业有限公司",
         "fang.com":"https://hz.esf.fang.com/loupan/2010183634.htm"
+    },
+    "河北省-邯郸市-恒大绿洲":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "江西省-南昌市-世茂泰禾南昌院子":{
+        "developer":"世茂集团",
+        "developer-subsidiary":"江西蓝天碧水开发建设有限公司",
+        "fang.com":"https://www.fang.com/xinfang/nc-2310199686/"
+    },
+    "云南省-大理白族自治州-大理的小院子北区":{
+        "developer":"融创",
+        "developer-subsidiary":"大理沃德佳置业有限公司",
+        "fang.com":"https://www.fang.com/xinfang/dali-3424111734/"
+    },
+    "河南省-郑州市-瀚海航城":{
+        "developer":"郑州黄河大观有限公司",
+        "developer-subsidiary":"河南瀚海港汇置业有限公司",
+        "fang.com":"https://www.fang.com/xinfang/zz-2510147943/"
+    },
+    "山东省-淄博市-恒大养生谷":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "陕西省-西安市-中南上悦城四期":{
+        "developer":"江苏中南建设集团股份有限公司",
+        "developer-subsidiary":"西安中南嘉成企业管理咨询有限公司",
+        "fang.com":"https://www.fang.com/xinfang/xian-3610190668/"
+    },
+    "广西壮族自治区-桂林市-山水国际":{
+        "developer":"桂林市合凯实业有限公司",
+        "anjuke.com":"https://mobile.anjuke.com/esf/gl-cm1542001/"
+    },
+    "广西壮族自治区-桂林市-山水华庭":{
+        "developer":"桂林市合凯实业有限公司",
+        "anjuke.com":"https://guilin.anjuke.com/community/view/910912"
+    },
+    "河南省-鹤壁市-淇县建业城":{
+        "developer":"建业地产股份有限公司",
+        "developer-subsidiary":"淇县建业置业有限公司",
+        "fang.com":"https://www.fang.com/xinfang/hebi-2515114501/"
     }
 }

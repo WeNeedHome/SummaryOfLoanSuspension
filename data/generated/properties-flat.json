@@ -254,14 +254,14 @@
   {
     "name": "山水国际",
     "uri": "images/广西壮族自治区/桂林市/山水国际和山水华庭停贷告知函.jpg",
-    "developer": "",
+    "developer": "桂林市合凯实业有限公司",
     "city": "桂林市",
     "province": "广西壮族自治区"
   },
   {
     "name": "山水华庭",
     "uri": "images/广西壮族自治区/桂林市/山水国际和山水华庭停贷告知函.jpg",
-    "developer": "",
+    "developer": "桂林市合凯实业有限公司",
     "city": "桂林市",
     "province": "广西壮族自治区"
   },
@@ -429,7 +429,7 @@
   {
     "name": "恒大绿洲",
     "uri": "images/河北省/邯郸市/邯郸恒大绿洲.jpg",
-    "developer": "",
+    "developer": "恒大",
     "city": "邯郸市",
     "province": "河北省"
   },
@@ -968,7 +968,7 @@
   {
     "name": "瀚海航城",
     "uri": "images/河南省/郑州市/瀚海航城告知书.png",
-    "developer": "",
+    "developer": "郑州黄河大观有限公司",
     "city": "郑州市",
     "province": "河南省"
   },
@@ -977,6 +977,13 @@
     "uri": "",
     "developer": "河南省翰高置业有限公司",
     "city": "周口市",
+    "province": "河南省"
+  },
+  {
+    "name": "淇县建业城",
+    "uri": "images/河南省/鹤壁市/河南鹤壁市淇县建业城强制停贷告知书.jfif",
+    "developer": "建业地产股份有限公司",
+    "city": "鹤壁市",
     "province": "河南省"
   },
   {
@@ -1549,7 +1556,7 @@
   {
     "name": "世茂泰禾南昌院子",
     "uri": "images/江西省/南昌市/_世茂泰禾南昌院子",
-    "developer": "",
+    "developer": "世茂集团",
     "city": "南昌市",
     "province": "江西省"
   },
@@ -1766,7 +1773,7 @@
   {
     "name": "恒大养生谷",
     "uri": "images/山东省/淄博市/_淄博恒大养生谷",
-    "developer": "",
+    "developer": "恒大",
     "city": "淄博市",
     "province": "山东省"
   },
@@ -1976,7 +1983,7 @@
   {
     "name": "中南上悦城四期",
     "uri": "images/陕西省/西安市/西安市西咸新区中南上悦城四期停贷告知书.png",
-    "developer": "",
+    "developer": "江苏中南建设集团股份有限公司",
     "city": "西安市",
     "province": "陕西省"
   },
@@ -2291,7 +2298,7 @@
   {
     "name": "大理的小院子北区（12月）",
     "uri": "images/云南省/大理白族自治州/_大理的小院子北区",
-    "developer": "",
+    "developer": "融创",
     "city": "大理白族自治州",
     "province": "云南省"
   },
