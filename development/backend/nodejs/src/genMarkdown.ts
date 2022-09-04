@@ -60,7 +60,7 @@ export const genPropertiesMd = (style: MdProvinceStyle, sourcePath: string, targ
                         if (developerDic[item.developer] == null) {
                             developerDic[item.developer] = []
                         }
-                        developerDic[item.developer].push(item.name)
+                        developerDic[item.developer].push(`${prov.name}-${city.name}-${item.name}`)
                     }
                 })
 
@@ -70,14 +70,17 @@ export const genPropertiesMd = (style: MdProvinceStyle, sourcePath: string, targ
         })
         console.log('finished writing items')
 
-        writer += '\n## 开发商数据（按拼音排序）\n'
         var total = 0
-        Object.entries(developerDic).sort().reverse().forEach(([key, value]) => {
-            writer += `### ${key} 【${value.length}】\n`
+        var developerDetails = ""
+        Object.entries(developerDic).sort(([n1, ], [n2, ]) => n1.localeCompare(n2, 'zh')).forEach(([key, value]) => {
+            developerDetails += "<details>\n"
+            developerDetails += `<summary><b> ${key} 【${value.length}】</b></summary>\n`
+            developerDetails += `  ${value.join(",<br>\n  ")}\n`
+            developerDetails += "</details>\n"
             total += value.length
         });
-        writer += `\n### 开发商总数 ${Object.entries(developerDic).length} 统计楼盘数 ${total} [数据源](data/source/extra-info.json)`
-        writer += '\n'
+        writer += `\n## 开发商总计 ${Object.entries(developerDic).length}（按拼音排序）（统计楼盘数 ${total}）[数据源](data/source/extra-info.json)\n`
+        writer += developerDetails
         console.log('finished writing developers')
     }
 
