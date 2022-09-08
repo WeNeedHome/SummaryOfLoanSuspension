@@ -1407,8 +1407,6 @@ sh ./run-validate.sh
 
 - 河南省-许昌市-铂悦山，博林首府，恒大悦龙台 3个停工楼盘 [#234](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/234)
 
-- 福建省-福州市-永泰青云小镇 [#258](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/258)
-
 - 河南省-三门峡市-航科城，开阳盛世，中海国际，春天城 4个烂尾项目 [#261](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/261)
 
 - 陕西省-西安市-贞观首府 [#262](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/262)
@@ -1422,3 +1420,27 @@ sh ./run-validate.sh
 - 江苏省-扬州市-江都区金奥文昌公馆 开发商破产，监管资金已空，楼盘自去年已经停工 [开发商债权申报](https://user-images.githubusercontent.com/38778288/180631681-31d1acb2-a6d5-4650-8ad4-4ddc352a9641.jpeg)
 
 - 重庆市-北碚区-融创映湖十里 烂尾楼盘
+
+- 浙江省-杭州市-绿地柏澜晶舍(推广名:绿地亚洲公园) [#292](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/292) [停工告知](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/0e560306424c6adfb67f13e12d3f4a3a7c3e06ff/images/%E7%BB%BF%E5%9C%B0%E6%9F%8F%E6%BE%9C%E6%99%B6%E8%88%8D%E5%BB%B6%E6%9C%9F%E4%BA%A4%E4%BB%98%E9%80%9A%E7%9F%A5%E4%B9%A6.jpg)
+
+- 安徽省-合肥市-新站区正荣中心 目前该小区的配套项目已经烂尾，住宅已经交付部分 [#320](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/320) [图一](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/16f3c43cf767c2b6d3ec2c4c459c6c14e0d00e9b/images/%E5%90%88%E8%82%A5%E6%96%B0%E7%AB%99%E5%8C%BA%E6%AD%A3%E8%8D%A3%E4%B8%AD%E5%BF%83.jpeg) [图二](https://raw.githubusercontent.com/WeNeedHome/SummaryOfLoanSuspension/16f3c43cf767c2b6d3ec2c4c459c6c14e0d00e9b/images/%E5%90%88%E8%82%A5%E6%96%B0%E7%AB%99%E5%8C%BA%E6%AD%A3%E8%8D%A3%E4%B8%AD%E5%BF%83%E7%83%82%E5%B0%BE%E6%94%BF%E5%BA%9C%E5%8F%8D%E9%A6%88.jpeg)
+
+- 湖北省-武汉市-绿地大都会 [#520](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/520)
+
+- 江西省-抚州市-东乡区红星雅苑 10年未能办理房产证 [#565](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/565)
+
+- 四川省-成都市-中海锦江城云熙二期，人居智荟城 [#586](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/586)
+
+- 重庆市-北碚区-北碚别墅群（小区名字不记得，在重庆北碚很出名） [#692](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/692)
+
+- 浙江省-杭州市-绿地众安宸瀚里（已结束） [#718](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/718) [绿臻置业公告](https://user-images.githubusercontent.com/16377295/179204666-6df50f70-0e5f-401f-929b-b1de3dac2637.png)
+
+- 广西省-南宁市-当代锦园3、5号楼 [#896](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/896)
+
+- 云南省-昆明市-别样幸福城 [#925](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/925)
+
+- 广东省-汕头市-恒大金碧江湾6期 [#993](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/993) [图](https://user-images.githubusercontent.com/50266660/180631384-35f3a5da-97e8-4dcf-a98a-9ecf66c0823c.jpg)
+
+- 广东省-深圳市-盐田佳兆业御璟佳园广场 [#1003](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1003)
+
+- 福建省-建瓯市-恒大溪山公馆 [#1062](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/1062) 
