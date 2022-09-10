@@ -1452,3 +1452,17 @@ sh ./run-validate.sh
 - 广东省-深圳市-盐田佳兆业御璟佳园广场 [#1003](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1003)
 
 - 福建省-建瓯市-恒大溪山公馆 [#1062](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/1062) 
+
+- 云南省-西双版纳傣族自治州-融创旅游度假区 [#558](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/558) 
+
+- 湖北省-襄阳市-融创民发御湖壹号 烂尾了 已经开始在门口拉横幅了 [comment](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/1134#discussioncomment-3452874)
+
+- 河南省-郑州市-金科星澜园 [comment](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/423#discussioncomment-3152066)
+
+- 江苏省-苏州市-恒大悦珑湾 八月底交房不交房就停贷 [comment](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/6#discussioncomment-3256616)
+
+- 四川省-成都市-龙泉-幸福东方白桦林 [#1190](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/1190)
+
+- 湖北省-武汉市-江岸区星湖湾 [#1195](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1195) 
+
+- 山西省-太原市-阳光城并州府 [#1200](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1200) 
