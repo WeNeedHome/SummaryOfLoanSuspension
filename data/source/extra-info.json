@@ -1486,5 +1486,18 @@
         "developer":"融创",
         "developer-subsidiary":"青岛嘉凯城房地产开发有限公司",
         "fang.com":"https://www.fang.com/xiaoqu/qd-2411123329/"
+    },
+    "河南省-安阳市-河南安阳恒大未来城":{
+        "developer":"恒大",
+        "fang.com":""
+    },
+    "山东省-青岛市-西海岸新区融创影都学府三期":{
+        "developer":"融创",
+        "developer-subsidiary":"东方影都融创投资有限公司",
+        "fang.com":"https://www.fang.com/xinfang/qd-2411123429/"
+    },
+    "浙江省-嘉兴市-桐乡金科时代天悦小区":{
+        "developer":"金科地产集团股份有限公司",
+        "fang.com":"https://www.fang.com/xinfang/tongxiang-2030183214/"
     }
 }
