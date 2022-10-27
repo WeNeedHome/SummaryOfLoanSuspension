@@ -402,7 +402,7 @@
         "developer":"融创",
         "fang.com":""
     },
-    "河南省-郑州市-奥园御湖城":{
+    "河南省-郑州市-奥园誉湖湾":{
         "developer":"奥园集团股份有限公司",
         "developer-subsidiary":"郑州望启置业有限公司",
         "anjuke.com":"https://zz.fang.anjuke.com/loupan/446531.html"
@@ -1481,5 +1481,10 @@
         "developer":"融创",
         "developer-subsidiary":"陕西恒安昕园置业有限公司",
         "fang.com":"https://xian.esf.fang.com/loupan/3610191228.htm"
+    },
+    "山东省-青岛市-李沧区融创悦山二期":{
+        "developer":"融创",
+        "developer-subsidiary":"青岛嘉凯城房地产开发有限公司",
+        "fang.com":"https://www.fang.com/xiaoqu/qd-2411123329/"
     }
 }
