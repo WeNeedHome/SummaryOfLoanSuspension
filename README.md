@@ -521,6 +521,7 @@ sh ./run-validate.sh
   [太原富力天禧城3期](images/山西省/太原市/太原市富力天禧城3期.jpg),
   [太原市恒大御景湾4期](images/山西省/太原市/太原市恒大御景湾4期.jpg),
   [太原市融创中心](images/山西省/太原市/太原市融创中心.png),
+  [远洋红星天润一期](images/山西省/太原市/远洋红星天润一期.jpg),
   泰禾金尊府
 
 ### 陕西省 [ 25 ]
@@ -1466,4 +1467,6 @@ sh ./run-validate.sh
 
 - 湖北省-武汉市-江岸区星湖湾 [#1195](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1195) 
 
-- 山西省-太原市-阳光城并州府 [#1200](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1200) 
+- 山西省-太原市-阳光城并州府 [#1200](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1200)
+
+- 山西省-太原市-远洋红星天润一期 [#1215](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1215)  [强制停贷告知书](images/山西省/太原市/远洋红星天润一期强制停贷告知书.pdf) 
