@@ -1467,4 +1467,6 @@ sh ./run-validate.sh
 
 - 湖北省-武汉市-江岸区星湖湾 [#1195](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1195) 
 
-- 山西省-太原市-阳光城并州府 [#1200](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1200) 
+- 山西省-太原市-阳光城并州府 [#1200](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1200)
+
+- 山西省-太原市-远洋红星天润一期 [#1215](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1215)  [强制停贷告知书](images/山西省/太原市/远洋红星天润一期强制停贷告知书.pdf) 
