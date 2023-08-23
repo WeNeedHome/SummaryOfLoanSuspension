@@ -1,6 +1,6 @@
 {
   "name": "中华人民共和国",
-  "count": 347,
+  "count": 348,
   "children": [
     {
       "name": "安徽省",
@@ -2007,11 +2007,11 @@
     },
     {
       "name": "山西省",
-      "count": 10,
+      "count": 11,
       "children": [
         {
           "name": "太原市",
-          "count": 10,
+          "count": 11,
           "children": [
             {
               "name": "宝能城一期（8月）",
@@ -2057,6 +2057,11 @@
               "name": "太原市融创中心",
               "uri": "images/山西省/太原市/太原市融创中心.png",
               "developer": "融创"
+            },
+            {
+              "name": "远洋红星天润一期",
+              "uri": "images/山西省/太原市/_远洋红星天润一期",
+              "developer": "远洋红星企业发展有限公司"
             },
             {
               "name": "泰禾金尊府",

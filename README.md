@@ -91,7 +91,7 @@ sh ./run-validate.sh
 - ~~[Notion 数据库](https://www.notion.so/21dab14200e2478eb91c49b68d16495f)~~ (
   20220717已被恶意删除)
 
-## 分省数据 (总计：【**347+**】，按三级拼音升序）
+## 分省数据 (总计：【**348+**】，按三级拼音升序）
 
 ### 安徽省 [ 2 ]
 
@@ -509,9 +509,9 @@ sh ./run-validate.sh
 - **淄博市（1）：** 
   [恒大养生谷](images/山东省/淄博市/_淄博恒大养生谷)
 
-### 山西省 [ 10 ]
+### 山西省 [ 11 ]
 
-- **太原市（10）：** 
+- **太原市（11）：** 
   宝能城一期（8月）,
   [恒大滨河府二期](images/山西省/太原市/太原恒大滨河府二期全体业主决定千2022年9月强制停贷告知书.jpeg),
   恒大金碧天下八期（10月）,
@@ -521,8 +521,8 @@ sh ./run-validate.sh
   [太原富力天禧城3期](images/山西省/太原市/太原市富力天禧城3期.jpg),
   [太原市恒大御景湾4期](images/山西省/太原市/太原市恒大御景湾4期.jpg),
   [太原市融创中心](images/山西省/太原市/太原市融创中心.png),
-  [远洋红星天润一期](images/山西省/太原市/远洋红星天润一期.jpg),
-  泰禾金尊府
+  泰禾金尊府,
+  [远洋红星天润一期](images/山西省/太原市/_远洋红星天润一期)
 
 ### 陕西省 [ 25 ]
 
@@ -639,7 +639,7 @@ sh ./run-validate.sh
 - **嘉兴市（1）：** 
   [桐乡金科时代天悦小区](images/浙江省/嘉兴市/_金科时代天悦小区)
 
-## 开发商总计 132（按拼音排序）（统计楼盘数 347）[数据源](data/source/extra-info.json)
+## 开发商总计 133（按拼音排序）（统计楼盘数 348）[数据源](data/source/extra-info.json)
 <details>
 <summary><b> 安徽斯瑞投资集团有限公司 【1】</b></summary>
   安徽省-合肥市-斯瑞大厦
@@ -1301,6 +1301,10 @@ sh ./run-validate.sh
   河南省-新乡市-新乡市豫飞盛世城邦（8月）
 </details>
 <details>
+<summary><b> 远洋红星企业发展有限公司 【1】</b></summary>
+  山西省-太原市-远洋红星天润一期
+</details>
+<details>
 <summary><b> 云南澄德房地产开发有限公司 【1】</b></summary>
   云南省-玉溪市-樱花谷（7月）
 </details>
@@ -1468,5 +1472,3 @@ sh ./run-validate.sh
 - 湖北省-武汉市-江岸区星湖湾 [#1195](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1195) 
 
 - 山西省-太原市-阳光城并州府 [#1200](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1200)
-
-- 山西省-太原市-远洋红星天润一期 [#1215](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/1215)  [强制停贷告知书](images/山西省/太原市/远洋红星天润一期强制停贷告知书.pdf) 
