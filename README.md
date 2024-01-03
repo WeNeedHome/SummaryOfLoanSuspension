@@ -1446,6 +1446,8 @@ sh ./run-validate.sh
 
 - 浙江省-杭州市-绿地众安宸瀚里（已结束） [#718](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/718) [绿臻置业公告](https://user-images.githubusercontent.com/16377295/179204666-6df50f70-0e5f-401f-929b-b1de3dac2637.png)
 
+- 陕西省-咸阳市-[融创御河宸院DK6](https://github.com/WeNeedHome/SummaryOfLoanSuspension/blob/ae61f72dd4d54b63c32b1ffa65d78d17fde2c5f8/images/%E9%99%95%E8%A5%BF%E7%9C%81/%E5%92%B8%E9%98%B3%E5%B8%82/%E5%92%B8%E9%98%B3%E8%9E%8D%E5%88%9B%E5%BE%A1%E6%B2%B3%E5%AE%B8%E9%99%A2DK6%E5%85%A8%E4%BD%93%E4%B8%9A%E4%B8%BB%E5%81%9C%E8%B4%A7%E5%91%8A%E7%9F%A5%E4%B9%A6.png)（已结束） [2023/12的归心家书](https://mp.weixin.qq.com/s/ZX6n0dz5Ali-DzgShoQfBA)
+
 - 广西省-南宁市-当代锦园3、5号楼 [#896](https://github.com/WeNeedHome/SummaryOfLoanSuspension/pull/896)
 
 - 云南省-昆明市-别样幸福城 [#925](https://github.com/WeNeedHome/SummaryOfLoanSuspension/discussions/925)
