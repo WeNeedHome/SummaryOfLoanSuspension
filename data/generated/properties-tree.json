@@ -1,6 +1,6 @@
 {
   "name": "中华人民共和国",
-  "count": 347,
+  "count": 348,
   "children": [
     {
       "name": "安徽省",
@@ -26,7 +26,7 @@
     },
     {
       "name": "北京市",
-      "count": 3,
+      "count": 4,
       "children": [
         {
           "name": "朝阳区",
@@ -58,6 +58,17 @@
               "name": "禹洲朗廷湾（朗廷雅苑）",
               "uri": "images/北京市/通州区/北京禹洲朗廷湾.jpeg",
               "developer": "禹洲集团"
+            }
+          ]
+        },
+        {
+          "name": "房山区",
+          "count": 1,
+          "children": [
+            {
+              "name": "长海御墅三期",
+              "uri": "images/北京市/房山区/_北京长海御墅三期",
+              "developer": "北京昊远隆基房地产开发有限公司"
             }
           ]
         }

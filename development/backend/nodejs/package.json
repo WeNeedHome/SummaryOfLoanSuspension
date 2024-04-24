@@ -11,9 +11,10 @@
   "devDependencies": {
     "@types/argparse": "^2.0.10",
     "@types/jimp": "^0.2.28",
-    "@types/node": "^18.0.4",
+    "@types/node": "^18.19.31",
     "@types/polyline": "^0.1.29",
-    "@types/unzipper": "^0.10.5"
+    "@types/unzipper": "^0.10.5",
+    "tslib": "^2.6.2"
   },
   "dependencies": {
     "argparse": "^2.0.1",
