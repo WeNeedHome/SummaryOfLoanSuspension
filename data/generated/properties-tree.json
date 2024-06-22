@@ -1,6 +1,6 @@
 {
   "name": "中华人民共和国",
-  "count": 349,
+  "count": 350,
   "children": [
     {
       "name": "安徽省",
@@ -532,7 +532,7 @@
     },
     {
       "name": "河北省",
-      "count": 24,
+      "count": 25,
       "children": [
         {
           "name": "保定市",
@@ -579,7 +579,7 @@
         },
         {
           "name": "邯郸市",
-          "count": 2,
+          "count": 3,
           "children": [
             {
               "name": "恒大绿洲",
@@ -589,6 +589,11 @@
             {
               "name": "恒大悦珑湾",
               "uri": "images/河北省/邯郸市/邯郸恒大.jpg",
+              "developer": "恒大"
+            },
+            {
+              "name": "恒大御景半岛",
+              "uri": "images/河北省/邯郸市/恒大御景半岛.jpg",
               "developer": "恒大"
             }
           ]
