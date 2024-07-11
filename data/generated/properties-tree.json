@@ -1,6 +1,6 @@
 {
   "name": "中华人民共和国",
-  "count": 350,
+  "count": 351,
   "children": [
     {
       "name": "安徽省",
@@ -254,16 +254,21 @@
     },
     {
       "name": "广东省",
-      "count": 8,
+      "count": 9,
       "children": [
         {
           "name": "广州市",
-          "count": 1,
+          "count": 2,
           "children": [
             {
               "name": "万科海上明月（9月）",
               "uri": "images/广东省/广州市/gz001.png",
               "developer": "万科"
+            },
+            {
+              "name": "升龙桂园",
+              "uri": "images/广东省/广州市/_广州升龙桂园",
+              "developer": "升龙集团"
             }
           ]
         },

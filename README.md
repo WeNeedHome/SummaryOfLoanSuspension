@@ -91,7 +91,7 @@ sh ./run-validate.sh
 - ~~[Notion 数据库](https://www.notion.so/21dab14200e2478eb91c49b68d16495f)~~ (
   20220717已被恶意删除)
 
-## 分省数据 (总计：【**350+**】，按三级拼音升序）
+## 分省数据 (总计：【**351+**】，按三级拼音升序）
 
 ### 安徽省 [ 2 ]
 
@@ -149,9 +149,10 @@ sh ./run-validate.sh
 - **庆阳市（1）：** 
   国金one（11月）
 
-### 广东省 [ 8 ]
+### 广东省 [ 9 ]
 
-- **广州市（1）：** 
+- **广州市（2）：** 
+  [升龙桂园](images/广东省/广州市/_广州升龙桂园),
   [万科海上明月（9月）](images/广东省/广州市/gz001.png)
 - **揭阳市（1）：** 
   恒大翡翠华庭二期
@@ -642,7 +643,7 @@ sh ./run-validate.sh
 - **绍兴市（1）：** 
   [绍兴藏珑府](images/浙江省/绍兴市/_绍兴藏珑府)
 
-## 开发商总计 134（按拼音排序）（统计楼盘数 350）[数据源](data/source/extra-info.json)
+## 开发商总计 135（按拼音排序）（统计楼盘数 351）[数据源](data/source/extra-info.json)
 <details>
 <summary><b> 安徽斯瑞投资集团有限公司 【1】</b></summary>
   安徽省-合肥市-斯瑞大厦
@@ -1154,6 +1155,10 @@ sh ./run-validate.sh
 <details>
 <summary><b> 上海兴宸房地产开发有限公司 【1】</b></summary>
   上海市-浦东新区-周浦合富广场
+</details>
+<details>
+<summary><b> 升龙集团 【1】</b></summary>
+  广东省-广州市-升龙桂园
 </details>
 <details>
 <summary><b> 石家庄中融汇通房地产开发有限公司 【1】</b></summary>
